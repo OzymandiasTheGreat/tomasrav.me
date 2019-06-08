@@ -1,0 +1,23 @@
+{
+  "name": "ozymandias.tk",
+  "version": "0.1.0",
+  "description": "Personal website for Tomas Ravinskas",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/OzymandiasTheGreat/ozymandias.tk"
+  },
+  "main": "./src/main.js",
+  "scripts": {
+    "test": "echo"
+  },
+  "keywords": [
+    "personal",
+    "website"
+  ],
+  "author": "Tomas Ravinskas",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.16.0"
+  }
+}
