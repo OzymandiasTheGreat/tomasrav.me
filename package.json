@@ -5,7 +5,8 @@
   "main": "src/scripts/index.js",
   "scripts": {
     "test": "echo",
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "dist": "rollup -c rollup.dist.config.js"
   },
   "repository": {
     "type": "git",

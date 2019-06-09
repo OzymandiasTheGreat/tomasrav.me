@@ -10,10 +10,10 @@ import json from 'rollup-plugin-json';
 module.exports = {
 	input: ['src/scripts/index.js', 'src/scripts/portfolio.js', 'src/scripts/project.js'],
 	output: {
-		dir: 'build/assets/',
+		dir: 'dist/assets/',
 		format: 'es',
 		chunkFileNames: '[name].js',
-		sourcemap: true,
+		sourcemap: false,
 	},
 	manualChunks: {
 		bundle: ['jquery', 'marked', 'magnific-popup', 'src/scripts/common'],
@@ -27,20 +27,20 @@ module.exports = {
 		terser({
 			mangle: false,
 			ie8: true,
-			sourcemap: true,
+			sourcemap: false,
 		}),
 		babel({exclude: 'node_modules/**'}),
 		iife({
-			sourcemap: true,
+			sourcemap: false,
 		}),
 		copy([
-			{files: 'src/!(*.fragment).html', dest: 'build'},
-			{files: 'src/styles/{*.css,*.css.map}', dest: 'build/assets'},
-			{files: 'src/content/**', dest: 'build/content'},
-			{files: 'src/img/**', dest: 'build/img'},
-			{files: 'node_modules/@fortawesome/fontawesome-free/webfonts/*', dest: 'build/assets/webfonts'},
-			{files: 'node_modules/normalize.css/normalize.css', dest: 'build/assets/'},
-			{files: 'node_modules/magnific-popup/dist/magnific-popup.css', dest: 'build/assets/'},
+			{files: 'src/!(*.fragment).html', dest: 'dist'},
+			{files: 'src/styles/*.css', dest: 'dist/assets'},
+			{files: 'src/content/**', dest: 'dist/content'},
+			{files: 'src/img/**', dest: 'dist/img'},
+			{files: 'node_modules/@fortawesome/fontawesome-free/webfonts/*', dest: 'dist/assets/webfonts'},
+			{files: 'node_modules/normalize.css/normalize.css', dest: 'dist/assets/'},
+			{files: 'node_modules/magnific-popup/dist/magnific-popup.css', dest: 'dist/assets/'},
 		]),
 	],
 };
