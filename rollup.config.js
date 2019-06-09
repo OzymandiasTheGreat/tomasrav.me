@@ -17,6 +17,7 @@ module.exports = {
 	},
 	manualChunks: {
 		bundle: ['jquery', 'marked', 'magnific-popup', 'src/scripts/common'],
+		polyfill: ['@babel/polyfill', 'core-js'],
 	},
 	plugins: [
 		resolve(),

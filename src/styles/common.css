@@ -13,6 +13,8 @@
   --ln-hover: #0097e6;
   --ln-visited: #9c88ff;
   --shadow: #00000077;
+  --warning: #c23616;
+  --warning-alt: #fbc531;
   --head-height: 57px;
 }
 
@@ -90,10 +92,24 @@ header nav ul li {
   vertical-align: middle;
 }
 
+header nav ul li:not(:last-child) div.menu:after, header nav ul li.lang:not(:last-child):after {
+  content: '';
+  display: inline-block;
+  height: calc(var(--head-height) * 0.85);
+  width: 1px;
+  background-color: var(--fg-alt);
+  margin: 0;
+  padding: 0;
+  vertical-align: middle;
+  position: relative;
+  top: -8px;
+}
+
 header nav ul li a {
   font-weight: 500;
   font-size: 24px;
   color: var(--fg-alt);
+  text-shadow: 1px 1px 5px var(--shadow);
   padding: 15px 10px;
 }
 
@@ -177,6 +193,7 @@ footer .copyright {
   font-size: 12px;
   font-weight: 300;
   font-style: italic;
+  text-shadow: 1px 1px 3px var(--bg-alt);
   padding: 5px 0;
   text-align: center;
   line-height: 14px;

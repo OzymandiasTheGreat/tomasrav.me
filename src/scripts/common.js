@@ -1,11 +1,13 @@
 import $ from 'jquery';
 import header from '../header.fragment.html';
 import footer from '../footer.fragment.html';
-import strings from '../content/index/strings.json';
+import strings from '../strings.json';
+import portfolio from '../portfolio.json';
 
 
 export const LANG = setLang();
 export const STRINGS = strings;
+export const PORTFOLIO = portfolio;
 
 
 $(function () {
@@ -24,17 +26,14 @@ $(function () {
 		$footer.find('p.copyright.attr-flags').html(STRINGS.lt.credit_flags);
 	}
 
-	$.get({url: './content/portfolio.json', cache: true}).done(function (response) {
-		let appList = $('#appList');
-		let libList = $('#libList');
-
-		for (let app of response.apps) {
-			appList.append(`<li class="menuItem"><a href="./project.html?project=${app}">${app}</a></li>`);
-		}
-		for (let lib of response.libs) {
-			libList.append(`<li class="menuItem"><a href="./project.html?project=${lib}">${lib}</a></li>`);
-		}
-	});
+	let appList = $('#appList');
+	let libList = $('#libList');
+	for (let app of PORTFOLIO.apps) {
+		appList.append(`<li class="menuItem"><a href="./project.html?project=${app}">${app}</a></li>`);
+	}
+	for (let lib of PORTFOLIO.libs) {
+		libList.append(`<li class="menuItem"><a href="./project.html?project=${lib}">${lib}</a></li>`);
+	}
 });
 
 

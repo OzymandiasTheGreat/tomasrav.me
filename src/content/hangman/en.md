@@ -1,4 +1,7 @@
-# [hangman](https://github.com/OzymandiasTheGreat/hangman) <a class="github-button" href="https://github.com/OzymandiasTheGreat/hangman" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star OzymandiasTheGreat/hangman on GitHub">Star</a>
+# [hangman](https://github.com/OzymandiasTheGreat/hangman)
+
+![stars](https://img.shields.io/github/stars/OzymandiasTheGreat/hangman.svg?style=social)
+![downloads](https://img.shields.io/github/downloads/OzymandiasTheGreat/hangman/total.svg?style=social)
 
 <div class="gallery"></div>
 

@@ -1,4 +1,7 @@
-# [grive-utils](https://github.com/OzymandiasTheGreat/grive-utils) <a class="github-button" href="https://github.com/OzymandiasTheGreat/grive-utils" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star OzymandiasTheGreat/grive-utils on GitHub">Star</a>
+# [grive-utils](https://github.com/OzymandiasTheGreat/grive-utils)
+
+![stars](https://img.shields.io/github/stars/OzymandiasTheGreat/grive-utils.svg?style=social)
+![downloads](https://img.shields.io/github/downloads/OzymandiasTheGreat/grive-utils/total.svg?style=social)
 
 <div class="gallery"></div>
 

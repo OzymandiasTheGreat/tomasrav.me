@@ -4,17 +4,16 @@
 	--bg: #2f3640
 	--bg-alt: #f5f6fa
 	--bg-head: #273c75
-	// --bg-head: #353b48
 	--fg: #2f3640
 	--fg-alt: #dcdde1
 	--nav-hl1: #e84118
-	// --nav-hl1: #fbc531
 	--nav-hl2: #c23616
-	// --nav-hl2: #e1b12c
 	--ln: #00a8ff
 	--ln-hover: #0097e6
 	--ln-visited: #9c88ff
 	--shadow: #00000077
+	--warning: #c23616
+	--warning-alt: #fbc531
 	--head-height: 57px
 
 code
@@ -73,22 +72,23 @@ header
 				line-height: 56px
 				vertical-align: middle
 
-				// &:not(:last-child):after
-				// 	content: ''
-				// 	display: inline-block
-				// 	height: 85%
-				// 	width: 1px
-				// 	background-color: var(--fg-alt)
-				// 	margin: 0
-				// 	padding: 0
-				// 	vertical-align: middle
-				// 	position: relative
-				// 	top: -8px
+				&:not(:last-child) div.menu:after, &.lang:not(:last-child):after
+					content: ''
+					display: inline-block
+					height: calc(var(--head-height) * 0.85)
+					width: 1px
+					background-color: var(--fg-alt)
+					margin: 0
+					padding: 0
+					vertical-align: middle
+					position: relative
+					top: -8px
 
 				a
 					font-weight: 500
 					font-size: 24px
 					color: var(--fg-alt)
+					text-shadow: 1px 1px 5px var(--shadow)
 					padding: 15px 10px
 
 					&:visited
@@ -158,6 +158,7 @@ footer
 		font-size: 12px
 		font-weight: 300
 		font-style: italic
+		text-shadow: 1px 1px 3px var(--bg-alt)
 		padding: 5px 0
 		text-align: center
 		line-height: 14px

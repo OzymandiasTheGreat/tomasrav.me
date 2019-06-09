@@ -1,4 +1,7 @@
-# [ginger](https://github.com/OzymandiasTheGreat/ginger) <a class="github-button" href="https://github.com/OzymandiasTheGreat/ginger" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star OzymandiasTheGreat/ginger on GitHub">Star</a>
+# [ginger](https://github.com/OzymandiasTheGreat/ginger)
+
+![stars](https://img.shields.io/github/stars/OzymandiasTheGreat/ginger.svg?style=social)
+![downloads](https://img.shields.io/github/downloads/OzymandiasTheGreat/ginger/total.svg?style=social)
 
 <div class="gallery"></div>
 

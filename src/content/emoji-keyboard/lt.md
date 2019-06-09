@@ -1,4 +1,7 @@
-# [emoji-keyboard](https://github.com/OzymandiasTheGreat/emoji-keyboard) <a class="github-button" href="https://github.com/OzymandiasTheGreat/emoji-keyboard" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star OzymandiasTheGreat/emoji-keyboard on GitHub">Star</a>
+# [emoji-keyboard](https://github.com/OzymandiasTheGreat/emoji-keyboard)
+
+![stars](https://img.shields.io/github/stars/OzymandiasTheGreat/emoji-keyboard.svg?style=social)
+![downloads](https://img.shields.io/github/downloads/OzymandiasTheGreat/emoji-keyboard/total.svg?style=social)
 
 #### Naujienose
 

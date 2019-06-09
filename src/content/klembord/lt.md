@@ -1,4 +1,8 @@
-# [klembord]() <a class="github-button" href="https://github.com/OzymandiasTheGreat/klembord" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star OzymandiasTheGreat/klembord on GitHub">Star</a>
+# [klembord](https://github.com/OzymandiasTheGreat/klembord)
+
+![stars](https://img.shields.io/github/stars/OzymandiasTheGreat/klembord.svg?style=social)
+![downloads](https://img.shields.io/github/downloads/OzymandiasTheGreat/klembord/total.svg?style=social)
+![installs](https://img.shields.io/pypi/dm/klembord.svg?label=Installs&style=social)
 
 > Palaikomos platformos: <span class="platform">Linux</span>, <span class="platform">Windows</span>
 

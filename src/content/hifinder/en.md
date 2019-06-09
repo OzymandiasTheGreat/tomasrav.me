@@ -1,4 +1,7 @@
-# [hifinder](https://github.com/OzymandiasTheGreat/hifinder) <a class="github-button" href="https://github.com/OzymandiasTheGreat/hifinder" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star OzymandiasTheGreat/hifinder on GitHub">Star</a>
+# [hifinder](https://github.com/OzymandiasTheGreat/hifinder)
+
+![stars](https://img.shields.io/github/stars/OzymandiasTheGreat/hifinder.svg?style=social)
+![downloads](https://img.shields.io/github/downloads/OzymandiasTheGreat/hifinder/total.svg?style=social)
 
 > Supported platforms: <span class="platform">Linux<span>
 

@@ -1,4 +1,7 @@
-# [xpander](https://github.com/OzymandiasTheGreat/xpander) <a class="github-button" href="https://github.com/OzymandiasTheGreat/xpander" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star OzymandiasTheGreat/xpander on GitHub">Star</a>
+# [xpander](https://github.com/OzymandiasTheGreat/xpander)
+
+![stars](https://img.shields.io/github/stars/OzymandiasTheGreat/xpander.svg?style=social)
+![downloads](https://img.shields.io/github/downloads/OzymandiasTheGreat/xpander/total.svg?style=social)
 
 <div class="gallery"></div>
 

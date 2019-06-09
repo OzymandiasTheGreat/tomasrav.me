@@ -1,4 +1,7 @@
-# [argos-scripts](https://github.com/OzymandiasTheGreat/argos-scripts) <a class="github-button" href="https://github.com/OzymandiasTheGreat/argos-scripts" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star OzymandiasTheGreat/argos-scripts on GitHub">Star</a>
+# [argos-scripts](https://github.com/OzymandiasTheGreat/argos-scripts)
+
+![stars](https://img.shields.io/github/stars/OzymandiasTheGreat/argos-scripts.svg?style=social)
+![downloads](https://img.shields.io/github/downloads/OzymandiasTheGreat/argos-scripts/total.svg?style=social)
 
 <div class="gallery"></div>
 

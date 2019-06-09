@@ -1,4 +1,8 @@
-# [winnotify](https://github.com/OzymandiasTheGreat/winnotify) <a class="github-button" href="https://github.com/OzymandiasTheGreat/winnotify" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star OzymandiasTheGreat/winnotify on GitHub">Star</a>
+# [winnotify](https://github.com/OzymandiasTheGreat/winnotify)
+
+![stars](https://img.shields.io/github/stars/OzymandiasTheGreat/winnotify.svg?style=social)
+![downloads](https://img.shields.io/github/downloads/OzymandiasTheGreat/winnotify/total.svg?style=social)
+![installs](https://img.shields.io/pypi/dm/winnotify.svg?label=Installs&style=social)
 
 > Supported platforms: <span class="platform">Windows</span>
 

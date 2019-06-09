@@ -1,4 +1,8 @@
-# [python-libinput](https://github.com/OzymandiasTheGreat/python-libinput) <a class="github-button" href="https://github.com/OzymandiasTheGreat/python-libinput" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star OzymandiasTheGreat/python-libinput on GitHub">Star</a>
+# [python-libinput](https://github.com/OzymandiasTheGreat/python-libinput)
+
+![stars](https://img.shields.io/github/stars/OzymandiasTheGreat/python-libinput.svg?style=social)
+![downloads](https://img.shields.io/github/downloads/OzymandiasTheGreat/python-libinput/total.svg?style=social)
+![installs](https://img.shields.io/pypi/dm/python-libinput.svg?label=Installs&style=social)
 
 > Palaikomos platformos: <span class="platform">Linux</span>
 

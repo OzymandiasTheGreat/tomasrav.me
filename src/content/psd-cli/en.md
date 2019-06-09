@@ -1,4 +1,7 @@
-# [psd-cli](https://github.com/OzymandiasTheGreat/psd-cli) <a class="github-button" href="https://github.com/OzymandiasTheGreat/psd-cli" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star OzymandiasTheGreat/psd-cli on GitHub">Star</a>
+# [psd-cli](https://github.com/OzymandiasTheGreat/psd-cli)
+
+![stars](https://img.shields.io/github/stars/OzymandiasTheGreat/psd-cli.svg?style=social)
+![downloads](https://img.shields.io/github/downloads/OzymandiasTheGreat/psd-cli/total.svg?style=social)
 
 > Supported platforms: <span class="platform">Linux</span>, <span class="platform">Windows</span>, <span class="platform">MacOS X</span>
 

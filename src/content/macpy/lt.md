@@ -1,4 +1,8 @@
-# [macpy](https://github.com/OzymandiasTheGreat/macpy) <a class="github-button" href="https://github.com/OzymandiasTheGreat/macpy" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star OzymandiasTheGreat/macpy on GitHub">Star</a>
+# [macpy](https://github.com/OzymandiasTheGreat/macpy)
+
+![stars](https://img.shields.io/github/stars/OzymandiasTheGreat/macpy.svg?style=social)
+![downloads](https://img.shields.io/github/downloads/OzymandiasTheGreat/macpy/total.svg?style=social)
+![installs](https://img.shields.io/pypi/dm/macpy.svg?label=Installs&style=social)
 
 > Palaikomos platformos: <span class="platform">Linux</span>, <span class="platform">Windows</span>
 
