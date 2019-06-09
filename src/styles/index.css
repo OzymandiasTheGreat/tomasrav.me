@@ -1,0 +1,140 @@
+section.photoBox {
+  float: left;
+}
+
+section.photoBox img {
+  image-orientation: from-image;
+  max-width: 80%;
+  border-radius: 10px;
+}
+
+section.photoBox figcaption {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+section.photoBox .statusBox {
+  padding: 5px 10px;
+}
+
+section.photoBox .statusBox #status {
+  margin-left: 15px;
+  font-size: 16px;
+  font-style: italic;
+}
+
+section.photoBox .contactBox {
+  padding: 5px 10px;
+}
+
+section.photoBox .contactBox .contact ul {
+  display: inline-block;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+section.photoBox .contactBox .contact ul li {
+  display: inline-block;
+  font-size: 28px;
+}
+
+section.photoBox .contactBox .contact ul li a {
+  color: var(--bg);
+}
+
+section.photoBox .contactBox .contact ul li a:visited {
+  color: var(--bg);
+}
+
+section.photoBox .contactBox .contact ul li:not(:last-child) {
+  margin-right: 20px;
+}
+
+section.photoBox .contactBox .contact ul li:first-child {
+  margin-left: 15px;
+}
+
+section#bio h1 {
+  font-size: 38px;
+  font-weight: 500;
+  opacity: 0.75;
+  margin: 0;
+  margin-bottom: 25px;
+  padding: 0;
+}
+
+section#bio h2 {
+  font-size: 28px;
+  font-weight: 500;
+  margin: 0;
+  margin-bottom: 20px;
+  padding: 0;
+}
+
+section#bio h3 {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0;
+  margin-bottom: 20px;
+  padding: 0;
+}
+
+section#bio p {
+  font-size: 18px;
+  font-weight: 300;
+  margin: 0;
+  margin-bottom: 20px;
+  padding: 0;
+}
+
+section#bio blockquote p {
+  margin-bottom: 5px;
+}
+
+section#bio hr {
+  margin: 0;
+  margin-bottom: 100px;
+  padding: 0;
+}
+
+section#bio .overflow {
+  overflow-x: auto;
+}
+
+section#bio table {
+  border-collapse: collapse;
+}
+
+section#bio table thead tr, section#bio table tbody tr:not(:last-child), section#bio table thead td, section#bio table tr:not(:last-child) td {
+  border-bottom: 1px solid var(--fg);
+}
+
+section#bio table tr td:not(:last-child), section#bio table tr th:not(:last-child) {
+  border-right: 1px solid var(--fg);
+}
+
+section#bio table th {
+  font-size: 14px;
+  font-weight: 500;
+  text-align: left;
+  padding: 5px 10px;
+}
+
+section#bio table td {
+  font-size: 16px;
+  font-weight: 300;
+  text-align: left;
+  padding: 5px 10px;
+}
+
+@media screen and (max-width: 900px) {
+  main {
+    padding: 50px 15px;
+  }
+  section.photoBox .statusBox, section.photoBox .contactBox {
+    margin: 15px;
+  }
+}
+/*# sourceMappingURL=index.css.map */

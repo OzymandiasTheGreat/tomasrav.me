@@ -1,0 +1,76 @@
+@charset "UTF-8";
+main div.gallery {
+  text-align: center;
+}
+
+main div.gallery img {
+  height: 128px;
+  padding: 15px;
+}
+
+main h1 {
+  font-size: 32px;
+  font-weight: 500;
+}
+
+main h1:before {
+  content: '🔗';
+  font-size: 28px;
+  font-weight: 400;
+  opacity: 0.6;
+  margin-right: 15px;
+}
+
+main h1:hover:before {
+  opacity: 1;
+}
+
+main h2 {
+  font-size: 28px;
+  font-weight: 500;
+}
+
+main h4 {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+main p {
+  font-size: 18px;
+  font-weight: 300;
+}
+
+main p a {
+  font-size: 14px;
+}
+
+main blockquote > p {
+  font-size: 14px;
+}
+
+main blockquote > p > .platform {
+  font-style: italic;
+}
+
+main div.more a {
+  font-size: 18px;
+}
+
+main div.more a:after {
+  content: '🔗';
+  font-size: 14px;
+  font-weight: 400;
+  opacity: 0.6;
+  margin-left: 10px;
+}
+
+main div.more a:hover:after {
+  opacity: 1;
+}
+
+main code {
+  font: var(--mono);
+  font-weight: 400;
+  font-size: 16px;
+}
+/*# sourceMappingURL=project.css.map */

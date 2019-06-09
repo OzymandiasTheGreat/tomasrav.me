@@ -1,0 +1,13 @@
+{
+	"apps": [
+		"emoji-keyboard",
+		"grive-utils",
+		"xpander",
+		"ginger",
+		"hifinder",
+		"argos-scripts",
+		"psd-cli",
+		"hangman"
+	],
+	"libs": []
+}

@@ -1,0 +1,26 @@
+<nav>
+	<ul>
+		<li>
+			<div class="menu">
+				<a href="./index.html">About</a>
+				<ul class="menuList"></ul>
+			</div>
+		</li>
+		<li>
+			<div class="menu">
+				<a href="./portfolio.html?type=apps">Applications</a>
+				<ul class="menuList" id="appList"></ul>
+			</div>
+		</li>
+		<li>
+			<div class="menu">
+				<a href="./portfolio.html?type=libs">Libraries</a>
+				<ul class="menuList" id="libList"></ul>
+			</div>
+		</li>
+	</ul>
+	<ul>
+		<li class="lang"><a href="#" onclick="(() => { window.sessionStorage.setItem('lang', 'en'); window.location.reload(true); })()"><img src="./img/uk.svg" alt="Flag of the United Kingdom"></a></li>
+		<li class="lang"><a href="#" onclick="(() => { window.sessionStorage.setItem('lang', 'lt'); window.location.reload(true); })()"><img src="./img/lt.svg" alt="Flag of Lithuania"></a></li>
+	</ul>
+</nav>

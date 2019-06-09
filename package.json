@@ -2,22 +2,45 @@
   "name": "ozymandias.tk",
   "version": "0.1.0",
   "description": "Personal website for Tomas Ravinskas",
+  "main": "src/scripts/index.js",
+  "scripts": {
+    "test": "echo",
+    "build": "rollup -c"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/OzymandiasTheGreat/ozymandias.tk"
-  },
-  "main": "./src/main.js",
-  "scripts": {
-    "test": "echo"
+    "url": "git+https://github.com/OzymandiasTheGreat/ozymandias.tk.git"
   },
   "keywords": [
-    "personal",
-    "website"
+    "'personal",
+    "website'"
   ],
   "author": "Tomas Ravinskas",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/OzymandiasTheGreat/ozymandias.tk/issues"
+  },
+  "homepage": "https://github.com/OzymandiasTheGreat/ozymandias.tk#readme",
   "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
     "babel-eslint": "^10.0.1",
-    "eslint": "^5.16.0"
+    "eslint": "^5.16.0",
+    "rollup": "^1.14.4",
+    "rollup-plugin-babel": "^4.3.2",
+    "rollup-plugin-commonjs": "^10.0.0",
+    "rollup-plugin-copy-glob": "^0.3.0",
+    "rollup-plugin-html": "^0.2.1",
+    "rollup-plugin-iife": "^0.2.0",
+    "rollup-plugin-node-resolve": "^5.0.1",
+    "rollup-plugin-terser": "^5.0.0"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.4.4",
+    "jquery": "^3.4.1",
+    "magnific-popup": "^1.1.0",
+    "marked": "^0.6.2",
+    "normalize.css": "^8.0.1"
   }
 }
