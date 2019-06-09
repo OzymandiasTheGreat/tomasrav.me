@@ -9,7 +9,7 @@
 > Client: <span class="platform">Anything with a modern browser</span>
 
 A sleek, modern, responsive interface for controlling Music Player Daemon.
-Ginger supports all the basic functionallity, such as controlling playback, adding streams and managing playlists.
+Ginger supports all the basic functionality, such as controlling playback, adding streams and managing playlists.
 
 I've set out to find a nice interface for mpd that would be simple enough for my family to use as well.
 The closest thing I could find was ympd and... it's looks amateurish to say the least.
@@ -18,6 +18,6 @@ So here is my own effort to provide something simple but robust.
 
 <div class="more">
 
-Find out more on the [github page](https://github.com/OzymandiasTheGreat/ginger)
+For more visit [github page](https://github.com/OzymandiasTheGreat/ginger)
 
 </div>

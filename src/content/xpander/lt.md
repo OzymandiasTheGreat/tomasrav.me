@@ -4,7 +4,7 @@
 
 > Palaikomos platformos: <span class="platform">Linux</span>, <span class="platform">Windows</span>
 
-Teksto plėtinių programa Linux ir Windows operacinėms sistemoms.
+Teksto plėtinių programa (*text expander*) Linux ir Windows operacinėms sistemoms.
 Jei jum reikia rašyti daug pasikartojančio teksto, pildyti daug formų ar norite iškarpų kurios veiktų tarp teksto editorių --
 xpander gali padėti!
 
@@ -14,6 +14,6 @@ Jūsų frazės yra saugomos kaip paprasti json failai, jūsų pasirinktame aplan
 
 <div class="more">
 
-Daugiau [github'e](https://github.com/OzymandiasTheGreat/xpander)
+Daugiau [github puslapyje](https://github.com/OzymandiasTheGreat/xpander)
 
 </div>

@@ -15,6 +15,6 @@ your pointer, search emoji by name and more!
 
 <div class="more">
 
-For more visit the [github page](https://github.com/OzymandiasTheGreat/emoji-keyboard)
+For more visit [github page](https://github.com/OzymandiasTheGreat/emoji-keyboard)
 
 </div>

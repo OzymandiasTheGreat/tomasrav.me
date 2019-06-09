@@ -14,6 +14,6 @@ Best of all it's all open source and using open standards, meaning the phrases y
 
 <div class="more">
 
-For more visit the [github page](https://github.com/OzymandiasTheGreat/xpander)
+For more visit [github page](https://github.com/OzymandiasTheGreat/xpander)
 
 </div>

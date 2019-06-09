@@ -3,9 +3,12 @@ import marked from 'marked';
 import * as common from './common';
 
 $(function () {
-	if (common.LANG === 'lt') {
-		$('#statusCaption').text('Statusas');
-		$('#contactCaption').text('Susisiekime');
+	if (common.LANG === 'en') {
+		$('#statusCaption').text(common.STRINGS.en.status);
+		$('#contactCaption').text(common.STRINGS.en.contact);
+	} else {
+		$('#statusCaption').text(common.STRINGS.lt.status);
+		$('#contactCaption').text(common.STRINGS.lt.contact);
 	}
 
 	$.get(`./content/index/status-${common.LANG}.txt`).done(function (response) {

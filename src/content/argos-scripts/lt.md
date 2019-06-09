@@ -13,6 +13,6 @@ Volumes suteikia patogesnį kilnojamų laikmenų valdyma su galimybę atverti pr
 
 <div class="more">
 
-Daugiau [github'e](https://github.com/OzymandiasTheGreat/argos-scripts)
+Daugiau [github puslapyje](https://github.com/OzymandiasTheGreat/argos-scripts)
 
 </div>

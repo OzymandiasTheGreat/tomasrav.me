@@ -9,6 +9,6 @@ A sync client for Google Drive. It wraps command-line sync client `grive2` and p
 
 <div class="more">
 
-For more visit the [github page](https://github.com/OzymandiasTheGreat/grive-utils)
+For more visit [github page](https://github.com/OzymandiasTheGreat/grive-utils)
 
 </div>

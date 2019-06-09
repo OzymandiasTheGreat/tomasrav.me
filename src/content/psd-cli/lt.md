@@ -1,7 +1,5 @@
 # [psd-cli](https://github.com/OzymandiasTheGreat/psd-cli) <a class="github-button" href="https://github.com/OzymandiasTheGreat/psd-cli" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star OzymandiasTheGreat/psd-cli on GitHub">Star</a>
 
-<div class="gallery"></div>
-
 > Palaikomos platformos: <span class="platform">Linux</span>, <span class="platform">Windows</span>, <span class="platform">MacOS X</span>
 
 Dirbkite su Adobe Photoshop failais iš komandinės-eilutės!
@@ -12,6 +10,6 @@ Palaikomi funkcionalumai yra failų/sluoksnių konvertavimas į png, failų per�
 
 <div class="more">
 
-Daugiau [github'e](https://github.com/OzymandiasTheGreat/psd-cli)
+Daugiau [github puslapyje](https://github.com/OzymandiasTheGreat/psd-cli)
 
 </div>

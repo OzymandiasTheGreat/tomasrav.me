@@ -9,6 +9,6 @@ Sinchronizacijos klientas Google Diskui. Ši programa apsupa komandinės-eilutė
 
 <div class="more">
 
-Daugiau [github'e](https://github.com/OzymandiasTheGreat/grive-utils)
+Daugiau [github puslapyje](https://github.com/OzymandiasTheGreat/grive-utils)
 
 </div>

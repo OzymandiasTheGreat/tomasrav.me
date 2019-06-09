@@ -14,6 +14,6 @@ Pamirškite emoji kopijavimą ir įklijavimą! Rašykite emoji tiesiai į progra
 
 <div class="more">
 
-Daugiau info [github'e](https://github.com/OzymandiasTheGreat/emoji-keyboard)
+Daugiau [github puslapyje](https://github.com/OzymandiasTheGreat/emoji-keyboard)
 
 </div>

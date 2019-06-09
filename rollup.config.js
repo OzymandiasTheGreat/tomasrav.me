@@ -5,6 +5,7 @@ import babel from 'rollup-plugin-babel';
 import { terser } from 'rollup-plugin-terser';
 import copy from 'rollup-plugin-copy-glob';
 import html from 'rollup-plugin-html';
+import json from 'rollup-plugin-json';
 
 module.exports = {
 	input: ['src/scripts/index.js', 'src/scripts/portfolio.js', 'src/scripts/project.js'],
@@ -20,6 +21,7 @@ module.exports = {
 	plugins: [
 		resolve(),
 		commonjs(),
+		json(),
 		html(),
 		terser({
 			mangle: false,
@@ -35,6 +37,7 @@ module.exports = {
 			{files: 'src/styles/{*.css,*.css.map}', dest: 'dist/assets'},
 			{files: 'src/content/**', dest: 'dist/content'},
 			{files: 'src/img/**', dest: 'dist/img'},
+			{files: 'node_modules/@fortawesome/fontawesome-free/webfonts/*', dest: 'dist/assets/webfonts'},
 			{files: 'node_modules/normalize.css/normalize.css', dest: 'dist/assets/'},
 			{files: 'node_modules/magnific-popup/dist/magnific-popup.css', dest: 'dist/assets/'},
 		]),

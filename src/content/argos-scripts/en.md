@@ -13,6 +13,6 @@ Volumes provides removable storage management with options to open mounts and sa
 
 <div class="more">
 
-Find out more on the [github page](https://github.com/OzymandiasTheGreat/argos-scripts)
+For more visit [github page](https://github.com/OzymandiasTheGreat/argos-scripts)
 
 </div>

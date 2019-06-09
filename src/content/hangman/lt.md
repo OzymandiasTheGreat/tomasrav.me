@@ -11,6 +11,6 @@ Back-end parašytas python ir tiesiog tiekia atsitiktinius žodžius su keliais 
 
 <div class="more">
 
-Daugiau [github'e](https://github.com/OzymandiasTheGreat/hangman)
+Daugiau [github puslapyje](https://github.com/OzymandiasTheGreat/hangman)
 
 </div>

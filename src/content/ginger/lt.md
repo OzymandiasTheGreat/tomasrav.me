@@ -19,6 +19,6 @@ Taigi štai mano bandymas pateikti kažką paprasto bet galingo.
 
 <div class="more">
 
-Daugiau [github'e](https://github.com/OzymandiasTheGreat/ginger)
+Daugiau [github puslapyje](https://github.com/OzymandiasTheGreat/ginger)
 
 </div>

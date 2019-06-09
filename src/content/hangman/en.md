@@ -11,6 +11,6 @@ The back-end is written in python and only serves random words with a few parame
 
 <div class="more">
 
-Find out more on the [github page](https://github.com/OzymandiasTheGreat/hangman)
+For more visit [github page](https://github.com/OzymandiasTheGreat/hangman)
 
 </div>

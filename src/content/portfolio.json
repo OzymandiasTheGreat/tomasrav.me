@@ -9,5 +9,10 @@
 		"psd-cli",
 		"hangman"
 	],
-	"libs": []
+	"libs": [
+		"macpy",
+		"klembord",
+		"python-libinput",
+		"winnotify"
+	]
 }

@@ -1,14 +1,29 @@
 import $ from 'jquery';
 import header from '../header.fragment.html';
 import footer from '../footer.fragment.html';
+import strings from '../content/index/strings.json';
 
 
 export const LANG = setLang();
+export const STRINGS = strings;
 
 
 $(function () {
-	$('header').html(header);
-	$('footer').html(footer);
+	let $header = $('header').html(header);
+	let $footer = $('footer').html(footer);
+
+	if (LANG === 'en') {
+		$header.find('#about').text(STRINGS.en.about);
+		$header.find('#apps').text(STRINGS.en.apps);
+		$header.find('#libs').text(STRINGS.en.libs);
+		$footer.find('p.copyright.attr-flags').html(STRINGS.en.credit_flags);
+	} else {
+		$header.find('#about').text(STRINGS.lt.about);
+		$header.find('#apps').text(STRINGS.lt.apps);
+		$header.find('#libs').text(STRINGS.lt.libs);
+		$footer.find('p.copyright.attr-flags').html(STRINGS.lt.credit_flags);
+	}
+
 	$.get({url: './content/portfolio.json', cache: true}).done(function (response) {
 		let appList = $('#appList');
 		let libList = $('#libList');
