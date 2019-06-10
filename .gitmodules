@@ -1,0 +1,3 @@
+[submodule "hangman"]
+	path = hangman
+	url = git@github.com:OzymandiasTheGreat/hangman.git
