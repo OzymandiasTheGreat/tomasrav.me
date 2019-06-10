@@ -132,9 +132,6 @@ section#bio table td {
 }
 
 @media screen and (max-width: 900px) {
-  main {
-    padding: 50px 15px;
-  }
   section.photoBox .statusBox, section.photoBox .contactBox {
     margin: 15px;
   }

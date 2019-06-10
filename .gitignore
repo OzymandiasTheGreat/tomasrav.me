@@ -2,3 +2,5 @@ node_modules
 dist
 build
 .cache
+src/styles/*.css
+src/styles/*.css.map

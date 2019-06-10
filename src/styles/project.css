@@ -1,20 +1,20 @@
 @charset "UTF-8";
-main div.gallery {
+div.gallery {
   text-align: center;
 }
 
-main div.gallery img {
+div.gallery img {
   height: 128px;
   padding: 15px;
 }
 
-main h1 {
+h1 {
   font-size: 32px;
   font-weight: 500;
   text-shadow: 3px 3px 5px var(--shadow);
 }
 
-main h1:before {
+h1:before {
   content: '🔗';
   font-size: 28px;
   font-weight: 400;
@@ -22,42 +22,42 @@ main h1:before {
   margin-right: 15px;
 }
 
-main h1:hover:before {
+h1:hover:before {
   opacity: 1;
 }
 
-main h2 {
+h2 {
   font-size: 28px;
   font-weight: 500;
 }
 
-main h4 {
+h4 {
   font-size: 16px;
   font-weight: 500;
 }
 
-main p {
+p {
   font-size: 18px;
   font-weight: 300;
 }
 
-main p a {
+p a {
   font-size: 14px;
 }
 
-main blockquote > p {
+blockquote > p {
   font-size: 14px;
 }
 
-main blockquote > p > .platform {
+blockquote > p > .platform {
   font-style: italic;
 }
 
-main div.more a {
+div.more a {
   font-size: 18px;
 }
 
-main div.more a:after {
+div.more a:after {
   content: '🔗';
   font-size: 14px;
   font-weight: 400;
@@ -65,31 +65,41 @@ main div.more a:after {
   margin-left: 10px;
 }
 
-main div.more a:hover:after {
+div.more a:hover:after {
   opacity: 1;
 }
 
-main code {
+code {
   font: var(--mono);
   font-weight: 400;
   font-size: 16px;
 }
 
-main div.warning blockquote {
+div.warning blockquote {
   position: relative;
   border: 5px solid var(--warning);
   border-left-width: 40px;
   padding: 15px 25px;
 }
 
-main div.warning blockquote:before {
+div.warning blockquote:before {
   content: '\f071';
   font-family: "Font Awesome 5 Free";
-  font-family-font-weight: 900;
+  font-weight: 900;
   font-size: 28px;
   color: var(--warning-alt);
   position: absolute;
   top: 6px;
   left: -34px;
+}
+
+@media screen and (max-width: 650px) {
+  h1 {
+    margin-top: 5px;
+  }
+  div.gallery img {
+    height: 64px;
+    padding: 5px;
+  }
 }
 /*# sourceMappingURL=project.css.map */

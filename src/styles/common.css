@@ -16,17 +16,48 @@
   --warning: #c23616;
   --warning-alt: #fbc531;
   --head-height: 57px;
+  --foot-height: 90px;
 }
 
-code {
-  font-family: var(--mono);
-  font-weight: 400;
+html {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  height: 100vh;
+  overflow-y: auto;
 }
 
 body {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
   font-family: var(--fira);
   color: var(--fg);
   background-color: var(--bg);
+  width: 100%;
 }
 
 body a {
@@ -71,10 +102,21 @@ header nav {
   margin: auto;
 }
 
+header nav div.navMenu a#hamburger {
+  display: none;
+}
+
+header nav div.navMenu a#hamburger img {
+  max-width: 24px;
+  padding: 5px;
+  border: 2px solid var(--fg-alt);
+  border-radius: 10px;
+}
+
 header nav ul {
   display: inline-block;
   list-style: none;
-  height: var(--head-height);
+  height: calc(var(--head-height) + 1px);
   margin: 0;
   padding: 0;
 }
@@ -88,7 +130,7 @@ header nav ul li.lang a img {
 header nav ul li {
   display: inline-block;
   height: var(--head-height);
-  line-height: 56px;
+  line-height: var(--head-height);
   vertical-align: middle;
 }
 
@@ -127,7 +169,7 @@ header nav ul li .menu {
 }
 
 header nav ul li .menu .menuList {
-  visibility: hidden;
+  display: none;
   position: absolute;
   left: 0;
   top: var(--head-height);
@@ -156,10 +198,13 @@ header nav ul li .menu .menuList .menuItem a {
 }
 
 header nav ul li .menu:hover .menuList, header nav ul li .menu .menuList:hover {
-  visibility: visible;
+  display: block;
 }
 
 main {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   background-color: var(--bg-alt);
   font-size: 18px;
   font-weight: 300;
@@ -169,6 +214,8 @@ main {
   padding: 50px;
   border-right: 1px solid var(--fg);
   border-left: 1px solid var(--fg);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 footer {
@@ -193,7 +240,7 @@ footer .copyright {
   font-size: 12px;
   font-weight: 300;
   font-style: italic;
-  text-shadow: 1px 1px 3px var(--bg-alt);
+  text-shadow: 1px 1px 1px var(--bg-alt);
   padding: 5px 0;
   text-align: center;
   line-height: 14px;
@@ -207,5 +254,88 @@ footer .copyright:before {
   font-weight: 500;
   margin: 0 10px;
   vertical-align: middle;
+}
+
+pre {
+  background-color: #fff;
+  width: 100%;
+  overflow-x: auto;
+}
+
+pre code {
+  font-family: var(--mono);
+  font-weight: 400;
+}
+
+@media screen and (max-width: 1025) {
+  header nav {
+    width: inherit;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  header nav {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  header nav {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    width: 100%;
+    margin: 0;
+  }
+  header nav div.navMenu {
+    position: relative;
+    margin: auto 15px;
+    max-width: 50%;
+  }
+  header nav div.navMenu a#hamburger {
+    display: block;
+  }
+  header nav div.navMenu > ul {
+    display: none;
+    position: absolute;
+    top: calc(var(--head-height) - 10px);
+    left: -15px;
+    height: initial;
+    background-color: var(--bg-head);
+  }
+  header nav div.navMenu > ul > li {
+    display: block;
+  }
+  header nav div.navMenu > ul > li .menu > a {
+    display: block;
+    padding: 0 15px;
+  }
+  header nav div.navMenu ul .menu ul.menuList {
+    display: none;
+    top: -100%;
+    right: 0;
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+    width: 165px;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+  }
+  header nav ul {
+    margin-right: 15px;
+  }
+  header nav ul li.lang a {
+    padding: 14px 7px;
+  }
+  header nav ul li:not(:last-child) div.menu::after, header nav ul li.lang:not(:last-child)::after {
+    display: none;
+  }
+  main {
+    width: 100vw;
+    padding: 15px;
+    padding-bottom: 50px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
 }
 /*# sourceMappingURL=common.css.map */

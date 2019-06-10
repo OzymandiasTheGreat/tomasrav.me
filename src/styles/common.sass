@@ -15,15 +15,26 @@
 	--warning: #c23616
 	--warning-alt: #fbc531
 	--head-height: 57px
+	--foot-height: 90px
 
-code
-	font-family: var(--mono)
-	font-weight: 400
+html
+	display: flex
+	flex-flow: column nowrap
+	justify-content: flex-start
+	align-items: baseline
+	height: 100vh
+	overflow-y: auto
 
 body
+	flex: 1
+	display: flex
+	flex-flow: column nowrap
+	justify-content: flex-start
+	align-items: baseline
 	font-family: var(--fira)
 	color: var(--fg)
 	background-color: var(--bg)
+	width: 100%
 
 	a
 		color: var(--ln)
@@ -54,10 +65,20 @@ header
 		height: var(--head-height)
 		margin: auto
 
+		div.navMenu a#hamburger
+			display: none
+
+			img
+				max-width: 24px
+				padding: 5px
+				border: 2px solid var(--fg-alt)
+				border-radius: 10px
+
+
 		ul
 			display: inline-block
 			list-style: none
-			height: var(--head-height)
+			height: calc(var(--head-height) + 1px)
 			margin: 0
 			padding: 0
 
@@ -69,7 +90,7 @@ header
 			li
 				display: inline-block
 				height: var(--head-height)
-				line-height: 56px
+				line-height: var(--head-height)
 				vertical-align: middle
 
 				&:not(:last-child) div.menu:after, &.lang:not(:last-child):after
@@ -101,7 +122,7 @@ header
 					position: relative
 
 					.menuList
-						visibility: hidden
+						display: none
 						position: absolute
 						left: 0
 						top: var(--head-height)
@@ -126,9 +147,10 @@ header
 								line-height: 18px
 
 					&:hover .menuList, .menuList:hover
-						visibility: visible
+						display: block
 
 main
+	flex: 1
 	background-color: var(--bg-alt)
 	font-size: 18px
 	font-weight: 300
@@ -138,6 +160,7 @@ main
 	padding: 50px
 	border-right: 1px solid var(--fg)
 	border-left: 1px solid var(--fg)
+	box-sizing: border-box
 
 footer
 	width: 100%
@@ -158,7 +181,7 @@ footer
 		font-size: 12px
 		font-weight: 300
 		font-style: italic
-		text-shadow: 1px 1px 3px var(--bg-alt)
+		text-shadow: 1px 1px 1px var(--bg-alt)
 		padding: 5px 0
 		text-align: center
 		line-height: 14px
@@ -171,3 +194,75 @@ footer
 			font-weight: 500
 			margin: 0 10px
 			vertical-align: middle
+
+pre
+	background-color: #fff
+	width: 100%
+	overflow-x: auto
+
+	code
+		font-family: var(--mono)
+		font-weight: 400
+
+
+@media screen and (max-width: 1025)
+	header nav
+		width: inherit
+
+@media screen and (max-width: 900px)
+	header nav
+		width: 90%
+
+@media screen and (max-width: 650px)
+	header nav
+		align-items: flex-start
+		width: 100%
+		margin: 0
+
+		div.navMenu
+			position: relative
+			margin: auto 15px
+			max-width: 50%
+
+			a#hamburger
+				display: block
+
+			& > ul
+				display: none
+				position: absolute
+				top: calc(var(--head-height) - 10px)
+				left: -15px
+				height: initial
+				background-color: var(--bg-head)
+
+				& > li
+					display: block
+
+					& .menu > a
+						display: block
+						padding: 0 15px
+
+			ul
+				.menu
+					ul.menuList
+						display: none
+						top: -100%
+						right: 0
+						transform: translateX(100%)
+						width: 165px
+						width: max-content
+
+		ul
+			margin-right: 15px
+
+			li.lang a
+					padding: 14px 7px
+
+			li:not(:last-child) div.menu::after, li.lang:not(:last-child)::after
+				display: none
+
+	main
+		width: 100vw
+		padding: 15px
+		padding-bottom: 50px
+		box-sizing: border-box

@@ -1,5 +1,5 @@
 @charset "UTF-8";
-main section {
+section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -15,21 +15,21 @@ main section {
   padding: 15px;
 }
 
-main section img.thumb {
+section img.thumb {
   max-width: 256px;
   margin-right: 25px;
 }
 
-main section img.thumb[src=""] {
+section img.thumb[src=""] {
   display: none;
 }
 
-main section article h1 {
+section article h1 {
   font-size: 24px;
   font-weight: 500;
 }
 
-main section article h1:before {
+section article h1:before {
   content: '🔗';
   font-size: 18px;
   font-weight: 400;
@@ -37,53 +37,69 @@ main section article h1:before {
   margin-right: 10px;
 }
 
-main section article h1:hover:before {
+section article h1:hover:before {
   opacity: 1;
 }
 
-main section article h2 {
+section article h2 {
   font-size: 22px;
   font-weight: 500;
 }
 
-main section article h4 {
+section article h4 {
   font-size: 14px;
   font-weight: 500;
 }
 
-main section article p {
+section article p {
   font-size: 16px;
   font-weight: 300;
 }
 
-main section article p a {
+section article p a {
   font-size: 14px;
 }
 
-main section article blockquote > p {
+section article blockquote > p {
   font-size: 12px;
   font-weight: 300;
 }
 
-main section article blockquote > p > .platform {
+section article blockquote > p > .platform {
   font-style: italic;
 }
 
-main section article > :nth-last-child(2) {
+section article > :nth-last-child(2) {
   opacity: 0.6;
   display: inline-block;
 }
 
-main section article > :nth-last-child(2):after {
+section article > :nth-last-child(2):after {
   content: '...';
   display: inline-block;
   opacity: 0.7;
 }
 
-main section article a.more {
+section article a.more {
   display: block;
   font-weight: 500;
   font-size: 22px;
   text-shadow: 1px 1px 3px var(--shadow);
+}
+
+@media screen and (max-width: 650px) {
+  section {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    margin: 10px 0;
+  }
 }
 /*# sourceMappingURL=portfolio.css.map */
