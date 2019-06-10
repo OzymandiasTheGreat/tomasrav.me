@@ -31,6 +31,4 @@ $(function () {
 			});
 		});
 	}
-
-	$.getScript('https://buttons.github.io/buttons.js');
 });

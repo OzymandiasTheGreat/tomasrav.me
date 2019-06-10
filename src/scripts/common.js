@@ -10,6 +10,17 @@ export const STRINGS = strings;
 export const PORTFOLIO = portfolio;
 
 
+let $title = $('title');
+let query = new URLSearchParams(top.location.search);
+if (query.has('type')) {
+	$title.text(STRINGS[LANG][query.get('type')] + $title.text());
+} else if (query.has('project')) {
+	$title.text(query.get('project') + $title.text());
+} else {
+	$title.text(STRINGS[LANG].about + $title.text());
+}
+
+
 $(function () {
 	let $header = $('header').html(header);
 	let $footer = $('footer').html(footer);

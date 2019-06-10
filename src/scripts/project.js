@@ -12,7 +12,6 @@ $(function () {
 
 		$.get(`./content/${project}/${common.LANG}.md`).done(function (response) {
 			$('main').html(marked(response));
-			$.getScript('https://buttons.github.io/buttons.js');
 
 			if (response.includes('<div class="gallery"></div>')) {
 				let gallery = $('div.gallery');
