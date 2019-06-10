@@ -6,7 +6,6 @@ import { terser } from 'rollup-plugin-terser';
 import copy from 'rollup-plugin-copy-glob';
 import html from 'rollup-plugin-html';
 import json from 'rollup-plugin-json';
-import progress from 'rollup-plugin-progress';
 
 module.exports = {
 	input: ['src/scripts/index.js', 'src/scripts/portfolio.js', 'src/scripts/project.js'],
@@ -26,10 +25,23 @@ module.exports = {
 		json(),
 		html(),
 		terser({
-			mangle: false,
+			mangle: true,
+			compress: false,
 			sourcemap: false,
 		}),
-		babel({exclude: 'node_modules/**'}),
+		babel({
+			exclude: 'node_modules/**',
+			presets: [
+				[
+					'@babel/preset-env',
+					{
+						targets: '> 1%, not dead, not op_mini all, IE 10',
+						useBuiltIns: 'usage',
+						corejs: 3,
+					}
+				]
+			]
+		}),
 		iife({
 			sourcemap: false,
 		}),
@@ -42,6 +54,5 @@ module.exports = {
 			{files: 'node_modules/normalize.css/normalize.css', dest: 'dist/assets/'},
 			{files: 'node_modules/magnific-popup/dist/magnific-popup.css', dest: 'dist/assets/'},
 		]),
-		progress(),
 	],
 };
