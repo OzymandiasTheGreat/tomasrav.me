@@ -1,19 +1,24 @@
 {
   "name": "ozymandias.tk",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Personal website for Tomas Ravinskas",
-  "main": "src/scripts/index.js",
+  "main": "src/assets/common.js",
   "scripts": {
-    "test": "echo",
-    "build": "rollup -c",
-    "dist": "rollup -c rollup.dist.config.js"
+    "wait": "sleep 3",
+    "clean": "rm -rfv dist/* &",
+    "build": "NODE_ENV=production rollup -c",
+    "serve": "NODE_ENV=development rollup -c --watch",
+    "open": "firefox -private-window localhost:3000/index",
+    "test:prepare": "npm-run-all -s clean serve",
+    "test:interact": "npm-run-all -s wait open",
+    "test": "npm-run-all -p test:*"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/OzymandiasTheGreat/ozymandias.tk.git"
   },
   "keywords": [
-    "'personal",
+    "personal",
     "website'"
   ],
   "author": "Tomas Ravinskas",
@@ -22,29 +27,42 @@
     "url": "https://github.com/OzymandiasTheGreat/ozymandias.tk/issues"
   },
   "homepage": "https://github.com/OzymandiasTheGreat/ozymandias.tk#readme",
-  "devDependencies": {
-    "@babel/cli": "^7.4.4",
-    "@babel/core": "^7.4.5",
-    "@babel/preset-env": "^7.4.5",
-    "babel-eslint": "^10.0.1",
-    "eslint": "^5.16.0",
-    "rollup": "^1.14.4",
-    "rollup-plugin-babel": "^4.3.2",
-    "rollup-plugin-commonjs": "^10.0.0",
-    "rollup-plugin-copy-glob": "^0.3.0",
-    "rollup-plugin-html": "^0.2.1",
-    "rollup-plugin-iife": "^0.2.0",
-    "rollup-plugin-json": "^4.0.0",
-    "rollup-plugin-node-resolve": "^5.0.1",
-    "rollup-plugin-terser": "^5.0.0"
-  },
+  "browserslist": "> 2%, not dead, not ie < 10, not OperaMini all",
   "dependencies": {
-    "@babel/polyfill": "^7.4.4",
-    "core-js": "^3.1.3",
-    "@fortawesome/fontawesome-free": "^5.9.0",
     "jquery": "^3.4.1",
-    "magnific-popup": "^1.1.0",
-    "marked": "^0.6.2",
-    "normalize.css": "^8.0.1"
+    "materialize-css": "^1.0.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "bs-console-qrcode": "file:../bs-console-qrcode",
+    "cookie-parser": "^1.4.4",
+    "eslint": "^5.16.0",
+    "express-negotiator": "^1.0.0",
+    "express-serve-json-dir": "0.0.1",
+    "fast-glob": "^3.0.2",
+    "htmlnano": "^0.2.3",
+    "node-sass": "^4.12.0",
+    "npm-run-all": "^4.1.5",
+    "postcss-preset-env": "^6.6.0",
+    "postcss-responsive-type": "^1.0.0",
+    "posthtml-expressions": "^1.1.1",
+    "posthtml-highlight": "^1.0.3",
+    "posthtml-markdown": "file:../posthtml-markdown",
+    "posthtml-modules": "^0.4.2",
+    "rollup": "^1.14.4",
+    "rollup-plugin-browsersync": "^1.0.0",
+    "rollup-plugin-buble": "^0.19.6",
+    "rollup-plugin-entry-glob": "file:../rollup-plugin-entry-glob",
+    "rollup-plugin-iife": "file:../rollup-plugin-iife",
+    "rollup-plugin-imagemin": "file:../rollup-plugin-imagemin",
+    "rollup-plugin-postcss": "^2.0.3",
+    "rollup-plugin-posthtml-multi": "file:../rollup-plugin-posthtml-multi",
+    "rollup-plugin-terser": "^5.0.0",
+    "voca": "^1.4.0"
+  },
+  "optionalDependencies": {
+    "rollup-plugin-filesize": "^6.1.1",
+    "rollup-plugin-notify": "^1.1.0",
+    "rollup-plugin-progress": "^1.1.1"
   }
 }

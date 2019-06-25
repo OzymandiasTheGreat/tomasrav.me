@@ -1,0 +1,16 @@
+{
+	"spellright.language": [
+		"English (American)",
+		"Lithuanian",
+		"Russian-English Bilingual"
+	],
+	"spellright.documentTypes": [
+		"markdown",
+		"latex",
+		"plaintext",
+		"jsonc",
+		"html",
+		"json",
+		"javascript"
+	]
+}

@@ -1,0 +1,16 @@
+{
+	"en": {
+		"about": "About",
+		"apps": "Applications",
+		"libs": "Dev Resources",
+		"statusTitle": "Status",
+		"contact": "Contact me"
+	},
+	"lt": {
+		"about": "Apie",
+		"apps": "Programos",
+		"libs": "Dev Resursai",
+		"statusTitle": "Statusas",
+		"contact": "Susisiekime"
+	}
+}

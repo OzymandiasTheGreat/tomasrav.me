@@ -1,0 +1,140 @@
+{
+	"project": {
+		"application": {
+			"emoji-keyboard": {
+				"buttons": {
+					"license": true,
+					"githubRelease": true,
+					"githubStars": true,
+					"githubDL": true,
+					"githubIssues": true,
+					"pypiDL": false,
+					"npmDL": false
+				}
+			},
+			"grive-utils": {
+				"buttons": {
+					"license": true,
+					"githubRelease": true,
+					"githubStars": true,
+					"githubDL": true,
+					"githubIssues": true,
+					"pypiDL": false,
+					"npmDL": false
+				}
+			},
+			"xpander": {
+				"buttons": {
+					"license": true,
+					"githubRelease": true,
+					"githubStars": true,
+					"githubDL": true,
+					"githubIssues": true,
+					"pypiDL": false,
+					"npmDL": false
+				}
+			},
+			"ginger": {
+				"buttons": {
+					"license": true,
+					"githubRelease": true,
+					"githubStars": true,
+					"githubDL": true,
+					"githubIssues": true,
+					"pypiDL": false,
+					"npmDL": false
+				}
+			},
+			"hifinder": {
+				"buttons": {
+					"license": true,
+					"githubRelease": true,
+					"githubStars": true,
+					"githubDL": true,
+					"githubIssues": true,
+					"pypiDL": false,
+					"npmDL": false
+				}
+			},
+			"argos-scripts": {
+				"buttons": {
+					"license": true,
+					"githubRelease": true,
+					"githubStars": true,
+					"githubDL": true,
+					"githubIssues": true,
+					"pypiDL": false,
+					"npmDL": false
+				}
+			},
+			"psd-cli": {
+				"buttons": {
+					"license": true,
+					"githubRelease": true,
+					"githubStars": true,
+					"githubDL": true,
+					"githubIssues": true,
+					"pypiDL": false,
+					"npmDL": false
+				}
+			},
+			"hangman": {
+				"buttons": {
+					"license": true,
+					"githubRelease": true,
+					"githubStars": true,
+					"githubDL": true,
+					"githubIssues": true,
+					"pypiDL": false,
+					"npmDL": false
+				}
+			}
+		},
+		"library": {
+			"macpy": {
+				"buttons": {
+					"license": true,
+					"githubRelease": true,
+					"githubStars": true,
+					"githubDL": true,
+					"githubIssues": true,
+					"pypiDL": true,
+					"npmDL": false
+				}
+			},
+			"klembord": {
+				"buttons": {
+					"license": true,
+					"githubRelease": true,
+					"githubStars": true,
+					"githubDL": true,
+					"githubIssues": true,
+					"pypiDL": true,
+					"npmDL": false
+				}
+			},
+			"python-libinput": {
+				"buttons": {
+					"license": true,
+					"githubRelease": true,
+					"githubStars": true,
+					"githubDL": true,
+					"githubIssues": true,
+					"pypiDL": true,
+					"npmDL": false
+				}
+			},
+			"winnotify": {
+				"buttons": {
+					"license": true,
+					"githubRelease": true,
+					"githubStars": true,
+					"githubDL": true,
+					"githubIssues": true,
+					"pypiDL": true,
+					"npmDL": false
+				}
+			}
+		}
+	}
+}
