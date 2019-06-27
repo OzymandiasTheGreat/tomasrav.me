@@ -3,14 +3,40 @@
 		"about": "About",
 		"apps": "Applications",
 		"libs": "Dev Resources",
+		"language": "Language",
 		"statusTitle": "Status",
-		"contact": "Contact me"
+		"contact": "Contact me",
+		"gdprTitle": "This website uses cookies",
+		"gdprBody": "Overview cookie purposes",
+		"gdprList": [
+			"To remember acceptance of this warning",
+			"To store your language preferences"
+		],
+		"gdprOK": "Accept",
+		"platforms": "Platforms",
+		"browser": "Any modern browser",
+		"linux": "Linux",
+		"windows": "Windows",
+		"macos": "MacOS"
 	},
 	"lt": {
 		"about": "Apie",
 		"apps": "Programos",
 		"libs": "Dev Resursai",
+		"language": "Kalba",
 		"statusTitle": "Statusas",
-		"contact": "Susisiekime"
+		"contact": "Susisiekime",
+		"gdprTitle": "Šis tinklapis naudoja slapukus",
+		"gdprBody": "Slapukų paskirčių apžvalga",
+		"gdprList": [
+			"Prisiminti sutikimą su šiuo įspėjimu",
+			"Išsaugoti jūsų kalbos parinktis"
+		],
+		"gdprOK": "Sutinku",
+		"platforms": "Platformos",
+		"browser": "Bet kokia, moderni naršyklė",
+		"linux": "Linux",
+		"windows": "Windows",
+		"macos": "MacOS"
 	}
 }

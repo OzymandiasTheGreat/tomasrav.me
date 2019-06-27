@@ -4,8 +4,14 @@
 	<module href="./modules/head.html"></module>
 </head>
 <body>
-	<main class="container" md>
-		{{ content }}
+	<module href="./modules/header.html"></module>
+	<main class="container" markdown>
+		<div class="row">
+			<div class="col s12 m8 l6 offset-m2 offset-l3">
+				{{ content }}
+			</div>
+		</div>
 	</main>
+	<module href="./modules/footer.html"></module>
 </body>
 </html>

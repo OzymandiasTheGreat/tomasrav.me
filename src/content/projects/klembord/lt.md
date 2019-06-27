@@ -1,15 +1,3 @@
-<ul class="platforms collapsible">
-	<li>
-		<div class="collapsible-header"><i class="fas fa-laptop-code"></i>{{ platforms }}<i class="fas fa-caret-down"></i></div>
-		<div class="collapsible-body">
-			<ul>
-				<li><i class="fab fa-linux"></i>Linux</li>
-				<li><i class="fab fa-windows"></i>Windows</li>
-			</ul>
-		</div>
-	</li>
-</ul>
-
 klembord (*iškarpinė* Olandiškai) yra python 3 paketas, kuris leidžia pilnai manipuliuoti iškarpinę, nepriklausomai nuo grafikos rinkinio kurį naudojate.
 
 klembord turi minimalias priklausomybes, priklausomas tik nuo platformos specifiniu API. Tai reiškia, jog galite jį naudoti su bet kokiu grafikos rinkiniu ar iš vis be rinkinio.

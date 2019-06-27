@@ -36,6 +36,19 @@
 				"showReuseMessage": true,
 				"clear": false
 			}
+		},
+		{
+			"type": "npm",
+			"script": "open",
+			"problemMatcher": [],
+			"presentation": {
+				"echo": false,
+				"reveal": "never",
+				"focus": false,
+				"panel": "shared",
+				"showReuseMessage": false,
+				"clear": true
+			}
 		}
 	],
 }

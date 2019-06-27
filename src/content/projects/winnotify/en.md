@@ -1,15 +1,3 @@
-<ul class="platforms collapsible">
-	<li>
-		<div class="collapsible-header"><i class="fas fa-laptop-code"></i>{{ platforms }}<i class="fas fa-caret-down"></i></div>
-		<div class="collapsible-body">
-			<ul>
-				<li><i class="fab fa-windows"></i>Windows</li>
-			</ul>
-		</div>
-	</li>
-</ul>
-
-
 This package allows you to show native Windows toast notifications on Windows 10 and balloon popups on earlier versions. Since it directly deals with Windows API and requires special compile time flags it is implemented as a C python extension.
 
 There are other packages that provide similar functionality but they depend on pywin32 extensions and as such do not compile under mingw.

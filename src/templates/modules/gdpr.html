@@ -1,0 +1,16 @@
+<div id="gdpr" class="gdpr modal modal-fixed-footer bottom-sheet red lighten-4">
+	<div class="modal-content">
+		<h5><i class="fas fa-cookie-bite yellow-text text-darken-3"></i>{{ gdprTitle }}</h5>
+		<details>
+			<summary>{{ gdprBody }}</summary>
+			<ul>
+				<each loop="item, index in gdprList">
+					<li><span>{{ item }}</span></li>
+				</each>
+			</ul>
+		</details>
+	</div>
+	<div class="modal-footer red lighten-4">
+		<a id="gdpr-ok" href="#" class="modal-close waves-effect btn light-green darken-1">{{ gdprOK }}</a>
+	</div>
+</div>

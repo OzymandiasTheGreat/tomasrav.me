@@ -7,10 +7,10 @@ import truncate from 'voca/truncate';
 
 import entryGlob from 'rollup-plugin-entry-glob';
 import iife from 'rollup-plugin-iife';
-// import buble from 'rollup-plugin-buble';
-// import { terser } from 'rollup-plugin-terser';
+import buble from 'rollup-plugin-buble';
+import { terser } from 'rollup-plugin-terser';
 import posthtml from 'rollup-plugin-posthtml-multi';
-// import postcss from 'rollup-plugin-postcss';
+import postcss from 'rollup-plugin-postcss';
 import imagemin from 'rollup-plugin-imagemin';
 import browsersync from 'rollup-plugin-browsersync';
 import progress from 'rollup-plugin-progress';
@@ -23,6 +23,10 @@ import htmlExpressions from 'posthtml-expressions';
 import markdown from 'posthtml-markdown';
 import highlight from 'posthtml-highlight';
 import htmlnano from 'htmlnano';
+
+
+import postcssEnv from 'postcss-preset-env';
+import responsiveType from 'postcss-responsive-type';
 
 
 import serveJSON from 'express-serve-json-dir';
@@ -57,12 +61,16 @@ const styles = [
 		sri: 'sha256-OweaP/Ic6rsV+lysfyS4h+LM6sRwuO3euTYfr6M124g=',
 	},
 	{
-		src: 'https://fonts.googleapis.com/css?family=Fira+Mono|Fira+Sans+Condensed:500,500i|Merriweather:300,300i&display=swap&subset=latin-ext',
+		src: 'https://fonts.googleapis.com/css?family=Fira+Mono|Fira+Sans+Condensed:500|Merriweather:300,300i|Oswald:600&display=swap&subset=latin-ext',
 		sri: '',
 	},
 	{
 		src: 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/atom-one-dark.min.css',
 		sri: 'sha256-GA29iW/iYj9FcuQQktvW45pRzHvZeFfgeFvA4tGVjpM=',
+	},
+	{
+		src: '/assets/main.css',
+		sri: '',
 	},
 ];
 const scripts = [
@@ -77,6 +85,14 @@ const scripts = [
 	{
 		src: 'https://kit.fontawesome.com/b5ef1f1427.js',
 		sri: 'sha384-7cupKsyf1krt0hPaFhz7o347RIzmECgbuiiOTe+NbIi9eA5z8RSNuYFdTDgRTZHH',
+	},
+	{
+		src: 'https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.0/js.cookie.min.js',
+		sri: 'sha256-9Nt2r+tJnSd2A2CRUvnjgsD+ES1ExvjbjBNqidm9doI=',
+	},
+	{
+		src: '/assets/common.js',
+		sri: '',
 	},
 ];
 const configureHtml = () => {
@@ -148,19 +164,9 @@ const configureHtml = () => {
 	];
 	const templates = [];
 	for (let [lang, strings] of Object.entries(locale)) {
-		templates.push(options(template.index, outputPage('', 'index', lang), plugins(template.index, {
-			styles,
-			scripts,
-			title: strings.about,
-			status: fs.readFileSync(src(`content/index/status.${lang}.txt`)).toString(),
-			blurb: fs.readFileSync(src(`content/index/blurb.${lang}.md`)).toString(),
-			cv: fs.readFileSync(src(`content/index/cv.${lang}.md`)).toString(),
-			...strings,
-		})));
-
-		const appCards = [];
-		const libCards = [];
-		for (let [ app, data ] of Object.entries(content.project.application)) {
+		const appList = [];
+		const libList = [];
+		for (let [app, data] of Object.entries(content.project.application)) {
 			const badges = [];
 			const content = fs.readFileSync(src(`content/projects/${app}/${lang}.md`)).toString();
 			for (let [name, include] of Object.entries(data.buttons)) {
@@ -170,16 +176,19 @@ const configureHtml = () => {
 				styles,
 				scripts,
 				title: app,
+				appList,
+				libList,
 				content,
 				badges,
+				dev: isDev,
 				...strings,
 			})));
-			appCards.push({
+			appList.push({
 				title: app,
 				blurb: truncate(content, 512),
 			});
 		}
-		for (let [ lib, data ] of Object.entries(content.project.library)) {
+		for (let [lib, data] of Object.entries(content.project.library)) {
 			const badges = [];
 			const content = fs.readFileSync(src(`content/projects/${lib}/${lang}.md`)).toString();
 			for (let [name, include] of Object.entries(data.buttons)) {
@@ -189,28 +198,50 @@ const configureHtml = () => {
 				styles,
 				scripts,
 				title: lib,
+				appList,
+				libList,
 				content,
 				badges,
+				dev: isDev,
 				...strings,
 			})));
-			libCards.push({
+			libList.push({
 				title: lib,
 				blurb: truncate(content, 512),
 			});
 		}
 
+		templates.push(options(template.index, outputPage('', 'index', lang), plugins(template.index, {
+			styles,
+			scripts,
+			appList,
+			libList,
+			title: strings.about,
+			status: fs.readFileSync(src(`content/index/status.${lang}.txt`)).toString(),
+			blurb: fs.readFileSync(src(`content/index/blurb.${lang}.md`)).toString(),
+			cv: fs.readFileSync(src(`content/index/cv.${lang}.md`)).toString(),
+			dev: isDev,
+			...strings,
+		})));
+
 		templates.push(options(template.listing, outputPage('', 'applications', lang), plugins(template.listing, {
 			styles,
 			scripts,
 			title: strings.apps,
-			cards: appCards,
+			appList,
+			libList,
+			cards: appList,
+			dev: isDev,
 			...strings,
 		})));
 		templates.push(options(template.listing, outputPage('', 'libraries', lang), plugins(template.listing, {
 			styles,
 			scripts,
 			title: strings.libs,
-			cards: libCards,
+			appList,
+			libList,
+			cards: libList,
+			dev: isDev,
 			...strings,
 		})));
 	}
@@ -226,8 +257,8 @@ module.exports = {
 	external: [...Object.keys(pkg.dependencies)],
 	input: [
 		src('assets', '*.js'),
+		src('assets', 'main.sass'),
 		src('templates', '*.html'),
-		// src('templates', 'index.html'),
 		`!${src('templates', 'modules', '*.html')}`,
 		src('img', '**', '*.{png,gif,svg,jpg,jpeg}'),
 	],
@@ -237,10 +268,14 @@ module.exports = {
 		globals: {
 			'jquery': '$',
 			'materialize-css': 'M',
+			'js-cookie': 'Cookies',
 		},
 		sourcemap: isDev,
 	},
 	onwarn: onWarn,
+	watch: {
+		clearScreen: false,
+	},
 	plugins: [
 		entryGlob({
 			exclude: [src('assets', '*.js')],
@@ -249,7 +284,24 @@ module.exports = {
 		iife({
 			sourcemap: isDev,
 		}),
+		buble({
+			include: '**/*.js',
+		}),
+		terser({
+			compress: !isDev,
+			mangle: !isDev,
+			sourcemap: isDev,
+		}),
 		posthtml(configureHtml()),
+		postcss({
+			plugins: [
+				postcssEnv(),
+				responsiveType(),
+			],
+			extract: dest('assets', 'main.css'),
+			minimize: !isDev,
+			sourceMap: isDev,
+		}),
 		imagemin({
 			disable: isDev,
 			fileName: '[name][extname]',

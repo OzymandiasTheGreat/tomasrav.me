@@ -1,15 +1,3 @@
-<ul class="platforms collapsible">
-	<li>
-		<div class="collapsible-header"><i class="fas fa-laptop-code"></i>{{ platforms }}<i class="fas fa-caret-down"></i></div>
-		<div class="collapsible-body">
-			<ul>
-				<li><i class="fab fa-linux"></i>Linux</li>
-			</ul>
-		</div>
-	</li>
-</ul>
-
-
 A text-expander for Linux and Windows.
 Type a lot of repetitive text? Need fill many forms? Want snippets that would function across editors?
 

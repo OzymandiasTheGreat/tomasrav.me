@@ -1,15 +1,3 @@
-<ul class="platforms collapsible">
-	<li>
-		<div class="collapsible-header"><i class="fas fa-laptop-code"></i>{{ platforms }}<i class="fas fa-caret-down"></i></div>
-		<div class="collapsible-body">
-			<ul>
-				<li><i class="fab fa-linux"></i>Linux</li>
-				<li><i class="fab fa-windows"></i>Windows</li>
-			</ul>
-		</div>
-	</li>
-</ul>
-
 This package provides easy keyboard/pointer/window management, macro creation and GUI automation for python versions 2.7 and 3.4+.
 Currently it works on Windows and Linux (both under X and with limited functionality under Wayland).
 
@@ -28,14 +16,14 @@ Some of it's features are:
 
 <div class="warning">
 
-> Note:
->
-> Window management functionality is not available under Wayland.
-> This is due to lack of an API on Wayland side. They don't plan on
-> providing anything useable due to security concerns.
->
-> More, keyboard and pointer functions require root access under Wayland
-> for reasons stated above.
+Note:
+
+Window management functionality is not available under Wayland.
+This is due to lack of an API on Wayland side. They don't plan on
+providing anything useable due to security concerns.
+
+More, keyboard and pointer functions require root access under Wayland
+for reasons stated above.
 
 </div>
 

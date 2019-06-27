@@ -2,6 +2,9 @@
 	"project": {
 		"application": {
 			"emoji-keyboard": {
+				"platforms": [
+					"linux"
+				],
 				"buttons": {
 					"license": true,
 					"githubRelease": true,
@@ -13,6 +16,9 @@
 				}
 			},
 			"grive-utils": {
+				"platforms": [
+					"linux"
+				],
 				"buttons": {
 					"license": true,
 					"githubRelease": true,
@@ -24,6 +30,9 @@
 				}
 			},
 			"xpander": {
+				"platforms": [
+					"linux"
+				],
 				"buttons": {
 					"license": true,
 					"githubRelease": true,
@@ -35,6 +44,10 @@
 				}
 			},
 			"ginger": {
+				"platforms": [
+					"linux",
+					"browser"
+				],
 				"buttons": {
 					"license": true,
 					"githubRelease": true,
@@ -46,6 +59,9 @@
 				}
 			},
 			"hifinder": {
+				"platforms": [
+					"linux"
+				],
 				"buttons": {
 					"license": true,
 					"githubRelease": true,
@@ -57,6 +73,9 @@
 				}
 			},
 			"argos-scripts": {
+				"platforms": [
+					"linux"
+				],
 				"buttons": {
 					"license": true,
 					"githubRelease": true,
@@ -68,6 +87,11 @@
 				}
 			},
 			"psd-cli": {
+				"platforms": [
+					"linux",
+					"windows",
+					"macos"
+				],
 				"buttons": {
 					"license": true,
 					"githubRelease": true,
@@ -79,6 +103,10 @@
 				}
 			},
 			"hangman": {
+				"platforms": [
+					"linux",
+					"browser"
+				],
 				"buttons": {
 					"license": true,
 					"githubRelease": true,
@@ -92,6 +120,10 @@
 		},
 		"library": {
 			"macpy": {
+				"platforms": [
+					"linux",
+					"windows"
+				],
 				"buttons": {
 					"license": true,
 					"githubRelease": true,
@@ -103,6 +135,10 @@
 				}
 			},
 			"klembord": {
+				"platforms": [
+					"linux",
+					"windows"
+				],
 				"buttons": {
 					"license": true,
 					"githubRelease": true,
@@ -114,6 +150,9 @@
 				}
 			},
 			"python-libinput": {
+				"platforms": [
+					"linux"
+				],
 				"buttons": {
 					"license": true,
 					"githubRelease": true,
@@ -125,6 +164,9 @@
 				}
 			},
 			"winnotify": {
+				"platforms": [
+					"windows"
+				],
 				"buttons": {
 					"license": true,
 					"githubRelease": true,

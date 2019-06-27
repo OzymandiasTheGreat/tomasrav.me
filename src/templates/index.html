@@ -3,17 +3,43 @@
 <head>
 	<module href="./modules/head.html"></module>
 </head>
-<body>
-	<main class="container">
-		<div>
-			{{ status }}
-		</div>
-		<markdown>
-			{{ blurb }}
-		</markdown>
-		<markdown>
-			{{ cv }}
-		</markdown>
+<body class="brown darken-4">
+	<module href="./modules/header.html"></module>
+	<main class="container z-depth-2 grey lighten-5 grey-text text-darken-3">
+		<section class="row">
+			<div class="col s12 m6">
+				<div class="imageBox">
+					<img class="responsive-img" src="./img/index/me.jpg" alt="Tomas Ravinskas">
+				</div>
+				<div class="statusBox">
+					<fieldset class="status">
+						<legend>{{ statusTitle }}</legend>
+						<span id="status">{{ status }}</span>
+					</fieldset>
+				</div>
+				<div class="contactBox">
+					<fieldset class="contact">
+						<legend>{{ contact }}</legend>
+						<div id="contact">
+							<a href="https://github.com/OzymandiasTheGreat"><i class="fab fa-github"></i></a>
+							<a href="mailto:tomas.rav@gmail.com"><i class="fas fa-envelope"></i></a>
+							<a href="https://wa.me/37064020967"><i class="fab fa-whatsapp"></i></a>
+							<a href="https://www.messenger.com/t/OzymandiasTheGreat"><i class="fab fa-facebook-messenger"></i></a>
+						</div>
+					</fieldset>
+				</div>
+			</div>
+			<div markdown class="col s12 m6">
+				{{ blurb }}
+			</div>
+		</section>
+		<hr>
+		<section class="row">
+			<div markdown class="col s12">
+				{{ cv }}
+			</div>
+		</section>
 	</main>
+	<module href="./modules/footer.html"></module>
 </body>
 </html>

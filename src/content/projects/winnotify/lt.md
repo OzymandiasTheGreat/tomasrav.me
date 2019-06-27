@@ -1,15 +1,3 @@
-<ul class="platforms collapsible">
-	<li>
-		<div class="collapsible-header"><i class="fas fa-laptop-code"></i>{{ platforms }}<i class="fas fa-caret-down"></i></div>
-		<div class="collapsible-body">
-			<ul>
-				<li><i class="fab fa-windows"></i>Windows</li>
-			</ul>
-		</div>
-	</li>
-</ul>
-
-
 Šis paketas leidžia rodyti vietinius pranešimus (*native toast notification*) Window 10 operacinėje sistemoje ir „balionus“ (*balloon popups*) ankstesnėse Windows versijose.
 Kadangi jis tiesiogiai bendrauja su Windows API ir šiam funkcionalumui reika tam tikrų kompiliavimo metu nustatytų vėliavų (*flags*), šis paketas yra implementuotas kaip C python plėtinys.
 

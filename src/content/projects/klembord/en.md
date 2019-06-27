@@ -1,15 +1,3 @@
-<ul class="platforms collapsible">
-	<li>
-		<div class="collapsible-header"><i class="fas fa-laptop-code"></i>{{ platforms }}<i class="fas fa-caret-down"></i></div>
-		<div class="collapsible-body">
-			<ul>
-				<li><i class="fab fa-linux"></i>Linux</li>
-				<li><i class="fab fa-windows"></i>Windows</li>
-			</ul>
-		</div>
-	</li>
-</ul>
-
 klembord (*clipboard*, Dutch) is a python 3 package that provides full, toolkit-agnostic clipboard access on supported platforms.
 
 klembord has minimal dependencies, depending only on platform specific apis, which means it can be used with any graphics toolkit or without a toolkit at all.

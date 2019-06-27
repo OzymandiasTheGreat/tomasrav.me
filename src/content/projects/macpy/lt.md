@@ -1,16 +1,3 @@
-<ul class="platforms collapsible">
-	<li>
-		<div class="collapsible-header"><i class="fas fa-laptop-code"></i>{{ platforms }}<i class="fas fa-caret-down"></i></div>
-		<div class="collapsible-body">
-			<ul>
-				<li><i class="fab fa-linux"></i>Linux</li>
-				<li><i class="fab fa-windows"></i>Windows</li>
-			</ul>
-		</div>
-	</li>
-</ul>
-
-
 [mac]ro (makro) + [py]thon, tariama kaip magpie (šarka Angliškai).
 
 Šis paketas leidžia lengvai valdyti klaviatūra, pelę ir programų langus, kurti makro ir automatizuoti grafines sąsajas (GUI). Veikia su python versijom 2.7 ir 3.4+.
@@ -31,13 +18,13 @@ Keletas iš macpy funkcijų:
 
 <div class="warning">
 
-> Įspėjimas:
->
-> Langų tvarkymas negalimas Wayland aplinkoje.
-> Taip yra dėl to, jog Wayland neturi jokio API šiom
-> funkcijom ir neplanuojo jo turėti dėl saugumo sumetimų.
->
-> Dar: klaviatūros ir pelės funkcijoms reikia root privielgijų Wayland aplinkoje, dėl tų pačių priežasčių.
+Įspėjimas:
+
+Langų tvarkymas negalimas Wayland aplinkoje.
+Taip yra dėl to, jog Wayland neturi jokio API šiom
+funkcijom ir neplanuojo jo turėti dėl saugumo sumetimų.
+
+Dar: klaviatūros ir pelės funkcijoms reikia root privielgijų Wayland aplinkoje, dėl tų pačių priežasčių.
 
 </div>
 
