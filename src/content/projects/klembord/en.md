@@ -1,10 +1,14 @@
-# [klembord](https://github.com/OzymandiasTheGreat/klembord)
-
-![stars](https://img.shields.io/github/stars/OzymandiasTheGreat/klembord.svg?style=social)
-![downloads](https://img.shields.io/github/downloads/OzymandiasTheGreat/klembord/total.svg?style=social)
-![installs](https://img.shields.io/pypi/dm/klembord.svg?label=Installs&style=social)
-
-> Supported platforms: <span class="platform">Linux</span>, <span class="platform">Windows</span>
+<ul class="platforms collapsible">
+	<li>
+		<div class="collapsible-header"><i class="fas fa-laptop-code"></i>{{ platforms }}<i class="fas fa-caret-down"></i></div>
+		<div class="collapsible-body">
+			<ul>
+				<li><i class="fab fa-linux"></i>Linux</li>
+				<li><i class="fab fa-windows"></i>Windows</li>
+			</ul>
+		</div>
+	</li>
+</ul>
 
 klembord (*clipboard*, Dutch) is a python 3 package that provides full, toolkit-agnostic clipboard access on supported platforms.
 
@@ -25,10 +29,3 @@ klembord.set_text('some string')
 Rich text formats are fully supported. Binary formats have limited support.
 
 Windows specific binary formats currently are not supported.
-
-
-<div class="more">
-
-For more visit [github page](https://github.com/OzymandiasTheGreat/klembord)
-
-</div>

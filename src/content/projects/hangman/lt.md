@@ -1,19 +1,16 @@
-# [hangman](https://github.com/OzymandiasTheGreat/hangman)
-
-![stars](https://img.shields.io/github/stars/OzymandiasTheGreat/hangman.svg?style=social)
-![downloads](https://img.shields.io/github/downloads/OzymandiasTheGreat/hangman/total.svg?style=social)
-
-<div class="gallery"></div>
+<ul class="platforms collapsible">
+	<li>
+		<div class="collapsible-header"><i class="fas fa-laptop-code"></i>{{ platforms }}<i class="fas fa-caret-down"></i></div>
+		<div class="collapsible-body">
+			<ul>
+				<li><i class="fab fa-chrome"></i>Moderni Naršyklė</li>
+			</ul>
+		</div>
+	</li>
+</ul>
 
 Naršyklinis kartuvių žaidimas, kurį sukūriau savo front-end klasei.
 Jis labai paprastas ir neišlaiko duomenų tarp sesijų.
 Galite jį išmėginti [čia](/hangman/)
 
 Back-end parašytas python ir tiesiog tiekia atsitiktinius žodžius su keliais parametrais.
-
-
-<div class="more">
-
-Daugiau [github puslapyje](https://github.com/OzymandiasTheGreat/hangman)
-
-</div>

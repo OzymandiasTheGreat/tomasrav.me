@@ -1,10 +1,14 @@
-# [winnotify](https://github.com/OzymandiasTheGreat/winnotify)
+<ul class="platforms collapsible">
+	<li>
+		<div class="collapsible-header"><i class="fas fa-laptop-code"></i>{{ platforms }}<i class="fas fa-caret-down"></i></div>
+		<div class="collapsible-body">
+			<ul>
+				<li><i class="fab fa-windows"></i>Windows</li>
+			</ul>
+		</div>
+	</li>
+</ul>
 
-![stars](https://img.shields.io/github/stars/OzymandiasTheGreat/winnotify.svg?style=social)
-![downloads](https://img.shields.io/github/downloads/OzymandiasTheGreat/winnotify/total.svg?style=social)
-![installs](https://img.shields.io/pypi/dm/winnotify.svg?label=Installs&style=social)
-
-> Supported platforms: <span class="platform">Windows</span>
 
 This package allows you to show native Windows toast notifications on Windows 10 and balloon popups on earlier versions. Since it directly deals with Windows API and requires special compile time flags it is implemented as a C python extension.
 
@@ -31,10 +35,3 @@ notify.isvisible()
 
 Supported image file types are ICO and PNG.
 Complete documentation available through `help()` function.
-
-
-<div class="more">
-
-For more visit [github page](https://github.com/OzymandiasTheGreat/winnotify)
-
-</div>

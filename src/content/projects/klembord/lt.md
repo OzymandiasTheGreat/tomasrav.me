@@ -1,10 +1,14 @@
-# [klembord](https://github.com/OzymandiasTheGreat/klembord)
-
-![stars](https://img.shields.io/github/stars/OzymandiasTheGreat/klembord.svg?style=social)
-![downloads](https://img.shields.io/github/downloads/OzymandiasTheGreat/klembord/total.svg?style=social)
-![installs](https://img.shields.io/pypi/dm/klembord.svg?label=Installs&style=social)
-
-> Palaikomos platformos: <span class="platform">Linux</span>, <span class="platform">Windows</span>
+<ul class="platforms collapsible">
+	<li>
+		<div class="collapsible-header"><i class="fas fa-laptop-code"></i>{{ platforms }}<i class="fas fa-caret-down"></i></div>
+		<div class="collapsible-body">
+			<ul>
+				<li><i class="fab fa-linux"></i>Linux</li>
+				<li><i class="fab fa-windows"></i>Windows</li>
+			</ul>
+		</div>
+	</li>
+</ul>
 
 klembord (*iškarpinė* Olandiškai) yra python 3 paketas, kuris leidžia pilnai manipuliuoti iškarpinę, nepriklausomai nuo grafikos rinkinio kurį naudojate.
 
@@ -26,10 +30,3 @@ klembord.set_text('kažkokia eilutė')
 Turtingo teksto formatai yra pilnai palaikomi. Dvejetainiai formatai turi ribotą palaikyma.
 
 Windows specifiniai dvejetainiai formatai šiuo metu nepalaikomi.
-
-
-<div class="more">
-
-Daugiau [github puslapyje](https://github.com/OzymandiasTheGreat/klembord)
-
-</div>

@@ -14,7 +14,7 @@
 - AutoHotKey, mano pirma kalba, automatizuojant Windows operacine sistema.
 
 
-## Išsilavinimas
+### Išsilavinimas
 
 | Institucija | Kursas | Pradėjau | Baigiau | Statusas | Komentaras |
 |-------------|----------------|------|------|----------|---|
@@ -23,7 +23,7 @@
 | [Baltic Talents Akademija](https://baltictalents.lt/) | Java Junior Programuotojas | 2018 | 2019 | Įgytas | Klasės pirmūnas, nors tai pradedančiūjų kursas. |
 
 
-## Ankstesni Darbai
+### Ankstesni Darbai
 
 | Įmonė | Pradėjau | Baigiau | Pareigos |
 |---------|---------|-------|----------|

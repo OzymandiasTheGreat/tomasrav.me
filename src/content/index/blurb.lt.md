@@ -13,6 +13,5 @@ Laisvu laiku mėgstu skaityti ir keliauti dviračiu.
 
 ## Asmeninė informacija
 
-> Gimiau: 1992
->
-> Vietovė: Kaunas, Lietuva
+- Gimiau: 1992
+- Vietovė: Kaunas, Lietuva

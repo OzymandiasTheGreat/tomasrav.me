@@ -1,12 +1,14 @@
-# [macpy](https://github.com/OzymandiasTheGreat/macpy)
-
-![stars](https://img.shields.io/github/stars/OzymandiasTheGreat/macpy.svg?style=social)
-![downloads](https://img.shields.io/github/downloads/OzymandiasTheGreat/macpy/total.svg?style=social)
-![installs](https://img.shields.io/pypi/dm/macpy.svg?label=Installs&style=social)
-
-> Supported platforms: <span class="platform">Linux</span>, <span class="platform">Windows</span>
-
-[mac]ro + [py]thon, pronounced like magpie.
+<ul class="platforms collapsible">
+	<li>
+		<div class="collapsible-header"><i class="fas fa-laptop-code"></i>{{ platforms }}<i class="fas fa-caret-down"></i></div>
+		<div class="collapsible-body">
+			<ul>
+				<li><i class="fab fa-linux"></i>Linux</li>
+				<li><i class="fab fa-windows"></i>Windows</li>
+			</ul>
+		</div>
+	</li>
+</ul>
 
 This package provides easy keyboard/pointer/window management, macro creation and GUI automation for python versions 2.7 and 3.4+.
 Currently it works on Windows and Linux (both under X and with limited functionality under Wayland).
@@ -37,9 +39,4 @@ Some of it's features are:
 
 </div>
 
-
-<div class="more">
-
-For more visit [github page](https://github.com/OzymandiasTheGreat/macpy) or [read the docs](https://macpy.readthedocs.io/)
-
-</div>
+You can read the rest in [full documentation](https://macpy.readthedocs.io/en/latest/).

@@ -12,6 +12,5 @@ Currently I am looking for stable, long-term employment.
 
 ## Personal Information
 
-> Born: 1992
->
-> Location: Kaunas, Lithuania
+- Born: 1992
+- Location: Kaunas, Lithuania

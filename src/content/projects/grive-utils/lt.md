@@ -1,17 +1,12 @@
-# [grive-utils](https://github.com/OzymandiasTheGreat/grive-utils)
-
-![stars](https://img.shields.io/github/stars/OzymandiasTheGreat/grive-utils.svg?style=social)
-![downloads](https://img.shields.io/github/downloads/OzymandiasTheGreat/grive-utils/total.svg?style=social)
-
-<div class="gallery"></div>
-
-> Palaikomos platformos: <span class="platform">Linux</span>
+<ul class="platforms collapsible">
+	<li>
+		<div class="collapsible-header"><i class="fas fa-laptop-code"></i>{{ platforms }}<i class="fas fa-caret-down"></i></div>
+		<div class="collapsible-body">
+			<ul>
+				<li><i class="fab fa-linux"></i>Linux</li>
+			</ul>
+		</div>
+	</li>
+</ul>
 
 Sinchronizacijos klientas Google Diskui. Ši programa apsupa komandinės-eilutės sichronizacijos klientą `grive2` ir pateikia paprasta, tačiau galinga grafinę sąsaja sinchronizacijos valdymui, paskyros prijungimui ir pasirinkimui ką sinchronizuoti.
-
-
-<div class="more">
-
-Daugiau [github puslapyje](https://github.com/OzymandiasTheGreat/grive-utils)
-
-</div>

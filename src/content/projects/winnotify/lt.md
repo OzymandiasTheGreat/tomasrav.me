@@ -1,10 +1,14 @@
-# [winnotify](https://github.com/OzymandiasTheGreat/winnotify)
+<ul class="platforms collapsible">
+	<li>
+		<div class="collapsible-header"><i class="fas fa-laptop-code"></i>{{ platforms }}<i class="fas fa-caret-down"></i></div>
+		<div class="collapsible-body">
+			<ul>
+				<li><i class="fab fa-windows"></i>Windows</li>
+			</ul>
+		</div>
+	</li>
+</ul>
 
-![stars](https://img.shields.io/github/stars/OzymandiasTheGreat/winnotify.svg?style=social)
-![downloads](https://img.shields.io/github/downloads/OzymandiasTheGreat/winnotify/total.svg?style=social)
-![installs](https://img.shields.io/pypi/dm/winnotify.svg?label=Installs&style=social)
-
-> Palaikomos platformos: <span class="platform">Windows</span>
 
 Šis paketas leidžia rodyti vietinius pranešimus (*native toast notification*) Window 10 operacinėje sistemoje ir „balionus“ (*balloon popups*) ankstesnėse Windows versijose.
 Kadangi jis tiesiogiai bendrauja su Windows API ir šiam funkcionalumui reika tam tikrų kompiliavimo metu nustatytų vėliavų (*flags*), šis paketas yra implementuotas kaip C python plėtinys.
@@ -31,10 +35,3 @@ notify.isvisible()
 
 Palaikomi paveikslėlių formatai yra ICO ir PNG.
 Pilna naudojimo instrucija pasiekiama per `help()` funkcija.
-
-
-<div class="more">
-
-For more visit [github page](https://github.com/OzymandiasTheGreat/winnotify)
-
-</div>

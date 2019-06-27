@@ -1,15 +1,14 @@
-# [ginger](https://github.com/OzymandiasTheGreat/ginger)
-
-![stars](https://img.shields.io/github/stars/OzymandiasTheGreat/ginger.svg?style=social)
-![downloads](https://img.shields.io/github/downloads/OzymandiasTheGreat/ginger/total.svg?style=social)
-
-<div class="gallery"></div>
-
-> Palaikomos platformos
->
-> Serveris: <span class="platform">Linux</span>
->
-> Klientas: <span class="platform">Bet kas, su modernia naršykle</span>
+<ul class="platforms collapsible">
+	<li>
+		<div class="collapsible-header"><i class="fas fa-laptop-code"></i>{{ platforms }}<i class="fas fa-caret-down"></i></div>
+		<div class="collapsible-body">
+			<ul>
+				<li><i class="fab fa-linux"></i>Backend: Linux</li>
+				<li><i class="fab fa-chrome"></i>Frontend: Bet kokia, moderni naršyklė</li>
+			</ul>
+		</div>
+	</li>
+</ul>
 
 Elegantiška, moderni, prisitaikanti prie ekrano dydžio sąsaja Music Player Daemon valdymui.
 Ginger palaiko visus bazinius mpd funkcionalumus, tokius kaip muzikos grojimo valdymas, srauto paleidimas ir grojarščių tvarkymas.
@@ -18,10 +17,3 @@ Ieškojau patogios sąsajos mpd valdymui kuri būtų pakankamai paprasta naudoti
 Artimiausia programa kurią radau yra ympd ir...
 Na, ji atrodo labai mėgėjiškai.
 Taigi štai mano bandymas pateikti kažką paprasto bet galingo.
-
-
-<div class="more">
-
-Daugiau [github puslapyje](https://github.com/OzymandiasTheGreat/ginger)
-
-</div>

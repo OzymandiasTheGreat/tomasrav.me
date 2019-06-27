@@ -14,7 +14,7 @@
 - AutoHotKey, my first experience with coding, automating Windows.
 
 
-## Education
+### Education
 
 | Institution | Degree | Started | Ended | Status | Comment |
 |-------------|----------------|------|------|----------|---|
@@ -23,7 +23,7 @@
 | [Baltic Talents Academy](https://baltictalents.lt/) | Java Junior Developer | 2018 | 2019 | Acquired | First of the class, but this was an intro course. |
 
 
-## Previous Employment
+### Previous Employment
 
 | Company | Started | Ended | Position |
 |---------|---------|-------|----------|
