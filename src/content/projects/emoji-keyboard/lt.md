@@ -1,6 +1,6 @@
-#### Naujienose
-
-[OMGUbuntu parašė įdomų straipsnį apie šią programą](https://www.omgubuntu.co.uk/2017/03/emoji-keyboard-app-linux)
+> ##### Naujienose
+>
+> [OMGUbuntu parašė įdomų straipsnį apie šią programą](https://www.omgubuntu.co.uk/2017/03/emoji-keyboard-app-linux)
 
 
 Pamirškite emoji kopijavimą ir įklijavimą! Rašykite emoji tiesiai į programas kuriomis naudojatės.

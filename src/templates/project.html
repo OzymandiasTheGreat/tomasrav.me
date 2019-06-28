@@ -3,11 +3,54 @@
 <head>
 	<module href="./modules/head.html"></module>
 </head>
-<body>
+<body class="brown darken-4">
 	<module href="./modules/header.html"></module>
-	<main class="container" markdown>
+	<main class="container z-depth-2 grey lighten-5 grey-text text-darken-3">
 		<div class="row">
-			<div class="col s12 m8 l6 offset-m2 offset-l3">
+			<div class="col s12 m10 l8 offset-m1 offset-l2 center-align">
+				<h1>{{ title }}</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col s12 m10 l8 offset-m1 offset-l2">
+				<div class="linkBadges">
+					<each loop="badge, index in badges">
+						<a class="linkBadge" href="{{ badge.lnk }}"><img src="{{ badge.img }}" alt="{{ badge.alt }}" class="responsive-image"></a>
+					</each>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col s12 m10 l8 offset-m1 offset-l2 center-align">
+				<div class="gallery" id="{{ title }}"></div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col s12 m10 l8 offset-m1 offset-l2">
+				<ul class="collapsible">
+					<li>
+						<div class="collapsible-header">
+							<i class="fas fa-laptop-code"></i>
+							{{ platforms }}
+							<i class="fas fa-angle-down"></i>
+						</div>
+						<div class="collapsible-body">
+							<ul>
+								<each loop="platform, index in runsOn">
+									<li>
+										<!-- I have no clue why I have to specify .class twice -->
+										<i class="{{ platform.class.class || platform.class }}"></i>
+										{{ platform.name }}
+									</li>
+								</each>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col s12 m10 l8 offset-m1 offset-l2" markdown>
 				{{ content }}
 			</div>
 		</div>
