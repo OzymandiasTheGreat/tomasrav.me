@@ -3,6 +3,10 @@
 @import '~materialize-css/sass/components/variables';
 @import '~materialize-css/sass/components/grid';
 
+$caption-bg: color('grey', 'lighten-4') + cc
+$borders: 0.75vmax
+$duration: 0.5s
+
 .title-font
 	font-family: 'Fira Sans Condensed', $font-stack, sans-serif
 	font-weight: 500
@@ -49,13 +53,13 @@ main
 		@extend .li-arrow
 	.collapsible li
 		&.active .collapsible-header i:last-child
-			text-align: left
 			transform: rotate(180deg)
-		.collapsible-header i:last-child
+		.collapsible-header .spacer
 			flex: 1 0
+		.collapsible-header i:last-child
 			margin: 0
-			text-align: right
 			transform: none
+			transition: transform $duration
 		.collapsible-body
 			padding: 15px 28px
 			ul li
@@ -138,7 +142,7 @@ header > nav a
 				margin: 0
 				background-color: transparent
 				transform: translateX(45%)
-				transition: transform 1s
+				transition: transform $duration
 			&.active > a > i.expander
 				transform: translateX(45%) rotate(180deg)
 			li > a
@@ -148,7 +152,7 @@ header > nav a
 	height: 2vmax
 	width: 4vmax
 	vertical-align: middle
-	border-radius: 0.75vmax
+	border-radius: $borders
 	box-sizing: border-box
 
 footer
@@ -192,17 +196,49 @@ footer
 
 // index
 .imageBox
+	position: relative
+	height: 93vh
 	box-sizing: border-box
-	padding: 7.5vmin 0 2.5vmin 0
+	padding: 0
+	margin: 7.5vmin 0 2.5vmin auto
+	overflow: hidden
+	border-radius: $borders
 	img
-		border-radius: 0.75vmax
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -50%)
+		padding: 0
+		margin: 0
+		max-height: 93vh
+		min-height: 93vmin
+		border-radius: $borders
+	.caption
+		position: absolute
+		bottom: 0
+		left: 0
+		@extend .title-font
+		font-size: 16px
+		text-shadow: 1px 1px 3px color('grey', 'darken-1')
+		width: 100%
+		color: color('grey', 'darken-3') + aa
+		background-color: $caption-bg
+		padding: 15px 35px
+		border-radius: 0 0 $borders $borders
+		transform: translateY(100%)
+		transform-origin: bottom center
+		opacity: 0.3
+		transition: transform $duration, opacity $duration
+	&:hover .caption
+		transform: translateY(0)
+		opacity: 1
 
 .contactBox, .statusBox
 	margin-bottom: 2.5vmin
 	fieldset
 		font-size: 18px
 		font-style: italic
-		border-radius: 0.75vmax
+		border-radius: $borders
 		legend
 			font-size: 16px
 			font-style: normal
@@ -271,6 +307,6 @@ div.warning
 	.card-image h4.card-title
 		width: 100%
 		margin: 0
-		background-color: #dadadacc
+		background-color: $caption-bg
 	.card-action i
 		font-size: 24px

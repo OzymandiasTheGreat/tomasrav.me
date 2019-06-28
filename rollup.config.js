@@ -12,7 +12,7 @@ import posthtml from 'rollup-plugin-posthtml-multi';
 import postcss from 'rollup-plugin-postcss';
 import imagemin from 'rollup-plugin-imagemin';
 import browsersync from 'rollup-plugin-browsersync';
-import copy from 'rollup-plugin-copy';
+import copy from 'rollup-plugin-cpy';
 import progress from 'rollup-plugin-progress';
 import notify from 'rollup-plugin-notify';
 import filesize from 'rollup-plugin-filesize';
@@ -45,7 +45,7 @@ const src = (...args) => path.resolve(path.join('src/', ...args));
 const dest = (...args) => path.resolve(path.join('dist/', ...args));
 // eslint-disable-next-line consistent-return
 const onWarn = (warning, warn) => {
-	if (warning.code === 'EMPTY_BUNDLE') {
+	if (['EMPTY_BUNDLE', 'DEPRECATED_FEATURE'].includes(warning.code)) {
 		return null;
 	}
 	warn(warning);
@@ -224,7 +224,7 @@ const configureHtml = () => {
 			})));
 			appList.push({
 				title: app,
-				blurb: truncate(content, 32, '...'),
+				blurb: truncate(content, 38, '...'),
 				runsOn,
 			});
 		}
@@ -255,7 +255,7 @@ const configureHtml = () => {
 			})));
 			libList.push({
 				title: lib,
-				blurb: truncate(content, 32, '...'),
+				blurb: truncate(content, 38, '...'),
 				runsOn,
 			});
 		}
@@ -378,9 +378,13 @@ module.exports = {
 			online: true,
 			logLevel: 'warn',
 		}),
-		copy({
-			targets: [{ src: 'hangman/dist/**/*', dest: dest('hangman') }],
-		}),
+		copy([
+			{
+				files: 'hangman/dist/**/*',
+				dest: dest(),
+				options: { parents: true },
+			},
+		]),
 		progress(),
 		notify(),
 		filesize(),
