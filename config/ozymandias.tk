@@ -24,7 +24,7 @@ server {
 	ssl_certificate /var/lib/dehydrated/certs/ozymandias.tk/fullchain.pem;
 	ssl_certificate_key /var/lib/dehydrated/certs/ozymandias.tk/privkey.pem;
 
-	include /etc/nginx/sites_available/ozymandias.include;
+	include /etc/nginx/sites-available/ozymandias.include;
 }
 
 server {
@@ -35,5 +35,5 @@ server {
 	ssl_certificate /var/lib/dehydrated/certs/ozymandias-the-great.duckdns.org/fullchain.pem;
 	ssl_certificate_key /var/lib/dehydrated/certs/ozymandias-the-great.duckdns.org/privkey.pem;
 
-	include /etc/nginx/sites_available/ozymandias.include;
+	include /etc/nginx/sites-available/ozymandias.include;
 }

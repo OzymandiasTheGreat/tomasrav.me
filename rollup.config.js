@@ -380,9 +380,24 @@ module.exports = {
 		}),
 		copy([
 			{
-				files: 'hangman/dist/**/*',
-				dest: dest(),
-				options: { parents: true },
+				files: 'hangman/dist/*',
+				dest: dest('hangman'),
+			},
+			{
+				files: 'hangman/dist/api/*',
+				dest: dest('hangman', 'api'),
+			},
+			{
+				files: 'hangman/dist/api/util/*',
+				dest: dest('hangman', 'api', 'util'),
+			},
+			{
+				files: 'hangman/dist/www/*',
+				dest: dest('hangman', 'www'),
+			},
+			{
+				files: 'hangman/dist/www/assets/*',
+				dest: dest('hangman', 'www', 'assets'),
 			},
 		]),
 		progress(),
