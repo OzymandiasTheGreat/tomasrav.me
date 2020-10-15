@@ -1,0 +1,101 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+	--sky-yellow: #ffff00;
+	--day-blue: linear-gradient(to bottom, #b3e5fc 0%, #0288d1 100%);
+	--night-blue: linear-gradient(to bottom, #00000066 0%, #000000aa), linear-gradient(to bottom, #5c6bc0 0%, #1a237e 100%);
+	--dusk-orange: radial-gradient(ellipse at bottom -10% right 25%, #ff6d00dd 0%, transparent 100%), var(--day-blue);
+	--dawn-yellow: radial-gradient(ellipse at bottom -10% left 25%, #ffff0066 0%, transparent 100%), var(--night-blue);
+	--grass-green: #33691e;
+	--grass-green-light: #2e7d32;
+	--grass-green-dark: #1b5e20;
+	--tree-brown: #3e241e;
+	--snow-white: #ffffff;
+	--sakura-pink: #fce4ec;
+	--fall-amber: #ff6f00;
+	--shadow: #21212133;
+	--storm-cloud: linear-gradient(to bottom, transparent 0%, #9e9e9eaa 40%, #757575aa 80%, transparent 100%);
+
+	--white: #ffffff;
+	--dark-gray: #212121;
+	--text: #212121;
+	--footer: #9e9e9e;
+}
+
+html, body {
+	height: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+html {
+	overflow-y: scroll;
+	scrollbar-width: none; /* Firefox */
+	-ms-overflow-style: none;  /* Internet Explorer 10+ */
+}
+html::-webkit-scrollbar { /* WebKit */
+	width: 0;
+	height: 0;
+}
+
+.donate {
+	color: #d50000;
+}
+
+.mat-card {
+	width: 85%;
+	max-width: 800px;
+	height: 85%;
+	margin: auto;
+	box-shadow: 0 1px 3px 1px var(--shadow);
+
+	.mat-card-header {
+		align-items: center;
+		margin-bottom: 1rem;
+
+		.mat-card-title {
+			margin: 0;
+		}
+	}
+
+	&.expanded {
+		width: 100vw;
+		height: auto;
+		box-sizing: border-box;
+	}
+}
+
+.anchor {
+	position: relative;
+	top: calc(-64px - 3rem);
+	display: block;
+	visibility: hidden;
+}
+
+.parallax {
+	--parallax: 0;
+	perspective: 1px;
+	height: 100vh;
+	overflow-x: hidden;
+	overflow-y: auto;
+
+	.parallax-layer {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		transform: translateZ(var(--parallax));
+	}
+}
+
+.md-image-wrapper {
+	display: inline-block;
+	padding: 5px;
+	border: 1px solid var(--shadow);
+	cursor: pointer;
+
+	.md-image {
+		height: 15rem;
+		width: auto;
+	}
+}

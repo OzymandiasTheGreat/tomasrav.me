@@ -1,0 +1,11 @@
+.accordion {
+	.mat-expansion-panel-header-title {
+		flex-basis: 0;
+		justify-content: flex-start;
+		align-items: center;
+	}
+
+	.mat-expansion-panel-header-description {
+		flex-basis: 0;
+	}
+}

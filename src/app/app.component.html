@@ -1,0 +1,37 @@
+<div class="navigation-wrapper">
+	<mat-toolbar class="navigation">
+		<div class="left">{{ core.info }}</div>
+		<div class="right">
+			<mat-form-field class="lang-select">
+				<mat-select [value]="lang" (valueChange)="onLang($event)">
+					<mat-select-trigger>
+						<mat-icon [svgIcon]="lang"></mat-icon>
+						<span class="lang">{{ lang | uppercase }}</span>
+					</mat-select-trigger>
+					<mat-option *ngFor="let lng of languages" [value]="lng">
+						<mat-icon [svgIcon]="lng"></mat-icon>
+						<span class="lang">{{ lng | uppercase }}</span>
+					</mat-option>
+				</mat-select>
+			</mat-form-field>
+			<span *ngIf="core.expanded !== 'hero'">
+				<a mat-icon-button [routerLink]="['/']" fragment="about"><mat-icon svgIcon="account" [matTooltip]="'common.about' | translate"></mat-icon></a>
+				<a mat-icon-button [routerLink]="['/']" fragment="apps"><mat-icon svgIcon="apps" [matTooltip]="'common.apps' | translate"></mat-icon></a>
+				<a mat-icon-button [routerLink]="['/']" fragment="libs"><mat-icon svgIcon="library" [matTooltip]="'common.libs' | translate"></mat-icon></a>
+				<a mat-icon-button [routerLink]="['/']" fragment="hobbies"><mat-icon svgIcon="coffee" [matTooltip]="'common.hobbies' | translate"></mat-icon></a>
+				<a mat-icon-button [routerLink]="['/']" fragment="donate"><mat-icon svgIcon="heart" [matTooltip]="'common.donate' | translate" class="donate"></mat-icon></a>
+			</span>
+		</div>
+	</mat-toolbar>
+</div>
+<router-outlet></router-outlet>
+<footer>
+	<fieldset>
+		<legend translate>Contact Me!</legend>
+		<a mat-icon-button href="https://github.com/OzymandiasTheGreat"><mat-icon svgIcon="github" matTooltip="GitHub"></mat-icon></a>
+		<a mat-icon-button href="mailto:tomas.rav@gmail.com"><mat-icon svgIcon="gmail" matTooltip="Email"></mat-icon></a>
+		<a mat-icon-button href="https://wa.me/37064020967"><mat-icon svgIcon="whatsapp" matTooltip="WhatsApp"></mat-icon></a>
+		<a mat-icon-button href="https://www.messenger.com/t/OzymandiasTheGreat"><mat-icon svgIcon="facebook-messenger" matTooltip="Facebook Messenger"></mat-icon></a>
+	</fieldset>
+	<div class="copyright">&copy; Ozymandias (Tomas Ravinskas) - 2020</div>
+</footer>

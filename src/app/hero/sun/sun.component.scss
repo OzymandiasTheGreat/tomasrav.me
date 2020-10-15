@@ -1,0 +1,96 @@
+// Adapted from https://css-tricks.com/snippets/sass/placing-items-circle/
+
+@mixin on-circle($item-count, $circle-size, $item-size) {
+	position: relative;
+	width:  $circle-size;
+	height: $circle-size;
+	padding: 0;
+	border-radius: 50%;
+	list-style: none;
+
+	> * {
+		display: block;
+		position: absolute;
+		top:  50%;
+		left: 50%;
+		width:  $item-size;
+		height: $item-size;
+		margin: -($item-size / 2);
+
+		$angle: (360 / $item-count);
+		$rot: 0;
+
+		@for $i from 1 through $item-count {
+			&:nth-of-type(#{$i}) {
+				transform:
+					rotate($rot * 1deg)
+					translate($circle-size / 2)
+					rotate($rot * -1deg)
+					rotate(($i * $angle * 1deg) - ($angle * 1deg));
+			}
+
+			$rot: $rot + $angle;
+		}
+	}
+}
+
+@keyframes spin {
+	from {
+		transform-origin: center;
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform-origin: 50%, calc(50% - 0.25rem);
+		transform: rotate(360deg);
+	}
+}
+
+.container {
+	width: calc(10rem + 1rem);
+	height: calc(10rem + 1rem);
+	padding: 0;
+	margin: 0;
+	.circle-wrapper {
+		display: inline-block;
+		position: relative;
+		width: calc(10rem + 1rem);
+		height: calc(10rem + 1rem);
+		padding: 0;
+		margin: 0;
+		will-change: transform, transform-origin;
+		animation: spin 13s linear infinite;
+
+		.outer-circle {
+			@include on-circle($item-count: 13, $circle-size: 10rem, $item-size: 1rem);
+			background-color: transparent;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin: 0;
+			transform: translate(-50%, -50%);
+
+			li {
+				height: 0;
+				width: 0;
+				border-top: 0.5rem solid transparent;
+				border-bottom: 0.5rem solid transparent;
+				border-left: 0.5rem solid var(--sky-yellow);
+			}
+		}
+
+		.inner-circle {
+			background-color: var(--sky-yellow);
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 8rem;
+			height: 8rem;
+			padding: 0;
+			border-radius: 50%;
+			margin: 0;
+			margin-left: -0.25rem;
+			transform: translate(-50%, -50%);
+		}
+	}
+}

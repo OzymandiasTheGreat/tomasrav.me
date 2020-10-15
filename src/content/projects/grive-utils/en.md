@@ -1,1 +1,0 @@
-A sync client for Google Drive. It wraps command-line sync client `grive2` and provides a simple, but powerful graphical interface for controlling sync, setting up your account and choosing what to sync.

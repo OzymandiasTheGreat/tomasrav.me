@@ -1,0 +1,32 @@
+img.mat-list-avatar.mat-list-avatar.mat-list-avatar.mat-list-avatar.mat-list-avatar {
+	border-radius: 5px;
+	width: 3.5em;
+	height: 3.5em;
+}
+
+.mat-icon.mat-list-icon.mat-icon.mat-list-icon.mat-icon.mat-list-icon.mat-icon.mat-list-icon.mat-icon.mat-list-icon {
+	font-size: 3.5rem;
+	width: 3.5rem;
+	height: 3.5rem;
+	opacity: 0.75;
+}
+
+.mat-list-item.mat-list-item.mat-list-item.mat-list-item.mat-list-item {
+	h3 {
+		font-weight: bold;
+	}
+}
+
+.title {
+	position: relative;
+
+	& > * {
+		position: absolute;
+		background-color: var(--sky-yellow);
+		top: -1px;
+		right: -25px;
+		z-index: 1;
+		clip-path: url(#star);
+		color: var(--text);
+	}
+}

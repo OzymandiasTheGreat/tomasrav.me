@@ -1,1 +1,0 @@
-Sinchronizacijos klientas Google Diskui. Ši programa apsupa komandinės-eilutės sichronizacijos klientą `grive2` ir pateikia paprasta, tačiau galinga grafinę sąsaja sinchronizacijos valdymui, paskyros prijungimui ir pasirinkimui ką sinchronizuoti.

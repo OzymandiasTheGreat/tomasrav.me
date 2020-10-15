@@ -1,0 +1,57 @@
+@keyframes flap {
+	100% {
+		background-position: -900px 0;
+	}
+}
+
+@keyframes fly {
+	0% {
+		transform: translateX(-10vw) scale(calc(0.6 * var(--seed)));
+	}
+
+	10% {
+		transform: translateY(2vh) translateX(10vw) scale(calc(0.75 * var(--seed)));
+	}
+
+	20% {
+		transform: translateY(0vh) translateX(30vw) scale(calc(0.85 * var(--seed)));
+	}
+
+	30% {
+		transform: translateY(4vh) translateX(50vw) scale(calc(0.9 * var(--seed)));
+	}
+
+	40% {
+		transform: translateY(2vh) translateX(70vw) scale(calc(0.95 * var(--seed)));
+	}
+
+	50% {
+		transform: translateY(0vh) translateX(90vw) scale(var(--seed));
+	}
+
+	60% {
+		transform: translateY(0vh) translateX(110vw) scale(var(--seed));
+	}
+
+	100% {
+		transform: translateY(0vh) translateX(110vw) scale(var(--seed));
+	}
+}
+
+.container {
+	position: relative;
+	.bird {
+		--seed: 0.75;
+		--random: 0.3;
+		position: absolute;
+		top: calc(4vh * var(--seed));
+		left: -10vw;
+		background-image: url("/assets/svg/bird.svg");
+		background-size: auto 100%;
+		width: 88px;
+		height: 125px;
+		will-change: background-position, transform;
+		animation: flap calc(1.25s * var(--seed)) steps(10) infinite, fly calc(25s * var(--seed)) linear calc(1250s * var(--random)) infinite;
+		transform: scale(var(--seed));
+	}
+}

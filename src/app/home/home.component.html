@@ -1,0 +1,28 @@
+<div class="content parallax">
+	<div [style.display]="!expanded || expanded === 'hero' ? 'block' : 'none'" class="hero-wrapper parallax-layer" [style.--parallax.px]="-2" [ngClass]="{ konami: expanded === 'hero' }">
+		<app-hero #hero class="hero parallax-layer" (expand)="toggleExpand($event)"></app-hero>
+	</div>
+	<div *ngIf="!expanded" class="profile-wrapper parallax-layer" [style.--parallax.px]="-1">
+		<img class="profile" [src]="profile" alt="Tomas Ravinskas" />
+	</div>
+	<div *ngIf="!expanded" class="spacer"></div>
+	<div [style.display]="expanded !== 'hero' ? 'block' : 'none'" class="layout">
+		<div class="cards" [ngClass]="{ expanded: !!expanded, portrait: portrait }">
+			<app-profile #about [style.display]="!expanded || expanded === 'about' ? 'block' : 'none'" (expand)="navigate($event)">
+				<a id="about" class="anchor"></a>
+			</app-profile>
+			<app-gh-card #apps type="apps" [style.display]="!expanded || expanded === 'apps' ? 'block' : 'none'" (expand)="navigate($event)">
+				<a id="apps" class="anchor"></a>
+			</app-gh-card>
+			<app-gh-card #libs type="libs" [style.display]="!expanded || expanded === 'libs' ? 'block' : 'none'" (expand)="navigate($event)">
+				<a id="libs" class="anchor"></a>
+			</app-gh-card>
+			<app-hobbies #hobbies [style.display]="!expanded || expanded === 'hobbies' ? 'block' : 'none'" (expand)="navigate($event)">
+				<a id="hobbies" class="anchor"></a>
+			</app-hobbies>
+			<app-donate #donate [style.display]="!expanded || expanded === 'donate' ? 'block' : 'none'" (expand)="navigate($event)">
+				<a id="donate" class="anchor"></a>
+			</app-donate>
+		</div>
+	</div>
+</div>
