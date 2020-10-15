@@ -1,0 +1,27 @@
+{
+  "user": "OzymandiasTheGreat",
+  "apps": [
+    "emoji-keyboard",
+    "ginger",
+    "mopidy-ytmusic",
+    "hedwigg",
+    "grive-utils",
+    "xpander",
+    "hifinder",
+    "Joy2DroidX",
+    "Joy2DroidX-server",
+    "psd-cli"
+  ],
+  "libs": [
+    "klembord",
+    "macpy",
+    "winnotify",
+    "python-libinput",
+    "gris",
+    "opds-parser2",
+    "nativescript-virtual-joystick",
+    "posthtml-markdown",
+    "rollup-plugin-entry-glob",
+    "rollup-plugin-posthtml-multi"
+  ]
+}

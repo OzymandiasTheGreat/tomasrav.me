@@ -1,0 +1,84 @@
+{
+	"common": {
+		"about": "Apie Mane",
+		"apps": "Programos",
+		"libs": "Bibliotekos",
+		"hobbies": "Hobiai",
+		"donate": "Paaukok!",
+		"more": "Skaityti Daugiau",
+    "search": "Ieškoti...",
+    "less": "Mažiau"
+	},
+	"Contact Me!": "Susisiekime!",
+	"donate": {
+		"blurb": "Labai myliu atvirą kodą (Open Source), bet kūrimas, rašymas ir palaikymas užima laiko ir sunku jo skirti be pajamų. Taigi jei naudojatės mano kodu ir jis jums naudingas, pasvarstykite galimybę parodyti savo palaikymą paaukojant."
+	},
+	"hero": {
+		"cycle": "Pereiti ciklą",
+		"reset": "Atstatyti",
+		"dawn": "Rytas",
+		"day": "Diena",
+		"dusk": "Vakaras",
+		"night": "Naktis",
+		"spring": "Pavasaris",
+		"summer": "Vasara",
+		"fall": "Ruduo",
+		"winter": "Žiema",
+		"clear": "Giedra",
+		"cloudy": "Debesuota",
+		"rain": "Lietus",
+		"snow": "Sniegas",
+		"fog": "Rūkas"
+	},
+	"hobbies": {
+		"books": {
+			"title": "Knygos",
+			"description": "Kūriniai kuriuos neseniai skaičiau"
+		},
+		"comics": {
+			"title": "Komiksai",
+			"description": "Grafinės novelės kuriomis mėgaujuosi"
+		},
+		"anime": {
+			"title": "Anime",
+			"description": "Animacija kurią myliu"
+		},
+		"manga": {
+			"title": "Manga",
+			"description": "Japoniški komiksai kuriuos skaitau"
+		},
+		"movies": {
+			"title": "Filmai",
+			"description": "Tai, ką neseniai mačiau"
+		},
+		"shows": {
+			"title": "Serialai",
+			"description": "Šiuos žiūriu retokai"
+		},
+		"cooking": {
+			"title": "Maistas",
+			"description": "Mano hobis numeris 1"
+		},
+		"blurb": "Dalykai kuriuos darau ir kuriais mėgaujuosi laisvu laiku. Nors programavimas prasidėjo kaip hobis ir aš vis dar tuo mėgaujuosi, įvairovė yra gerai."
+	},
+	"profile": {
+		"me": "Tomas Ravinskas",
+		"about": {
+			"blurb": "Aš esu laisvai samdomas programuotojas su daugiau kaip 5 metų patirtimi, pagrinde su Python ir Javascript, nors daug labiau mėgstu Typescript kur galima ją panaudoti."
+		}
+	},
+	"Institution": "Institucija",
+	"Degree": "Laipsnis",
+	"Started": "Pradžia",
+	"Ended": "Pabaiga",
+	"Status": "Statusas",
+	"Comment": "Komentaras",
+	"Company": "Įmonė",
+	"Position": "Pareigos",
+	"apps": {
+		"blurb": "Programos kurias sukūriau, kai kurios populeresnės nei kitos. Kūrimas, rašymas ir palaikymas užima daug laiko, taigi jei iš to negaunu pajamų, kūrimas išliks lėtas."
+	},
+	"libs": {
+		"blurb": "Programinės bibliotekos kurias parašiau. Kadangi jas dažnai naudoju asmeniškai, kūrimas kiek greitesnis. Vis dėl to pasvarstykite galimybę paaukoti jei jos jums naudingos."
+	}
+}
