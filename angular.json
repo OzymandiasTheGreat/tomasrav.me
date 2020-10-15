@@ -131,6 +131,10 @@
               "devServerTarget": "ozymandias-v2:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
     }
