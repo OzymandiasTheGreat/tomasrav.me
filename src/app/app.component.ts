@@ -11,7 +11,7 @@ import { CoreService } from "./core/services/core.service";
 })
 export class AppComponent implements OnInit {
 	public title = "Tomas Ravinskas";
-	public languages: string[] = ["en", "lt", "ru"];
+	public languages: string[] = ["en", "lt"];
 	public lang: string;
 
 	constructor(private translate: TranslateService, public core: CoreService) {
