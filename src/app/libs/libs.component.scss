@@ -1,0 +1,28 @@
+.mat-card {
+	margin: 65px auto;
+	height: max-content;
+
+	h3 {
+		height: 1.3rem;
+
+		.mat-badge {
+			font-weight: 600;
+			position: absolute;
+			z-index: 900;
+
+			.mat-badge-content {
+				background-color: var(--sky-yellow);
+				color: #fefefe;
+				clip-path: url(#star);
+				transform: scale(1.75);
+				font-size: 0.4rem;
+				right: -27px;
+			}
+		}
+	}
+
+	.mat-list-icon {
+		width: 40px;
+		height: 40px;
+	}
+}

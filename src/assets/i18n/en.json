@@ -1,84 +1,88 @@
 {
-	"common": {
-		"about": "About Me",
-		"apps": "Applications",
-		"libs": "Libraries",
-		"hobbies": "Hobbies",
-		"donate": "Donate!",
-		"less": "Less",
-		"more": "Read More",
-		"search": "Search..."
-	},
-	"Contact Me!": "Contact Me!",
-	"donate": {
-		"blurb": "I love open source with a passion, however development takes time and it's hard to allocate time without income. So if you use my software and find it usefull, please consider showing your support by donating."
-	},
-	"hero": {
-		"cycle": "Cycle",
-		"reset": "Reset",
-		"dawn": "Dawn",
-		"day": "Day",
-		"dusk": "Dusk",
-		"night": "Night",
-		"spring": "Spring",
-		"summer": "Summer",
-		"fall": "Fall",
-		"winter": "Winter",
-		"clear": "Clear",
-		"cloudy": "Cloudy",
-		"rain": "Rain",
-		"snow": "Snow",
-		"fog": "Fog"
-	},
-	"hobbies": {
-		"books": {
-			"title": "Books",
-			"description": "Some of the things I read recently"
-		},
-		"comics": {
-			"title": "Comics",
-			"description": "Graphic novels I enjoy"
-		},
-		"anime": {
-			"title": "Anime",
-			"description": "Animation I adore"
-		},
-		"manga": {
-			"title": "Manga",
-			"description": "Japanese comics I read"
-		},
-		"movies": {
-			"title": "Movies",
-			"description": "Things I watched recently"
-		},
-		"shows": {
-			"title": "TV shows",
-			"description": "I don't watch these much"
-		},
-		"cooking": {
-			"title": "Cooking",
-			"description": "My number 1 hobby"
-		},
-		"blurb": "Things I do and enjoy in my free time. While coding started out as a hobby and I still enjoy it, variety is good."
-	},
-	"profile": {
-		"me": "Tomas Ravinskas",
-		"about": {
-			"blurb": "I'm freelance developer with over 5 years of experience, mainly with Python and Javascript, though I much prefer Typescript where possible."
-		}
-	},
-	"Institution": "Institution",
-	"Degree": "Degree",
-	"Started": "Started",
-	"Ended": "Ended",
-	"Status": "Status",
-	"Comment": "Comment",
-	"Company": "Company",
-	"Position": "Position",
-	"apps": {
-		"blurb": "Applications I have written, some more popular than others. Maintenance and bugfixing are very time consuming, so unless I can generate some income from these, development will remain slow."
-	},
-	"libs": {
-		"blurb": "Software libraries I've written and tend to use in my projects. These see much more use personally, so development is somewhat faster. Still, consider donating if you find them usefull."
-	}
+  "common": {
+    "about": "About Me",
+    "apps": "Applications",
+    "libs": "Libraries",
+    "hobbies": "Hobbies",
+    "donate": "Donate!",
+    "less": "Less",
+    "more": "Read More",
+    "search": "Search...",
+    "tagline": "Welcome to my little corner on the Internet! Here you can learn everything you want (and don't want) to know about me."
+  },
+  "Contact Me!": "Contact Me!",
+  "donate": {
+    "blurb": "I love open source with a passion, however development takes time and it's hard to allocate time without income. So if you use my software and find it usefull, please consider showing your support by donating."
+  },
+  "hero": {
+    "cycle": "Cycle",
+    "reset": "Reset",
+    "dawn": "Dawn",
+    "day": "Day",
+    "dusk": "Dusk",
+    "night": "Night",
+    "spring": "Spring",
+    "summer": "Summer",
+    "fall": "Fall",
+    "winter": "Winter",
+    "clear": "Clear",
+    "cloudy": "Cloudy",
+    "rain": "Rain",
+    "snow": "Snow",
+    "fog": "Fog",
+    "gecko": {
+      "warning": "Animations disabled on Firefox"
+    }
+  },
+  "hobbies": {
+    "books": {
+      "title": "Books",
+      "description": "Some of the things I read recently"
+    },
+    "comics": {
+      "title": "Comics",
+      "description": "Graphic novels I enjoy"
+    },
+    "anime": {
+      "title": "Anime",
+      "description": "Animation I adore"
+    },
+    "manga": {
+      "title": "Manga",
+      "description": "Japanese comics I read"
+    },
+    "movies": {
+      "title": "Movies",
+      "description": "Things I watched recently"
+    },
+    "shows": {
+      "title": "TV shows",
+      "description": "I don't watch these much"
+    },
+    "cooking": {
+      "title": "Cooking",
+      "description": "My number 1 hobby"
+    },
+    "blurb": "Things I do and enjoy in my free time. While coding started out as a hobby and I still enjoy it, variety is good."
+  },
+  "profile": {
+    "me": "Tomas Ravinskas",
+    "about": {
+      "blurb": "I'm freelance developer with over 5 years of experience, mainly with Python and Javascript, though I much prefer Typescript where possible."
+    }
+  },
+  "Institution": "Institution",
+  "Degree": "Degree",
+  "Started": "Started",
+  "Ended": "Ended",
+  "Status": "Status",
+  "Comment": "Comment",
+  "Company": "Company",
+  "Position": "Position",
+  "apps": {
+    "blurb": "Applications I have written, some more popular than others. Maintenance and bugfixing are very time consuming, so unless I can generate some income from these, development will remain slow."
+  },
+  "libs": {
+    "blurb": "Software libraries I've written and tend to use in my projects. These see much more use personally, so development is somewhat faster. Still, consider donating if you find them usefull."
+  }
 }

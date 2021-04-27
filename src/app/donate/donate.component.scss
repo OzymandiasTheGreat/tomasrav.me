@@ -1,4 +1,14 @@
-p {
-	max-width: 600px;
-	margin: auto;
+.mat-card {
+	height: max-content;
+	margin: 65px auto;
+
+	.blurb {
+		margin: 25px auto;
+	}
+
+	.box {
+		width: 450px;
+		height: 600px;
+		margin: auto;
+	}
 }

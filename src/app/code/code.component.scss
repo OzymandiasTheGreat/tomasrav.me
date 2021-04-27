@@ -1,0 +1,22 @@
+.mat-card {
+	height: max-content;
+	margin: 65px auto;
+
+	.screenshots {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: center;
+		align-items: center;
+
+		.screenshot {
+			padding: 5px;
+			border: 1px solid var(--shadow);
+			margin: 5px;
+
+			img {
+				width: auto;
+				height: 7.5rem;
+			}
+		}
+	}
+}

@@ -1,8 +1,7 @@
-import { Component, OnInit, AfterViewInit, ViewChild, ElementRef, ChangeDetectorRef, EventEmitter, Output } from "@angular/core";
+import { Component, OnInit, Output, EventEmitter } from "@angular/core";
+import { Platform } from "@angular/cdk/platform";
 import * as suncalc from "suncalc";
 
-import { SunComponent } from "../sun/sun.component";
-import { MoonComponent } from "../moon/moon.component";
 import { GeolocationService } from "../geolocation.service";
 import { GeocodingService, Geocode } from "../geocoding.service";
 import { GeoIPService, GeoIP } from "../geoip.service";
@@ -18,36 +17,43 @@ const KONAMI_CODE = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft"
 	templateUrl: "./hero.component.html",
 	styleUrls: ["./hero.component.scss"]
 })
-export class HeroComponent implements OnInit, AfterViewInit {
-	@ViewChild("hero", { static: true }) private hero: ElementRef<HTMLDivElement>;
-	@ViewChild("sun") private sun: SunComponent;
-	@ViewChild("moon") private moon: MoonComponent;
-	@Output() public expand: EventEmitter<"hero">;
+export class HeroComponent implements OnInit {
+	@Output() public fullscreen: EventEmitter<boolean>;
 	public now: Date = new Date();
 	public daytime: "day" | "dusk" | "night" | "dawn" = "day";
 	public daytimes: string[] = ["day", "dusk", "night", "dawn"];
-	public season: "spring" | "summer" | "fall" | "winter";
-	public seasons: string[] = ["spring", "summer", "fall", "winter"];
+	public skyGradient = {
+		day: { top: "#FEFEFE", bottom: "#4fc3f7" },
+		dusk: { top: "#4fc3f7", bottom: "#ff6d00dd" },
+		night: { top: "#5c6bc0", bottom: "#1a237e" },
+		dawn: { top: "#1a237e", bottom: "#ffff0066" },
+	};
+	public season: "spring" | "summer" | "autumn" | "winter";
+	public seasons: string[] = ["spring", "summer", "autumn", "winter"];
 	public location: { lat: number, lon: number, city: string, country: string } = HOME_COORDS;
 	public weather: WeatherData;
 	public skyBodyPos: { sunX: number, sunY: number, moonX: number, moonY: number } = { sunX: 1, sunY: 1, moonX: 1, moonY: 1 };
 	public conditions = { clear: false, cloudy: false, rain: false, snow: false, fog: false };
 	public conditonList: string[];
+	public trees: number[] = [];
 	public konami = false;
 	public sequence: string[] = [];
 	public lastKey = 0;
+	public notGecko: boolean;
 
 	constructor(
-		private cdRef: ChangeDetectorRef,
+		private platform: Platform,
 		private geo: GeolocationService,
 		private geocode: GeocodingService,
 		private geoIP: GeoIPService,
 		private owm: OpenWeatherMapService,
 	) {
-		this.expand = new EventEmitter<"hero">();
+		this.fullscreen = new EventEmitter<boolean>();
 	}
 
 	public ngOnInit(): void {
+		this.notGecko = !this.platform.FIREFOX;
+		this.trees = new Array(randInt(1, 13)).fill(0).map(() => randInt(-150, 600));
 		this.conditonList = Object.keys(this.conditions);
 		window.addEventListener("keydown", (event) => {
 			if ((Date.now() - this.lastKey) > 30000) {
@@ -59,8 +65,8 @@ export class HeroComponent implements OnInit, AfterViewInit {
 					this.sequence.shift();
 				}
 				if (KONAMI_CODE.every((k, i) => k === this.sequence[i])) {
-					this.expand.emit("hero");
 					this.konami = true;
+					this.fullscreen.emit(true);
 				}
 			} else {
 				this.sequence = [];
@@ -69,15 +75,12 @@ export class HeroComponent implements OnInit, AfterViewInit {
 		});
 		this.setSeason(this.now.getMonth());
 		this.setSkyBodyPosition();
-	}
-
-	public ngAfterViewInit(): void {
 		this.geolocate();
 	}
 
 	public shrink(): void {
 		this.konami = false;
-		this.expand.emit(null);
+		this.fullscreen.emit(false);
 		this.geolocate();
 	}
 
@@ -125,7 +128,6 @@ export class HeroComponent implements OnInit, AfterViewInit {
 			this.setDaytime();
 			this.setSkyBodyPosition();
 			this.generateScenery();
-			this.cdRef.detectChanges();
 		}).catch(() => {
 			console.log(`Generating random scenery for ${this.location.city}, ${this.location.country}...`);
 			this.now.setHours(randInt(0, 23), 0, 0, 0);
@@ -150,7 +152,6 @@ export class HeroComponent implements OnInit, AfterViewInit {
 					this.weather.weather[0].main = "Snow";
 			}
 			this.generateScenery();
-			this.cdRef.detectChanges();
 		});
 	}
 
@@ -171,7 +172,7 @@ export class HeroComponent implements OnInit, AfterViewInit {
 					? "night"
 					: (now >= dawn && now < day)
 						? "dawn"
-						: "day";
+						: "night";
 	}
 
 	private setSeason(month: number): void {
@@ -184,7 +185,7 @@ export class HeroComponent implements OnInit, AfterViewInit {
 			case 9:
 			case 10:
 			case 11:
-				this.season = this.location.lat >= 0 ? "fall" : "spring";
+				this.season = this.location.lat >= 0 ? "autumn" : "spring";
 				break;
 			case 12:
 			case 1:
@@ -194,23 +195,18 @@ export class HeroComponent implements OnInit, AfterViewInit {
 			case 3:
 			case 4:
 			case 5:
-				this.season = this.location.lat >= 0 ? "spring" : "fall";
+				this.season = this.location.lat >= 0 ? "spring" : "autumn";
 		}
 	}
 
 	private setSkyBodyPosition(): void {
-		const rect = this.hero.nativeElement.getBoundingClientRect();
-		const sunMaxX = this.sun && (rect.width - this.sun.rect.width) || 0;
-		const sunMaxY = this.sun && (rect.height - this.sun.rect.height) || 0;
-		const moonMaxX = this.moon && (rect.width - this.moon.rect.width) || 0;
-		const moonMaxY = this.moon && (rect.height - this.moon.rect.height) || 0;
 		const maxAzimuth = Math.PI * (3 / 4);
 		const sunPos = suncalc.getPosition(this.now, this.location.lat, this.location.lon);
 		const moonPos = suncalc.getMoonPosition(this.now, this.location.lat, this.location.lat);
-		const sunX = ((sunPos.azimuth + maxAzimuth) / (maxAzimuth * 2)) * sunMaxX;
-		const sunY = sunPos.altitude * (sunMaxY / (Math.PI / 2));
-		const moonX = ((moonPos.azimuth + maxAzimuth) / (maxAzimuth * 2)) * moonMaxX;
-		const moonY = moonPos.altitude * (moonMaxY / (Math.PI / 2));
+		const sunX = ((sunPos.azimuth + maxAzimuth) / (maxAzimuth * 2)) * 800;
+		const sunY = sunPos.altitude * (Math.PI / 2) * -250;
+		const moonX = ((moonPos.azimuth + maxAzimuth) / (maxAzimuth * 2)) * 800;
+		const moonY = moonPos.altitude * (Math.PI / 2) * -250;
 		this.skyBodyPos = { sunX, sunY, moonX, moonY };
 	}
 

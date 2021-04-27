@@ -32,6 +32,7 @@
 		"luminous-lightbox": "^2.3.2",
 		"ng-recaptcha": "^5.0.0",
 		"ngx-markdown": "^10.1.0",
+		"ngx-skeleton-loader": "^2.9.1",
 		"rxjs": "~6.5.5",
 		"slug": "^3.3.4",
 		"suncalc": "^1.8.0",

@@ -1,9 +1,6 @@
-.expanded {
-
-	.profile {
-		padding: 0 15px;
-		box-sizing: border-box;
-	}
+.card {
+	margin: 65px auto;
+	height: max-content;
 }
 
 .profile {
@@ -47,6 +44,26 @@
 			width: 100vw;
 			min-width: 800px;
 			height: auto;
+		}
+	}
+}
+
+
+@media print {
+	.card {
+		box-shadow: none;
+		margin: 0;
+		overflow: visible;
+
+		.table-wrapper {
+			width: 100vw;
+			overflow-x: hidden;
+			overflow-y: visible;
+			white-space: normal;
+
+			td:last-of-type {
+				width: 480px;
+			}
 		}
 	}
 }

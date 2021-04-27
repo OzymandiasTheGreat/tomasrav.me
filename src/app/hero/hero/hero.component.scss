@@ -1,89 +1,146 @@
+@keyframes twinkle {
+	from {
+		transform: scale(0.75);
+	}
+
+	to {
+		transform: scale(1);
+	}
+}
+
+@keyframes shine {
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes drift {
+	from {
+		transform: translateX(0);
+	}
+
+	to {
+		transform: translateX(800px);
+	}
+}
+
+@keyframes sway {
+	from {
+		transform: skewX(0);
+	}
+
+	to {
+		transform: skewX(-30deg);
+	}
+}
+
+@keyframes fall {
+	from {
+		transform: translateY(0);
+	}
+
+	to {
+		transform: translateY(400px);
+	}
+}
+
+@keyframes fade {
+	from {
+		opacity: 1;
+	}
+
+	to {
+		opacity: 0;
+	}
+}
+
 .container {
-	display: flex;
-	flex-flow: column nowrap;
-	justify-content: flex-start;
-	align-items: flex-star;
 	width: 100%;
-	height: 100%;
-	overflow: hidden;
+	height: 100vh;
+	max-height: 700px;
 
-	.konami-bar {
-		position: relative;
-		display: flex;
-		flex-flow: row nowrap;
-		justify-content: space-around;
-		align-items: center;
-		box-sizing: border-box;
-		box-shadow: 0 -1px 3px 1px var(--shadow);
-	}
-
-	.hero {
-		width: 100%;
-		height: calc(100% - 64px);
-		position: relative;
-		overflow: hidden;
-
-		&.day {
-			background-image: var(--day-blue);
+	&.notGecko {
+		#star1, #star2 {
+			animation: twinkle 3s linear infinite alternate;
 		}
 
-		&.night {
-			background-image: var(--night-blue);
+		#sun1 {
+			transform-origin: 70px 70px;
+			animation: shine 10s linear infinite;
 		}
 
-		&.dusk {
-			background-image: var(--dusk-orange);
+		#clouds {
+			animation: drift 20s linear infinite;
 		}
 
-		&.dawn {
-			background-image: var(--dawn-yellow);
+		#left-lid, #right-lid {
+			animation: fade 1.35s linear infinite alternate;
 		}
 
-		.close-btn {
-			position: absolute;
-			top: 5%;
-			right: 5%;
+		#downpour, #snowstorm {
+			animation: fall 10s linear infinite;
 		}
 
-		#blacky {
-			position: absolute;
-			bottom: 0;
-			left: 15%;
-			transform: scale(1.35, 1.35);
-			transform-origin: bottom;
+		#grass-back {
+			animation: sway 10s linear infinite alternate;
 		}
 
-		.sky-body {
-			position: absolute;
-		}
-
-		.ground {
-			position: absolute;
-			bottom: 0;
-			left: 0;
-			width: 100%;
-		}
-
-		.trees {
-			position: absolute;
-			bottom: 0;
-			left: 0;
-			width: 100%;
-		}
-
-		.snowbank {
-			position: absolute;
-			bottom: 0;
-			left: 0;
-			width: 100%;
-		}
-
-		.precipation {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
+		#grass-front {
+			animation: sway 10s linear 3s infinite alternate;
 		}
 	}
+}
+
+.konami-bar {
+	position: fixed;
+	bottom: 0;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 50px;
+}
+
+.close-btn {
+	background-color: var(--background);
+	box-shadow: 1px 1px 3px 1px var(--shadow);
+	position: absolute;
+	top: 15px;
+	right: 5px;
+}
+
+.location {
+	font-family: "Oswald", sans-serif;
+	font-weight: 500;
+	font-size: 18px;
+	background-color: var(--background);
+	box-shadow: 1px 1px 3px 1px var(--shadow);
+	height: 40px;
+	padding: 5px 10px;
+	border-radius: 25px;
+	box-sizing: border-box;
+	position: absolute;
+	top: 15px;
+	left: 20%;
+	transform: translateX(-50%);
+}
+
+.warning {
+	font-family: "Oswald", sans-serif;
+	font-weight: 500;
+	font-size: 18px;
+	background-color: var(--background);
+	box-shadow: 1px 1px 3px 1px var(--shadow);
+	height: 40px;
+	padding: 5px 10px;
+	border-radius: 25px;
+	box-sizing: border-box;
+	position: absolute;
+	top: 15px;
+	left: 50%;
+	transform: translateX(-50%);
 }

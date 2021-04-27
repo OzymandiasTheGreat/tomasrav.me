@@ -1,0 +1,106 @@
+<mat-card class="card" >
+	<mat-card-header>
+		<mat-icon mat-card-avatar svgIcon="arrow-left" [routerLink]="['/']" ></mat-icon>
+		<mat-card-title translate>common.hobbies</mat-card-title>
+	</mat-card-header>
+	<mat-card-content >
+		<mat-accordion class="accordion">
+			<mat-expansion-panel>
+				<mat-expansion-panel-header>
+					<mat-panel-title>
+						<mat-icon svgIcon="book"></mat-icon>
+						{{ 'hobbies.books.title' | translate }}
+					</mat-panel-title>
+					<mat-panel-description>
+						{{ 'hobbies.books.description' | translate }}
+					</mat-panel-description>
+				</mat-expansion-panel-header>
+				<app-cover-flow [items]="books" itemSize="98px" shadowColor="var(--shadow)"></app-cover-flow>
+				<mat-action-row>
+					<a mat-button [href]="grProfileLink">{{ 'common.more' | translate }}</a>
+				</mat-action-row>
+			</mat-expansion-panel>
+
+			<mat-expansion-panel>
+				<mat-expansion-panel-header>
+					<mat-panel-title>
+						<mat-icon svgIcon="book"></mat-icon>
+						{{ 'hobbies.comics.title' | translate }}
+					</mat-panel-title>
+					<mat-panel-description>
+						{{ 'hobbies.comics.description' | translate }}
+					</mat-panel-description>
+				</mat-expansion-panel-header>
+				<app-cover-flow [items]="comics" itemSize="98px" shadowColor="var(--shadow)"></app-cover-flow>
+				<mat-action-row>
+					<a mat-button [href]="grProfileLink">{{ 'common.more' | translate }}</a>
+				</mat-action-row>
+			</mat-expansion-panel>
+
+			<mat-expansion-panel>
+				<mat-expansion-panel-header>
+					<mat-panel-title>
+						<mat-icon svgIcon="television-classic"></mat-icon>
+						{{ 'hobbies.anime.title' | translate }}
+					</mat-panel-title>
+					<mat-panel-description>
+						{{ 'hobbies.anime.description' | translate }}
+					</mat-panel-description>
+				</mat-expansion-panel-header>
+				<app-cover-flow [items]="anime" itemSize="98px" shadowColor="var(--shadow)"></app-cover-flow>
+				<mat-action-row>
+					<a mat-button [href]="kitsuProfileLink">{{ 'common.more' | translate }}</a>
+				</mat-action-row>
+			</mat-expansion-panel>
+
+			<mat-expansion-panel>
+				<mat-expansion-panel-header>
+					<mat-panel-title>
+						<mat-icon svgIcon="book"></mat-icon>
+						{{ 'hobbies.manga.title' | translate }}
+					</mat-panel-title>
+					<mat-panel-description>
+						{{ 'hobbies.manga.description' | translate }}
+					</mat-panel-description>
+				</mat-expansion-panel-header>
+				<app-cover-flow [items]="manga" itemSize="98px" shadowColor="var(--shadow)"></app-cover-flow>
+				<mat-action-row>
+					<a mat-button [href]="kitsuProfileLink">{{ 'common.more' | translate }}</a>
+				</mat-action-row>
+			</mat-expansion-panel>
+
+			<mat-expansion-panel>
+				<mat-expansion-panel-header>
+					<mat-panel-title>
+						<mat-icon svgIcon="movie-roll"></mat-icon>
+						{{ 'hobbies.movies.title' | translate }}
+					</mat-panel-title>
+					<mat-panel-description>
+						{{ 'hobbies.movies.description' | translate }}
+					</mat-panel-description>
+				</mat-expansion-panel-header>
+				<app-cover-flow [items]="movies" itemSize="98px" shadowColor="var(--shadow)"></app-cover-flow>
+				<mat-action-row>
+					<a mat-button [href]="traktProfileLink">{{ 'common.more' | translate }}</a>
+				</mat-action-row>
+			</mat-expansion-panel>
+
+			<mat-expansion-panel>
+				<mat-expansion-panel-header>
+					<mat-panel-title>
+						<mat-icon svgIcon="television-classic"></mat-icon>
+						{{ 'hobbies.shows.title' | translate }}
+					</mat-panel-title>
+					<mat-panel-description>
+						{{ 'hobbies.shows.description' | translate }}
+					</mat-panel-description>
+				</mat-expansion-panel-header>
+				<app-cover-flow [items]="shows" itemSize="98px" shadowColor="var(--shadow)"></app-cover-flow>
+				<mat-action-row>
+					<a mat-button [href]="traktProfileLink">{{ 'common.more' | translate }}</a>
+				</mat-action-row>
+			</mat-expansion-panel>
+
+		</mat-accordion>
+	</mat-card-content>
+</mat-card>

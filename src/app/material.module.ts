@@ -13,6 +13,10 @@ import { MatTableModule } from "@angular/material/table";
 import { MatListModule } from "@angular/material/list";
 import { MatBadgeModule } from "@angular/material/badge";
 import { MatExpansionModule } from "@angular/material/expansion";
+import { MatSidenavModule } from "@angular/material/sidenav";
+import { PlatformModule } from "@angular/cdk/platform";
+
+import { NgxSkeletonLoaderModule } from "ngx-skeleton-loader";
 
 
 @NgModule({
@@ -30,6 +34,9 @@ import { MatExpansionModule } from "@angular/material/expansion";
 		MatListModule,
 		MatBadgeModule,
 		MatExpansionModule,
+		MatSidenavModule,
+		PlatformModule,
+		NgxSkeletonLoaderModule,
 	],
 	exports: [
 		MatToolbarModule,
@@ -43,6 +50,9 @@ import { MatExpansionModule } from "@angular/material/expansion";
 		MatListModule,
 		MatBadgeModule,
 		MatExpansionModule,
+		MatSidenavModule,
+		PlatformModule,
+		NgxSkeletonLoaderModule,
 	],
 })
 export class MaterialModule {

@@ -1,0 +1,18 @@
+.content {
+	max-width: calc(min(80%, 800px));
+	padding: 20px;
+	border-radius: 4px;
+	margin: 65px auto;
+	background-color: #fdfdfdbb;
+
+	img {
+		display: block;
+		margin: auto;
+	}
+
+	.mat-icon-button {
+		display: block;
+		margin: auto;
+		color: var(--text);
+	}
+}
