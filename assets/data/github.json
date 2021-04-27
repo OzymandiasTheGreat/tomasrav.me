@@ -10,7 +10,8 @@
     "hifinder",
     "Joy2DroidX",
     "Joy2DroidX-server",
-    "psd-cli"
+    "psd-cli",
+    "savage"
   ],
   "libs": [
     "klembord",
@@ -20,8 +21,6 @@
     "gris",
     "opds-parser2",
     "nativescript-virtual-joystick",
-    "posthtml-markdown",
-    "rollup-plugin-entry-glob",
-    "rollup-plugin-posthtml-multi"
+    "liepa-tts"
   ]
 }

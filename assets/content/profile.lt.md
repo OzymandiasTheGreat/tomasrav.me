@@ -1,5 +1,5 @@
-Aš esu laisvai samdomas programuotojas su daugiau nei 5
-metų patirtimi, retkarčiais sistemų administratorius (Linux), taip pat teko dirbti vertėju iš/į Anglų/Lietuvių kalbų.
+Aš esu laisvai samdomas programuotojas su daugiau nei 6
+metų patirtimi, retkarčiais (nenoriomis) sistemų administratorius (Linux), taip pat teko dirbti vertėju iš/į Anglų/Lietuvių kalbų.
 
 Mano interesai pagrinde sukasi apie Atvirą kodą (Open Source) ir Linux operacinę sistemą, vis dėl to turiu patirties ir Windows pasaulyje, tokios kaip darbas su Windows C API.
 

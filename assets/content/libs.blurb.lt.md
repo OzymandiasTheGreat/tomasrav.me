@@ -1,5 +1,4 @@
 Programinės bibliotekos kurias parašiau.
-Jomis naudojuosi gan dažnai asmeniškai, taigi kūrimas vyksta kiek greičiau.
-Vis dėl to, pasvarstykite galimybę paaukoti, jei jos jums naudingos.
-
-Vėl gi, pull requests yra visada laukiamos!
+Jas kuriu ir atnaujinu pagal poreikį mano asmeniniams projektams.
+Jei planuoji jas naudoti, negailėk atsiliepimų.
+Tai sutaupys mums abiems laiko ateityje.
