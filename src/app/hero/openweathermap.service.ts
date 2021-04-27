@@ -61,7 +61,7 @@ export class OpenWeatherMapService {
 	constructor() { }
 
 	public getWeather(location: { lat: number, lon: number }): Promise<WeatherData> {
-		return fetch(`https://pure-tor-21982.herokuapp.com/owm?lat=${location.lat}&lon=${location.lon}`)
+		return fetch(`https://api-ozymandias-tk.herokuapp.com/owm?lat=${location.lat}&lon=${location.lon}`)
 			.then((response) => {
 				if (response.ok) {
 					return response.json();

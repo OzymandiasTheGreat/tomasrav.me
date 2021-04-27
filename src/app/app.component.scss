@@ -29,10 +29,12 @@
 			}
 		}
 
-		h1 {
+		h1 a {
 			font-family: 'Oswald', sans-serif;
 			font-weight: 500;
 			font-size: 28px;
+			color: var(--text);
+			text-decoration: none;
 			padding: 0 15px;
 			margin: 0;
 			margin-bottom: 20px;
@@ -97,6 +99,31 @@
 		.toggle.opened {
 			left: calc(30vw + 5px);
 			transform: rotate(0);
+		}
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.mat-sidenav-container {
+		.mat-sidenav {
+			max-width: 85vw;
+		}
+
+		.mat-sidenav-content {
+			.toggle.opened {
+				left: calc(85vw + 5px);
+			}
+		}
+
+	}
+}
+
+@media print {
+	.mat-sidenav-container {
+		.mat-sidenav-content {
+			.toggle {
+				display: none;
+			}
 		}
 	}
 }

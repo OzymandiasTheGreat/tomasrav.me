@@ -3,7 +3,7 @@ import { Injectable } from "@angular/core";
 import { randInt } from "../../core/functions/random";
 
 
-const ENDPOINT = "https://pure-tor-21982.herokuapp.com/kitsu/library-entries";
+const ENDPOINT = "https://api-ozymandias-tk.herokuapp.com/kitsu/library-entries";
 
 
 export type Kind = "manga" | "anime";

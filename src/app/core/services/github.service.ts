@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Observable, from } from "rxjs";
 
-const GRAPHQL = "https://pure-tor-21982.herokuapp.com/gh";
+const GRAPHQL = "https://api-ozymandias-tk.herokuapp.com/gh";
 
 
 export interface Repository {
@@ -25,6 +25,9 @@ export interface GraphRepository {
 		entries: Array<{ name: string }>,
 	};
 	readme: {
+		text: string,
+	};
+	rst: {
 		text: string,
 	};
 }
@@ -81,6 +84,11 @@ export class GithubService {
 							text
 						}
 					}
+					rst: object(expression: "master:README.rst") {
+						... on Blob {
+							text
+						}
+					}
 				}
 			`);
 		}
@@ -114,7 +122,7 @@ export class GithubService {
 					updated: new Date(d.updatedAt),
 					stars: d.stargazers.totalCount,
 					screenshots: d.screenshots && d.screenshots.entries.map((e) => this.getURI(user, d.name, `screenshots/${e.name}`)),
-					readme: d.readme && d.readme.text,
+					readme: d.readme && d.readme.text || d.rst && d.rst.text,
 				};
 			}
 			return repositories;

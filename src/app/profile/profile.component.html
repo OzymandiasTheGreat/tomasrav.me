@@ -1,78 +1,76 @@
-<mat-card class="card" >
+<mat-card >
 	<mat-card-header>
 		<mat-icon mat-card-avatar svgIcon="arrow-left" [routerLink]="['/']" ></mat-icon>
 		<mat-card-title translate>profile.me</mat-card-title>
 	</mat-card-header>
 	<mat-card-content >
-		<div class="profile">
-			<div class="contact-box">
-				<div class="pic-wrapper">
-					<img [src]="picURI" [alt]="'profile.me' | translate" class="profile-pic" >
-				</div>
-				<fieldset>
-					<legend translate>Contact Me!</legend>
-					<a mat-icon-button href="https://github.com/OzymandiasTheGreat"><mat-icon svgIcon="github" matTooltip="GitHub"></mat-icon></a>
-					<a mat-icon-button href="mailto:tomas.rav@gmail.com"><mat-icon svgIcon="gmail" matTooltip="Email"></mat-icon></a>
-					<a mat-icon-button href="https://wa.me/37064020967"><mat-icon svgIcon="whatsapp" matTooltip="WhatsApp"></mat-icon></a>
-					<a mat-icon-button href="https://www.messenger.com/t/OzymandiasTheGreat"><mat-icon svgIcon="facebook-messenger" matTooltip="Facebook Messenger"></mat-icon></a>
-					<a mat-icon-button (click)="print()" ><mat-icon svgIcon="printer" ></mat-icon></a>
-				</fieldset>
+		<div class="contact-box">
+			<div class="pic-wrapper">
+				<img [src]="picURI" [alt]="'profile.me' | translate" class="profile-pic" >
 			</div>
-			<markdown [src]="profileURI" (error)="log($event)" ></markdown>
-			<h3>Education</h3>
-			<div class="table-wrapper">
-				<table mat-table [dataSource]="education">
-					<ng-container matColumnDef="institution">
-						<th mat-header-cell *matHeaderCellDef> {{ 'Institution' | translate }} </th>
-						<td mat-cell *matCellDef="let element"><a [href]="element.uri">{{ element.institution | translate }}</a></td>
-					</ng-container>
-					<ng-container matColumnDef="degree">
-						<th mat-header-cell *matHeaderCellDef> {{ 'Degree' | translate }} </th>
-						<td mat-cell *matCellDef="let element">{{ element.degree | translate }}</td>
-					</ng-container>
-					<ng-container matColumnDef="started">
-						<th mat-header-cell *matHeaderCellDef> {{ 'Started' | translate }} </th>
-						<td mat-cell *matCellDef="let element">{{ element.started }}</td>
-					</ng-container>
-					<ng-container matColumnDef="ended">
-						<th mat-header-cell *matHeaderCellDef> {{ 'Ended' | translate }} </th>
-						<td mat-cell *matCellDef="let element">{{ element.ended }}</td>
-					</ng-container>
-					<ng-container matColumnDef="status">
-						<th mat-header-cell *matHeaderCellDef> {{ 'Status' | translate }} </th>
-						<td mat-cell *matCellDef="let element">{{ element.status | translate }}</td>
-					</ng-container>
-					<ng-container matColumnDef="comment">
-						<th mat-header-cell *matHeaderCellDef> {{ 'Comment' | translate }} </th>
-						<td mat-cell *matCellDef="let element">{{ element.comment }}</td>
-					</ng-container>
-					<tr mat-header-row *matHeaderRowDef="educationCols"></tr>
-					<tr mat-row *matRowDef="let row; columns: educationCols;"></tr>
-				</table>
-			</div>
-			<h3>Employment History</h3>
-			<div class="table-wrapper">
-				<table mat-table [dataSource]="employment">
-					<ng-container matColumnDef="company">
-						<th mat-header-cell *matHeaderCellDef> {{ 'Company' | translate }} </th>
-						<td mat-cell *matCellDef="let element"><a [href]="element.uri">{{ element.company | translate }}</a></td>
-					</ng-container>
-					<ng-container matColumnDef="started">
-						<th mat-header-cell *matHeaderCellDef> {{ 'Started' | translate }} </th>
-						<td mat-cell *matCellDef="let element">{{ element.started }}</td>
-					</ng-container>
-					<ng-container matColumnDef="ended">
-						<th mat-header-cell *matHeaderCellDef> {{ 'Ended' | translate }} </th>
-						<td mat-cell *matCellDef="let element">{{ element.ended }}</td>
-					</ng-container>
-					<ng-container matColumnDef="position">
-						<th mat-header-cell *matHeaderCellDef> {{ 'Position' | translate }} </th>
-						<td mat-cell *matCellDef="let element">{{ element.position }}</td>
-					</ng-container>
-					<tr mat-header-row *matHeaderRowDef="employmentCols"></tr>
-					<tr mat-row *matRowDef="let row; columns: employmentCols;"></tr>
-				</table>
-			</div>
+			<fieldset>
+				<legend translate>Contact Me!</legend>
+				<a mat-icon-button href="https://github.com/OzymandiasTheGreat"><mat-icon svgIcon="github" matTooltip="GitHub"></mat-icon></a>
+				<a mat-icon-button href="mailto:tomas.rav@gmail.com"><mat-icon svgIcon="gmail" matTooltip="Email"></mat-icon></a>
+				<a mat-icon-button href="https://wa.me/37064020967"><mat-icon svgIcon="whatsapp" matTooltip="WhatsApp"></mat-icon></a>
+				<a mat-icon-button href="https://www.messenger.com/t/OzymandiasTheGreat"><mat-icon svgIcon="facebook-messenger" matTooltip="Facebook Messenger"></mat-icon></a>
+				<a mat-icon-button (click)="print()" ><mat-icon svgIcon="printer" ></mat-icon></a>
+			</fieldset>
+		</div>
+		<markdown [src]="profileURI" ></markdown>
+		<h3>Education</h3>
+		<div class="table-wrapper">
+			<table mat-table [dataSource]="education">
+				<ng-container matColumnDef="institution">
+					<th mat-header-cell *matHeaderCellDef> {{ 'Institution' | translate }} </th>
+					<td mat-cell *matCellDef="let element"><a [href]="element.uri">{{ element.institution | translate }}</a></td>
+				</ng-container>
+				<ng-container matColumnDef="degree">
+					<th mat-header-cell *matHeaderCellDef> {{ 'Degree' | translate }} </th>
+					<td mat-cell *matCellDef="let element">{{ element.degree | translate }}</td>
+				</ng-container>
+				<ng-container matColumnDef="started">
+					<th mat-header-cell *matHeaderCellDef> {{ 'Started' | translate }} </th>
+					<td mat-cell *matCellDef="let element">{{ element.started }}</td>
+				</ng-container>
+				<ng-container matColumnDef="ended">
+					<th mat-header-cell *matHeaderCellDef> {{ 'Ended' | translate }} </th>
+					<td mat-cell *matCellDef="let element">{{ element.ended }}</td>
+				</ng-container>
+				<ng-container matColumnDef="status">
+					<th mat-header-cell *matHeaderCellDef> {{ 'Status' | translate }} </th>
+					<td mat-cell *matCellDef="let element">{{ element.status | translate }}</td>
+				</ng-container>
+				<ng-container matColumnDef="comment">
+					<th mat-header-cell *matHeaderCellDef> {{ 'Comment' | translate }} </th>
+					<td mat-cell *matCellDef="let element">{{ element.comment }}</td>
+				</ng-container>
+				<tr mat-header-row *matHeaderRowDef="educationCols"></tr>
+				<tr mat-row *matRowDef="let row; columns: educationCols;"></tr>
+			</table>
+		</div>
+		<h3>Employment History</h3>
+		<div class="table-wrapper">
+			<table mat-table [dataSource]="employment">
+				<ng-container matColumnDef="company">
+					<th mat-header-cell *matHeaderCellDef> {{ 'Company' | translate }} </th>
+					<td mat-cell *matCellDef="let element"><a [href]="element.uri">{{ element.company | translate }}</a></td>
+				</ng-container>
+				<ng-container matColumnDef="started">
+					<th mat-header-cell *matHeaderCellDef> {{ 'Started' | translate }} </th>
+					<td mat-cell *matCellDef="let element">{{ element.started }}</td>
+				</ng-container>
+				<ng-container matColumnDef="ended">
+					<th mat-header-cell *matHeaderCellDef> {{ 'Ended' | translate }} </th>
+					<td mat-cell *matCellDef="let element">{{ element.ended }}</td>
+				</ng-container>
+				<ng-container matColumnDef="position">
+					<th mat-header-cell *matHeaderCellDef> {{ 'Position' | translate }} </th>
+					<td mat-cell *matCellDef="let element">{{ element.position }}</td>
+				</ng-container>
+				<tr mat-header-row *matHeaderRowDef="employmentCols"></tr>
+				<tr mat-row *matRowDef="let row; columns: employmentCols;"></tr>
+			</table>
 		</div>
 	</mat-card-content>
 </mat-card>

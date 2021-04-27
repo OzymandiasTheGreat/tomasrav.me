@@ -1,5 +1,5 @@
-I'm a freelance developer with over 5 years of experience,
-occasionally systems administrator (Linux), and I've also worked as
+I'm a freelance developer with over 6 years of experience,
+occasionally an unwilling systems administrator (Linux), and I've also worked as
 translator for English/Lithuanian.
 
 My interest primarily revolve around Open Source and Linux, however

@@ -54,3 +54,40 @@ html, body {
 .donate {
 	color: #d50000;
 }
+
+.mat-card {
+	markdown h3:first-of-type {
+		margin-top: 95px;
+	}
+
+	h3 {
+		margin: 25px 0;
+	}
+
+	.mat-card-header {
+		font-family: "Oswald", sans-serif;
+		font-weight: 500;
+	}
+}
+
+markdown {
+	* {
+		font-family: "Fira Sans Condensed", sans-serif;
+		font-weight: 300;
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		font-family: "Oswald", sans-serif;
+		font-weight: 500;
+	}
+
+	pre {
+		font-family: "Fira Code", monospace;
+		font-weight: 400;
+		background-color: #f0f0f0;
+	}
+}
+
+.lum-open {
+	z-index: 900;
+}

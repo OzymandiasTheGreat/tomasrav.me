@@ -1,7 +1,5 @@
 Programos kurias sukūriau, kai kurios populiaresnės nei kitos.
-Palaikymas ir klaidų taisymas užima labai daug laiko, tai jei nepavyksta gauti iš to pajamų, kūrimas išliks lėtas.
+Palaikymas ir klaidų taisymas trunka amžinai, bet aš vis tiek pradedu naujus projektus.
+Tai tampa blogu įpročiu.
 
-Aš taip pat turiu nekokį įprotį išbandyt naujus dalykus ir gaminti naujas programas, nors sunkiai randu laiko palaikyti senoms.
-
-Taigi jei randi klaidą, nedvejok - siųsk pull request.
-Sutaupysi mums abiems laiko!
+Vis dėl to, jei radai klaida ar turi atsiliepimų, atidaryk issue Github'e. Aš tuo užsiimsiu (kada nors).

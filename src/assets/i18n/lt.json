@@ -1,14 +1,18 @@
 {
   "common": {
     "about": "Apie Mane",
+    "tech": "Technologijų kampelis",
     "apps": "Programos",
     "libs": "Bibliotekos",
+    "kitchen": "Virtuvės nuotykiai",
     "hobbies": "Hobiai",
     "donate": "Paaukok!",
     "less": "Mažiau",
     "more": "Skaityti Daugiau",
     "search": "Ieškoti...",
-    "tagline": "Sveiki atvykę į mano mažąjį interneto kampelį! Čia galėsite sužinoti viską ką norit (ir nenorit) apie mane."
+    "tagline": "Sveiki atvykę į mano mažąjį interneto kampelį! Čia galėsite sužinoti viską ką norit (ir nenorit) apie mane.",
+    "home": "Pradinis",
+    "404": "Puslapis nerastas"
   },
   "Contact Me!": "Susisiekime!",
   "donate": {
@@ -62,14 +66,10 @@
     "cooking": {
       "title": "Maistas",
       "description": "Mano hobis numeris 1"
-    },
-    "blurb": "Dalykai kuriuos darau ir kuriais mėgaujuosi laisvu laiku. Nors programavimas prasidėjo kaip hobis ir aš vis dar tuo mėgaujuosi, įvairovė yra gerai."
+    }
   },
   "profile": {
-    "me": "Tomas Ravinskas",
-    "about": {
-      "blurb": "Aš esu laisvai samdomas programuotojas su daugiau kaip 5 metų patirtimi, pagrinde su Python ir Javascript, nors daug labiau mėgstu Typescript kur galima ją panaudoti."
-    }
+    "me": "Tomas Ravinskas"
   },
   "Institution": "Institucija",
   "Degree": "Laipsnis",
@@ -78,11 +78,5 @@
   "Status": "Statusas",
   "Comment": "Komentaras",
   "Company": "Įmonė",
-  "Position": "Pareigos",
-  "apps": {
-    "blurb": "Programos kurias sukūriau, kai kurios populeresnės nei kitos. Kūrimas, rašymas ir palaikymas užima daug laiko, taigi jei iš to negaunu pajamų, kūrimas išliks lėtas."
-  },
-  "libs": {
-    "blurb": "Programinės bibliotekos kurias parašiau. Kadangi jas dažnai naudoju asmeniškai, kūrimas kiek greitesnis. Vis dėl to pasvarstykite galimybę paaukoti jei jos jums naudingos."
-  }
+  "Position": "Pareigos"
 }

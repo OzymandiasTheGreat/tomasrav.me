@@ -1,8 +1,15 @@
 .mat-card {
-	margin: 65px auto;
-	height: max-content;
+	font-family: 'Fira Sans Condensed', sans-serif;
+	font-weight: 300;
+	font-size: 20px;
+	width: 80%;
+	max-width: 800px;
+	margin: 25px auto;
+	box-shadow: 1px 1px 3px 1px var(--shadow);
 
 	h3 {
+		font-family: "Oswald", sans-serif;
+		font-weight: 500;
 		height: 1.3rem;
 
 		.mat-badge {

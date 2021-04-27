@@ -233,7 +233,7 @@ export class GoodreadsService {
 	constructor() { }
 
 	public getBooks(userID: string): Promise<Book[]> {
-		return fetch(`https://pure-tor-21982.herokuapp.com/gr?v=2&id=${userID}&shelf=read&sort=random&per_page=13`)
+		return fetch(`https://api-ozymandias-tk.herokuapp.com/gr?v=2&id=${userID}&shelf=read&sort=random&per_page=13`)
 			.then((response) => {
 				if (response.ok) {
 					return response.text();
@@ -280,7 +280,7 @@ export class GoodreadsService {
 	}
 
 	public getComics(userID: string): Promise<Book[]> {
-		return fetch(`https://pure-tor-21982.herokuapp.com/gr?v=2&id=${userID}&shelf=comics&sort=random&per_page=13`)
+		return fetch(`https://api-ozymandias-tk.herokuapp.com/gr?v=2&id=${userID}&shelf=comics&sort=random&per_page=13`)
 		.then((response) => {
 			if (response.ok) {
 				return response.text();

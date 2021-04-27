@@ -1,8 +1,8 @@
 import { Injectable } from "@angular/core";
 
 
-const TRAKT_ENDPOINT = "https://pure-tor-21982.herokuapp.com/trakt";
-const IMG_OMDB_ENDPOINT = "https://pure-tor-21982.herokuapp.com/iomdb";
+const TRAKT_ENDPOINT = "https://api-ozymandias-tk.herokuapp.com/trakt";
+const IMG_OMDB_ENDPOINT = "https://api-ozymandias-tk.herokuapp.com/iomdb";
 
 
 export interface TraktResponse {

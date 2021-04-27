@@ -1,6 +1,12 @@
 .mat-card {
 	height: max-content;
-	margin: 65px auto;
+	font-family: 'Fira Sans Condensed', sans-serif;
+	font-weight: 300;
+	font-size: 20px;
+	width: 80%;
+	max-width: 800px;
+	margin: 25px auto;
+	box-shadow: 1px 1px 3px 1px var(--shadow);
 
 	.blurb {
 		margin: 25px auto;

@@ -1,6 +1,5 @@
 import { Component, OnInit } from "@angular/core";
 
-import { randInt } from "../core/functions/random";
 import { GithubService, Repository } from "../core/services/github.service";
 import data from "../../assets/data/github.json";
 

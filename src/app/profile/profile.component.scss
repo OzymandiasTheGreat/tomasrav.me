@@ -1,9 +1,17 @@
-.card {
-	margin: 65px auto;
-	height: max-content;
-}
+.mat-card {
+	font-family: 'Fira Sans Condensed', sans-serif;
+	font-weight: 300;
+	font-size: 20px;
+	width: 80%;
+	max-width: 800px;
+	margin: 25px auto;
+	box-shadow: 1px 1px 3px 1px var(--shadow);
 
-.profile {
+	.mat-card-title {
+		font-family: "Oswald", sans-serif;
+		font-weight: 500;
+	}
+
 	.contact-box {
 		float: left;
 
@@ -13,7 +21,7 @@
 			padding: 5px;
 			border-radius: 50%;
 			margin: 0.5rem 3.5rem 0.5rem 0.5rem;
-			box-shadow: 0 0 3px 1px var(--shadow);
+			box-shadow: 1px 1px 3px 1px var(--shadow);
 
 			.profile-pic {
 				width: 256px;
@@ -48,21 +56,25 @@
 	}
 }
 
-
 @media print {
-	.card {
-		box-shadow: none;
+	.mat-card {
+		width: 100%;
+		max-width: 100%;
 		margin: 0;
-		overflow: visible;
+		box-sizing: border-box;
 
 		.table-wrapper {
-			width: 100vw;
 			overflow-x: hidden;
-			overflow-y: visible;
-			white-space: normal;
 
-			td:last-of-type {
-				width: 480px;
+			table {
+				width: 100%;
+				min-width: 100%;
+
+				td , th {
+					white-space: normal;
+					word-wrap: break-word;
+					max-width: 20%;
+				}
 			}
 		}
 	}

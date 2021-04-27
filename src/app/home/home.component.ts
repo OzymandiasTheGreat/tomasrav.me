@@ -12,8 +12,10 @@ export class HomeComponent implements OnInit {
 	public konami: boolean;
 	public lang: string;
 	public aboutUri: string;
+	public techUri: string;
 	public appsUri: string;
 	public libsUri: string;
+	public kitchenUri: string;
 	public hobbiesUri: string;
 
 	constructor(
@@ -22,8 +24,10 @@ export class HomeComponent implements OnInit {
 	) {
 		this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
 			this.aboutUri = `/assets/content/profile.blurb.${event.lang}.md`;
+			this.techUri = `/assets/content/tech.blurb.${event.lang}.md`;
 			this.appsUri = `/assets/content/apps.blurb.${event.lang}.md`;
 			this.libsUri = `/assets/content/libs.blurb.${event.lang}.md`;
+			this.kitchenUri = `/assets/content/kitchen.blurb.${event.lang}.md`;
 			this.hobbiesUri = `/assets/content/hobbies.blurb.${event.lang}.md`;
 		});
 	}
@@ -31,14 +35,22 @@ export class HomeComponent implements OnInit {
 	public ngOnInit(): void {
 		this.lang = window.localStorage.getItem("lang") || this.translate.getBrowserLang();
 		this.aboutUri = `/assets/content/profile.blurb.${this.lang}.md`;
+		this.techUri = `/assets/content/tech.blurb.${this.lang}.md`;
 		this.appsUri = `/assets/content/apps.blurb.${this.lang}.md`;
 		this.libsUri = `/assets/content/libs.blurb.${this.lang}.md`;
+		this.kitchenUri = `/assets/content/kitchen.blurb.${this.lang}.md`;
 		this.hobbiesUri = `/assets/content/hobbies.blurb.${this.lang}.md`;
 	}
 
-	public navigate(uri: string): void {
-		// setTimeout(() => {
-		// 	this.router.navigate(["/", uri]);
-		// }, 750);
+	public navigate(uri: string, external: boolean = false): void {
+		if (external) {
+			setTimeout(() => {
+				window.open(uri, "_self");
+			}, 350);
+		} else {
+			setTimeout(() => {
+				this.router.navigate(["/", uri]);
+			}, 350);
+		}
 	}
 }

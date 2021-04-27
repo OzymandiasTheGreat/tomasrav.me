@@ -57,8 +57,9 @@
 		}
 
 		.title {
+			font-family: "Oswald", sans-serif;
+			font-weight: 500;
 			font-size: 1.3rem;
-			font-weight: bold;
 			padding: 25px 15px 5px;
 
 			a {
@@ -79,12 +80,16 @@
 		}
 
 		.subtitle {
+			font-family: "Fira Sans Condensed", sans-serif;
+			font-weight: 300;
 			font-size: 0.75rem;
 			opacity: 0.75;
 			padding: 0 15px;
 		}
 
 		.description {
+			font-family: "Fira Sans Condensed", sans-serif;
+			font-weight: 300;
 			font-size: 0.9rem;
 			opacity: 0.9;
 			padding: 10px 15px;

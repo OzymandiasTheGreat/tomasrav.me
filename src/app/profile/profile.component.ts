@@ -37,8 +37,4 @@ export class ProfileComponent implements OnInit {
 	public print(): void {
 		window.print();
 	}
-
-	public log(err: any): void {
-		console.error(err);
-	}
 }

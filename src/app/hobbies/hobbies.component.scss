@@ -1,11 +1,25 @@
-.accordion {
-	.mat-expansion-panel-header-title {
-		flex-basis: 0;
-		justify-content: flex-start;
-		align-items: center;
-	}
+.mat-card {
+	font-family: 'Fira Sans Condensed', sans-serif;
+	font-weight: 300;
+	font-size: 20px;
+	width: 80%;
+	max-width: 800px;
+	margin: 25px auto;
+	box-shadow: 1px 1px 3px 1px var(--shadow);
 
-	.mat-expansion-panel-header-description {
-		flex-basis: 0;
+	.mat-accordion {
+		.mat-expansion-panel-header-title {
+			font-family: 'Fira Sans Condensed', sans-serif;
+			font-weight: 300;
+			flex-basis: 0;
+			justify-content: flex-start;
+			align-items: center;
+		}
+
+		.mat-expansion-panel-header-description {
+			font-family: 'Fira Sans Condensed', sans-serif;
+			font-weight: 300;
+			flex-basis: 0;
+		}
 	}
 }
