@@ -11,5 +11,5 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-  ]
+, "i18n/index.js"  ]
 }

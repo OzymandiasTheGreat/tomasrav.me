@@ -5,5 +5,6 @@
 		".next/": true,
 		".vscode/": true,
 		"node_modules/": true
-	}
+	},
+	"svg.preview.background": "editor"
 }
