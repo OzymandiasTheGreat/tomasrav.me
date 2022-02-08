@@ -4,10 +4,14 @@
 const { withExpo } = require("@expo/next-adapter");
 const withPlugins = require("next-compose-plugins");
 const withRNWeb = require("next-transpile-modules")(["react-native-web"]);
+const withImages = require("next-images");
+const withFonts = require("next-fonts");
 
 
 module.exports = withPlugins([
   withRNWeb,
+  withImages,
+  withFonts,
   [
     withExpo,
     {
