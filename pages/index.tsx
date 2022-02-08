@@ -7,6 +7,7 @@ import {
 	useFonts,
 	FiraSansCondensed_400Regular,
 } from "@expo-google-fonts/dev";
+import useTheme from "./_theme";
 
 export default function App() {
 	const { t } = useTranslation();
@@ -14,12 +15,13 @@ export default function App() {
 	const [enq] = useLanguageQuery("en");
 	const [ltq] = useLanguageQuery("lt");
 
+	const theme = useTheme();
 	useFonts({ fira: FiraSansCondensed_400Regular });
 
 	return (
-		<View style={styles.container}>
+		<View style={[theme.container, styles.container]}>
 			<Link passHref href={{ query: query?.lang === "en" ? ltq : enq }}>
-				<Text style={styles.text}>{t("hi")} 👋</Text>
+				<Text style={[theme.text, styles.text]}>{t("hi")} 👋</Text>
 			</Link>
 		</View>
 	);
@@ -33,6 +35,6 @@ const styles = StyleSheet.create({
 	},
 	text: {
 		fontFamily: "fira",
-		fontSize: 16,
+		fontSize: 20,
 	},
 });
