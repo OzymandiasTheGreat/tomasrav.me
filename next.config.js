@@ -9,14 +9,14 @@ const withFonts = require("next-fonts");
 
 
 module.exports = withPlugins([
-  withRNWeb,
-  withImages,
-  withFonts,
-  [
-    withExpo,
-    {
-      projectRoot: __dirname,
-      webpack5: true,
-    },
-  ],
+	withRNWeb,
+	withImages,
+	withFonts,
+	[
+		withExpo,
+		{
+			projectRoot: __dirname,
+			webpack5: true,
+		},
+	],
 ]);
