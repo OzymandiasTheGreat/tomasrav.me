@@ -1,0 +1,189 @@
+{
+	"bubbles": {
+		"greeting": "*Sveiki!* Mano vardas Tomas ir aš **rašau kodą**.",
+		"location": "Aš kilęs iš Kauno, Lietuvos 🇱🇹, Šiaurinės Europos",
+		"github": {
+			"releases": "Mano leidiniai [Github'e](https://github.com/OzymandiasTheGreat) buvo parsiųsti virš **{{ count }} kartų**.",
+			"stars": "Mano projectai [Github'e](https://github.com/OzymandiasTheGreat) kartu turi virš **{{ count }} žvaigždučių**"
+		},
+		"packages": {
+			"npm": "Mano paketai [npm registre](https://www.npmjs.com/~ozymandiasthegreat) buvo parsiųsti virš **{{ count }} kartų** šį mėnesį.",
+			"pypi": "Mano paketai [PyPI](https://pypi.org/user/OzymandiasTheGreat/) buvo parsiųsti virš **{{ count }} kartų** šį mėnesį."
+		},
+		"weather": {
+			"-10": "**{{ temp }}!** Mes čia baigiam suledėt! ",
+			"-0": "Gana šalta, **{{ temp }}**. Iš namų neišeisiu dar ilgai. ",
+			"10": "Vėsu, **{{ temp }}**, lauk nelysiu, jei nebūtina. ",
+			"20": "**{{ temp }}**, galėtų būti ir šilčiau. ",
+			"25": "**{{ temp }}** - ne per karšta, ne per šalta. ",
+			"+25": "Karšta! **{{ temp }}** ir aš tirpstu... "
+		},
+		"weather-0": {
+			"Unknown": "",
+			"Cloudy": "Ir viskas pilka...",
+			"PartlyCloudy": "Beveik matau saulę! Beveik.",
+			"VeryCloudy": "Per visus debesis jaučias kaip poliarinė naktis...",
+			"Fog": "Už lango dar ir pilka siena.",
+			"HeavyRain": "Taip šlapia už lango.",
+			"HeavyShowers": "Taip šlapia už lango.",
+			"LightRain": "Taip šlapia už lango.",
+			"LightShowers": "Taip šlapia už lango.",
+			"ThunderyHeavyRain": "Taip šlapia už lango.",
+			"ThunderyShowers": "Taip šlapia už lango.",
+			"HeavySnow": "Lauke gražu. Nebent reikia vairuoti.",
+			"HeavySnowShowers": "Lauke gražu. Nebent reikia vairuoti.",
+			"LightSnow": "Lauke gražu. Nebent reikia vairuoti.",
+			"LightSnowShowers": "Lauke gražu. Nebent reikia vairuoti.",
+			"ThunderySnowShowers": "Lauke gražu. Nebent reikia vairuoti.",
+			"LightSleet": "Lietus ir sniegas, man visai nepatinka.",
+			"LightSleetShowers": "Lietus ir sniegas, man visai nepatinka.",
+			"Sunny": "Bent jau sausa."
+		},
+		"weather10": {
+			"Unknown": "",
+			"Cloudy": "Galėtų būti ir šviesiau.",
+			"PartlyCloudy": "Galėtų būti ir šviesiau.",
+			"VeryCloudy": "Galėtų būti ir šviesiau.",
+			"Fog": "Galėtų būti ir šviesiau.",
+			"HeavyRain": "Visa šita drėgmė erzina.",
+			"HeavyShowers": "Visa šita drėgmė erzina.",
+			"LightRain": "Visa šita drėgmė erzina.",
+			"LightShowers": "Visa šita drėgmė erzina.",
+			"ThunderyHeavyRain": "Visa šita drėgmė erzina.",
+			"ThunderyShowers": "Visa šita drėgmė erzina.",
+			"HeavySnow": "Sniegas būtų gražus, bet tuoj ištirps.",
+			"HeavySnowShowers": "Sniegas būtų gražus, bet tuoj ištirps.",
+			"LightSnow": "Sniegas būtų gražus, bet tuoj ištirps.",
+			"LightSnowShowers": "Sniegas būtų gražus, bet tuoj ištirps.",
+			"ThunderySnowShowers": "Sniegas būtų gražus, bet tuoj ištirps.",
+			"LightSleet": "Keliai turbūt labai slidūs.",
+			"LightSleetShowers": "Keliai turbūt labai slidūs.",
+			"Sunny": "Lauke *atrodo* šilta, bet aš ne kvailas!"
+		},
+		"weather+25": {
+			"Unknown": "",
+			"Cloudy": "Be saulės, visai pakeliama.",
+			"PartlyCloudy": "Be saulės, visai pakeliama.",
+			"VeryCloudy": "Be saulės, visai pakeliama.",
+			"Fog": "Man visai patinka vasaros rūkas, bet aš nevairuoju.",
+			"HeavyRain": "Gaivu!",
+			"HeavyShowers": "Gaivu!",
+			"LightRain": "Gaivu!",
+			"LightShowers": "Gaivu!",
+			"ThunderyHeavyRain": "Gaivu!",
+			"ThunderyShowers": "Gaivu!",
+			"Sunny": "Bet saulė tai svilina."
+		},
+		"fun": {
+			"intro": "Įdomus faktas: ",
+			"facts": {
+				"cats": "Aš gyvenu su dviem katėm. Viena balta, kita juoda.",
+				"flowers": "Aš auginu rožes ir gvazdikus ant savo palangės.",
+				"cook": "Aš *gaminu*! Mano Magnum Opus tikriausiai yra **Plikyti Piragaičiai**"
+			}
+		},
+		"time": {
+			"0": "**{{ time }}** - Greičiausiai miegu, bet kartais sulaukiu skambučių net ir tokiu laiku",
+			"1": "**{{ time }}** - Miegu",
+			"2": "**{{ time }}** - Miegu",
+			"3": "**{{ time }}** - Miegu",
+			"4": "**{{ time }}** - Labas rytas! Ankstyvas paukštis gauna kirminą! (Bet Lietuviškai neskamba...)",
+			"5": "**{{ time }}** - Laikas kibt į darbus!",
+			"6": "**{{ time }}** - Rytais aš gan produktyvus.",
+			"7": "**{{ time }}** - Kavos pertraukėlė",
+			"8": "**{{ time }}** - Dar galiu padirbėt prieš šeimynai pabundant",
+			"9": "**{{ time }}** - Laikas žadint šeimyną",
+			"10": "**{{ time }}** - Grįžtam prie darbų",
+			"11": "**{{ time }}** - Rašom, rašom kodą",
+			"12": "**{{ time }}** - Kavos pertraukėlė",
+			"13": "**{{ time }}** - Laikas pradėt \"test\"/\"debug\" ritualą",
+			"14": "**{{ time }}** - Na, man reik dar kavos",
+			"15": "**{{ time }}** - Dirbam",
+			"16": "**{{ time }}** - Dirbam",
+			"17": "**{{ time }}** - Ruošiamės užbaigti darbus šiandienai",
+			"18": "**{{ time }}** - Paskutinis puodelis kavos",
+			"19": "**{{ time }}** - Laikas rast pramogų",
+			"20": "**{{ time }}** - Užteks pramogų, pažiūrėkim ar dar kažką galim nudirbt...",
+			"21": "**{{ time }}** - Baigiam darbus iš tikrųjų",
+			"22": "**{{ time }}** - Labos nakties",
+			"23": "**{{ time }}** - Miegu"
+		}
+	},
+	"home": {
+		"resume": {
+			"title": "Reziumė",
+			"blurb": "Skaitykite daugiau apie mane, mano įgūdžius, ir mano patirtį."
+		},
+		"portfolio": {
+			"title": "Portfolio",
+			"blurb": "Peržiūrėkite dalykus, kuriuos aš sukūriau."
+		},
+		"tech": {
+			"title": "Technologijų Kampelis",
+			"blurb": "Mano blog'as visom temom apie technologijas. Mokomoji medžiaga, mano kodo pristatymai, ir gal šiet tiek nuomonių."
+		},
+		"kitchen": {
+			"title": "Virtuvės Nuotykiai",
+			"blurb": "Mano receptų knyga. Ar rašysiu apie nuotykius vykstančius virtuvėje dar nežinau."
+		},
+		"support": {
+			"title": "Palaikykit Mane",
+			"blurb": "Atviras-Kodas mažai moka. Pamatykite kaip galite palaikyti mano tolesnį programinės įrangos kūrimą."
+		}
+	},
+	"resume": {
+		"fullname": "Tomas Ravinskas",
+		"contact": {
+			"whatsapp": {
+				"href": "https://wa.me/+37064020967",
+				"title": "WhatsApp"
+			},
+			"gmail": {
+				"href": "mailto:tomas.rav@gmail.com",
+				"mail": "tomas.rav@gmail.com",
+				"title": "Email"
+			},
+			"fb": {
+				"href": "https://m.me/OzymandiasTheGreat",
+				"title": "Facebook Messenger"
+			},
+			"gh": {
+				"href": "https://github.com/OzymandiasTheGreat",
+				"title": "Github"
+			},
+			"print": "Print Version"
+		},
+		"tech-stack": {
+			"title": "Technologijų Stack'as",
+			"intro": "Tai yra neišsamus sąrašas technologijų kuriomis man teko naudotis praeityje ir su kuriomis norėčiau vėl dirbti:"
+		}
+	},
+	"portfolio": {
+		"month": "mėnesį",
+		"stars": "Github'o Žvaigždutės",
+		"downloads": "Parsiuntimai",
+		"action": "Pamatykite Gyvai!"
+	},
+	"support": {
+		"title": "Būdai mane paremti",
+		"p1": "Aš atlieku didžiąją dalį savo darbo neapmokamai, dėl bendruomenės. Taigi jūsų aukos man yra gyvibiškai svarbios.",
+		"p2": "Jei norite, kad programinė klaida būtų ištaisyta greičiau, ar tiesiog norite parodyti savo palaikymą, galite paaukoti, ir nedvejokite su manim susisiekti.",
+		"patreon": "Tapkite Mecenatu šiandien! Nors šiuo metu nesiūlau atlygio pakopų, tai gali greitai keistis.",
+		"donorbox": "Jei negalite, ar tiesiog nenorite, naudotis Patreon sistema, ar tiesiog norėtumėte atlikti vienkartinę auką, galite naudoti ",
+		"p3": "Visos Jūsų aukos padeda padengti mano pragyvenimo ir darbo išlaidas už laiką kurį skiriu Atviram-Kodui. Ačiū Jums! ❤️"
+	},
+	"footer": {
+		"license": "Turinys prieinamas pagal ",
+		"copyright": "2022 - Tomas Ravinskas",
+		"third-party": "Trečiųjų šalių licenzijos, kreditai, ir paminėjimai."
+	},
+	"credits": {
+		"title": "Kreditai",
+		"byline": " sukurta ",
+		"intro": "Čia yra, atsitiktine tvarka, kreditai kūrinių ir grafikos, naudojamos šiame puslapyje:",
+		"noattr": "Jei pamatėte savo kūrinį naudojamą šiame puslapyje be atributikos, prašau ",
+		"contact": "susisiekti",
+		"tech": "Jeigu verčiau skaitytumėte apie technologijas ir karkasus naudotus kuriant šį puslapį, peržiūrėkite ",
+		"repo": "Github repozitoriją"
+	}
+}

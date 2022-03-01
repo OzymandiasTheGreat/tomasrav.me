@@ -1,3 +1,10 @@
 {
-	"typescript.tsdk": "node_modules/typescript/lib"
+	"files.exclude": {
+		".expo-shared/": true,
+		".expo/": true,
+		".next/": true,
+		".vscode/": true,
+		"node_modules/": true
+	},
+	"svg.preview.background": "editor"
 }

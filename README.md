@@ -1,27 +1,31 @@
-# OzymandiasV2
+# [<img src="./public/favicon.svg" style="width: 48px; height: 48px; vertical-align: middle;" /> tomasrav.me](https://tomasrav.me/)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.4.
+This is my personal website, version 3.0 (I think, I wasn't keeping track).
 
-## Development server
+It's built using:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- [expo](https://github.com/expo/expo)
+	- While I have no intention of distributing my website as an app, I wanted to use react-native for it's CSS-in-JS and other perks, and expo has excellent support for react-native-web
+- [next.js](https://github.com/vercel/next.js)
+	- I wanted to use Gatsby initially, but Gatsby support was broken in expo at the time. Static site generation FTW!
+	- While next has built-in support for localization, it doesn't work with SSG.
+	Thankfully there's [next-export-i18n](https://github.com/martinkr/next-export-i18n)
+- [preact](https://github.com/preactjs/preact)
+	- Why not? Makes bundles over 30kb smaller.
+- [Material Design Icons](https://github.com/templarian/MaterialDesign)
+	- The only constant between various iterations of my website. I really love these.
+- [Graphics from the Noun Project](https://thenounproject.com/)
+- [unified](https://github.com/unifiedjs/unified)
+	- I wanted to keep my content as markdown for easy migration in case I want to rewrite my website yet again. This seemed like the most popular and best-supported parser.
+	- For actually rendering parsed markdown I wrote [react-native-markdown](https://github.com/OzymandiasTheGreat/react-native-markdown)
+- [gray-matter](https://github.com/jonschlinkert/gray-matter)
+- [tsparticles](https://github.com/matteobruni/tsparticles)
+	- Why not have an animated background? Performance could be better though.
+- I also use [dayjs](https://github.com/iamkun/dayjs) as a lightweight alternative to moment.
 
-## Code scaffolding
+The website is intended to serve as CV/Resume/Portfolio for potential recruiters and clients
+(I'm a freelance developer).
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+It also serves as intro point for my various doings around the web.
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Do check it out and if you like it, gimme a ⭐
