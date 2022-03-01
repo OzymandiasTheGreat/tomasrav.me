@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useWindowDimensions, SafeAreaView, View } from "react-native";
+import { useSelectedLanguage } from "next-export-i18n";
 import { randInt } from "../../util/math";
 import { Getter, Position } from "./bubble";
 import { FunBubble } from "./fun";
@@ -25,6 +26,7 @@ const Bubbles: React.FC<{ width: number; height: number }> = ({
 	width,
 	height,
 }) => {
+	const { lang } = useSelectedLanguage();
 	const { width: wWidth, height: wHeight } = useWindowDimensions();
 	const [ready, setReady] = useState(false);
 	const [dimensions, setDimensions] =
@@ -41,6 +43,7 @@ const Bubbles: React.FC<{ width: number; height: number }> = ({
 	}, [wWidth, wHeight, width, height]);
 	useEffect(() => {
 		if (dimensions) {
+			setReady(false);
 			const x = new Array(Math.ceil(dimensions.width / 32))
 				.fill(null)
 				.map((_, i) => i * 32);
@@ -55,7 +58,7 @@ const Bubbles: React.FC<{ width: number; height: number }> = ({
 			AVAILABLE.splice(0, AVAILABLE.length, ...positons);
 			setReady(true);
 		}
-	}, [dimensions]);
+	}, [dimensions, lang]);
 
 	return (
 		<SafeAreaView
