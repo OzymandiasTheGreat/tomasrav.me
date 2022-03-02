@@ -19,7 +19,7 @@ class CustomDocument extends Document {
 						crossOrigin="anonymous"
 					/>
 					<link
-						href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Fira+Sans:wght@900&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap"
+						href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Fira+Sans:ital,wght@1,900&family=Roboto+Serif:ital,wght@0,400;0,700;1,400&display=swap"
 						rel="stylesheet"
 					/>
 				</Head>

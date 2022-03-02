@@ -1,7 +1,7 @@
 import { TextStyle } from "react-native";
 
 export const FONT_HEADING = "Fira Sans";
-export const FONT_BODY = "PT Serif";
+export const FONT_BODY = "Roboto Serif";
 export const FONT_CODE = "Fira Code";
 export const FONT_WEIGHT_H = "900";
 export const FONT_WEIGHT_R = "400";
