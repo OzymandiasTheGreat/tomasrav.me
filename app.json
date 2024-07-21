@@ -7,7 +7,8 @@
     "userInterfaceStyle": "automatic",
     "web": {
       "bundler": "metro",
-      "output": "static"
+      "output": "static",
+      "shortName": "Tomas Ravinskas"
     },
     "plugins": ["expo-router", "expo-localization"],
     "experiments": {
