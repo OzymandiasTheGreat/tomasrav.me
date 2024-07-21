@@ -1,7 +1,7 @@
 import React, { useMemo } from "react"
 import { Image, ScrollView, StyleSheet, Text, View } from "react-native"
 import MDI from "@expo/vector-icons/MaterialCommunityIcons"
-import Markdown from "expo-markdown"
+import Markdown from "exponent-markdown"
 import { Link } from "expo-router"
 import { URIs } from "@/constants/uris"
 import { usePages } from "@/hooks/usePages"
