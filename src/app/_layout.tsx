@@ -12,11 +12,13 @@ import {
 } from "@expo-google-fonts/fira-sans"
 import { useLocales } from "expo-localization"
 import { Link, Slot } from "expo-router"
+import Head from "expo-router/head"
 import { URIs } from "@/constants/uris"
 import { createThemedStylesheet } from "@/hooks/useTheme"
 import { getLocale, useLocale, LocaleContext, UpdateLocaleContext } from "@/hooks/useLocale"
 import { useStrings } from "@/hooks/useStrings"
 import { getColorScheme, ColorSchemeContext, UpdateColorSchemeContext, useTheme } from "@/hooks/useTheme"
+import { useTitle } from "@/hooks/useTitle"
 import { type Lang, Locales } from "@/i18n"
 import cheshire from "@/images/background.svg"
 import { ColorScheme, Language } from "@/lib/storage"
@@ -170,6 +172,8 @@ export default function HomeScreen() {
     setLocale(locale)
   }, [])
 
+  const title = useTitle()
+
   useEffect(() => {
     if (Locales.includes(systemLocale as Lang)) {
       updateLocale(systemLocale as Lang)
@@ -182,6 +186,9 @@ export default function HomeScreen() {
         <UpdateColorSchemeContext.Provider value={updateColorScheme}>
           <LocaleContext.Provider value={locale}>
             <UpdateLocaleContext.Provider value={updateLocale}>
+              <Head>
+                <title>{title}</title>
+              </Head>
               <MainPage colorScheme={colorScheme} updateColorScheme={updateColorScheme} />
             </UpdateLocaleContext.Provider>
           </LocaleContext.Provider>
