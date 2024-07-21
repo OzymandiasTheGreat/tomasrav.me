@@ -1,0 +1,16 @@
+export const URIs = {
+  mymail: "mailto:tomas@tomasrav.me",
+  holepunch: "https://holepunch.to/",
+  kaunasMap: "https://www.google.com/maps/@54.8985,23.9036,13z",
+  keet: "https://keet.io/",
+  emojiKeyboard: "https://github.com/OzymandiasTheGreat/emoji-keyboard",
+  klembord: "https://github.com/OzymandiasTheGreat/klembord",
+  mopidyYTMusic: "https://github.com/OzymandiasTheGreat/mopidy-ytmusic",
+  kitchen: "https://kitchen.tomasrav.me/",
+  tech: "https://tech.tomasrav.me/",
+  github: "https://github.com/OzymandiasTheGreat",
+  githubSponsors: "https://github.com/sponsors/OzymandiasTheGreat",
+  patreon: "https://www.patreon.com/ozymandias",
+  donorbox: "https://donorbox.org/tomasrav-open-source-development",
+  cc: "https://creativecommons.org/licenses/by/4.0/",
+}

@@ -1,5 +1,6 @@
 // Learn more https://docs.expo.io/guides/customizing-metro
 const { getDefaultConfig } = require("expo/metro-config")
+const exclusionList = require("metro-config/src/defaults/exclusionList")
 const path = require("path")
 
 const expoMarkdown = "expo-markdown"
@@ -22,5 +23,6 @@ config.resolver.nodeModulesPaths = [
   path.resolve(workspaceRoot, "node_modules"),
   path.resolve(expoMarkdownPath, "node_modules")
 ]
+config.resolver.assetExts = [...config.resolver.assetExts, "md"]
 
 module.exports = config

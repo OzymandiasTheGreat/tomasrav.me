@@ -1,0 +1,22 @@
+{
+  "hello_there": "Hello, there!",
+  "my_name": "My name is",
+  "me": "Tomas Ravinskas",
+  "i_make": "and I make software.",
+  "mostly_mobile": "Mostly mobile apps, occasionally desktop applications, sometimes software libraries.",
+  "location": "Kaunas, Lithuania, Northern Europe",
+  "about": "About me",
+  "showcase": "Showcase",
+  "getKeet": "Get Keet",
+  "goToGithub": "Go to project page on Github",
+  "tech": "Technology Blog",
+  "kitchen": "Food Blog",
+  "support": "Support",
+  "githubSponsors": "Github Sponsors",
+  "patreon": "Patreon",
+  "donorbox": "DonorBox",
+  "donateOn": "Donate on",
+  "copyright": "2024 - Tomas Ravinskas",
+  "license": "CC-BY 4.0",
+  "droids": "These are not the droids you're looking for..."
+}
