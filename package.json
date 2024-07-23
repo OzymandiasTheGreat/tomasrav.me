@@ -4,7 +4,7 @@
   "main": "expo-router/entry",
   "version": "4.0.1",
   "scripts": {
-    "start": "watchman watch-del .. && expo start --clear",
+    "start": "watchman watch-del . && expo start --clear",
     "clean": "rm -rf .expo/ dist/ node_modules/ yarn.lock",
     "export": "expo export -p web",
     "deploy": "gh-pages -t -d dist --tag $npm_package_version --cname \"tomasrav.me\"",
