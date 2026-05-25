@@ -1,0 +1,1 @@
+The client-server model is outdated and fragile. With edge devices getting more powerful everyday we can shift computing from server to client, enabling resilient distributed mesh networks. The future is now and the future is **P2P**!

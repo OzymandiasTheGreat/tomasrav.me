@@ -1,0 +1,18 @@
+{
+  "me": "Tomas Ravinskas",
+  "email": "tomas@tomasrav.me",
+  "github": "OzymandiasTheGreat",
+  "location": "@54.8902269,23.8442056,12z",
+  "sponsor": {
+    "github": {
+      "name": "Github Sponsors",
+      "link": "https://github.com/sponsors/OzymandiasTheGreat"
+    }
+  },
+  "copyright": {
+    "year": "2026",
+    "license": "CC BY 4.0",
+    "link": "https://creativecommons.org/licenses/by/4.0/",
+    "icons": ["copyright", "account-circle-outline"]
+  }
+}

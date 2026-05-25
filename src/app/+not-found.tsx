@@ -1,53 +1,108 @@
-import { Image, StyleSheet, Text, View } from "react-native"
-import MDI from "@expo/vector-icons/MaterialCommunityIcons"
-import { Link } from "expo-router"
-import { useStrings } from "@/hooks/useStrings"
-import { createThemedStylesheet, useTheme } from "@/hooks/useTheme"
+import { Image } from "expo-image"
+import { Link, useFocusEffect } from "expo-router"
+import { StyleSheet, Text, View, useWindowDimensions } from "react-native"
+import Animated, {
+  Easing,
+  FadeInUp,
+  interpolate,
+  useAnimatedStyle,
+  useSharedValue,
+  withRepeat,
+  withTiming,
+} from "react-native-reanimated"
 
-export default function NotFoundScreen() {
-  const theme = useTheme()
-  const styles = useStyle()
-  const strings = useStrings()
+import { useMainStrings } from "@/hooks/use-strings"
+import { createThemedStylesheet } from "@/hooks/use-theme"
+
+const DROID_WIDTH = 256
+
+const AnimatedImage = Animated.createAnimatedComponent(Image)
+
+export default function NotFound({ home }: { home?: string } = {}) {
+  const strings = useMainStrings()["notFound"]
+  const styles = useStyles()
+  const { width } = useWindowDimensions()
+  const bounce = useSharedValue(0)
+  const position = useSharedValue(0)
+  const animatedStyle = useAnimatedStyle(() => ({
+    transform: [
+      {
+        translateX: interpolate(position.value, [0, 1], [0 - DROID_WIDTH, width + DROID_WIDTH]),
+      },
+      {
+        translateY: bounce.value,
+      },
+    ],
+  }))
+
+  useFocusEffect(() => {
+    bounce.value = withRepeat(withTiming(3, { duration: 150, easing: Easing.bounce }), -1, true)
+    position.value = withTiming(1, { duration: 7_000, easing: Easing.inOut(Easing.linear) })
+  })
+
   return (
-    <View style={styles.root}>
-      <View style={styles.wrapper}>
-        <Text style={styles.text}>{strings.droids}</Text>
-        <Image source={{ uri: "/images/r2d2.svg", width: 256, height: 256 }} resizeMode="contain" style={styles.image} />
-      </View>
-      <Link href="/" style={styles.close}>
-        <MDI name="close" size={32} color={theme.colors.text} />
-      </Link>
+    <View style={styles.container}>
+      <AnimatedImage
+        source={require("@/assets/images/r2d2.svg")}
+        style={[styles.droid, animatedStyle]}
+      />
+      <Animated.View entering={FadeInUp.duration(750).delay(2_750)} style={styles.quote}>
+        <Text style={styles.quoteText}>“{strings.quote}”</Text>
+        <Text style={styles.quoteAttribution}>— {strings.attribution}</Text>
+        <Link href={(home ?? "/") as any} replace style={styles.quoteLink}>
+          {strings.go_home}
+        </Link>
+      </Animated.View>
     </View>
   )
 }
 
-const useStyle = createThemedStylesheet((theme) =>
+const useStyles = createThemedStylesheet((theme, portrait) =>
   StyleSheet.create({
-    root: {
+    container: {
+      backgroundColor: "#b1875c",
+      backgroundImage: "url(/dunes.svg)",
+      backgroundSize: "512px 320px",
+      backgroundPosition: "-128px",
       flex: 1,
       alignItems: "center",
       justifyContent: "center",
+      overflow: "hidden",
     },
-    close: {
-      position: "absolute",
-      top: theme.spacing.small,
-      right: theme.spacing.small,
+    droid: {
+      alignSelf: "flex-start",
+      width: DROID_WIDTH,
+      height: DROID_WIDTH,
     },
-    wrapper: {
-      backgroundColor: theme.colors.shadowInverted,
-      borderRadius: 13,
-      padding: theme.spacing.large,
+    quote: {
+      backgroundColor: theme.colors.card + "66",
+      alignItems: "center",
+      padding: 16,
+      borderRadius: 16,
+      marginTop: 32,
+      marginHorizontal: 16,
+      gap: 16,
     },
-    text: {
+    quoteText: {
+      ...theme.fonts.prose.italic,
       color: theme.colors.text,
-      fontFamily: theme.fonts.regular,
-      fontSize: 22,
-      fontWeight: "bold",
-      marginBottom: theme.spacing.large,
+      fontSize: portrait ? 28 : 32,
+      fontStyle: "italic",
+      textAlign: "center",
     },
-    image: {
-      alignSelf: "center",
-      opacity: 0.75,
+    quoteAttribution: {
+      ...theme.fonts.prose.regular,
+      color: theme.colors.text,
+      fontSize: 28,
+      textAlign: "center",
+      alignSelf: "flex-end",
+    },
+    quoteLink: {
+      ...theme.fonts.ui.regular,
+      color: theme.colors.secondary,
+      fontSize: 24,
+      fontWeight: "700",
+      textAlign: "center",
     },
   }),
 )

@@ -2,17 +2,21 @@
   "expo": {
     "name": "tomasrav.me",
     "slug": "tomasrav_me",
-    "version": "4.0.0",
+    "version": "5.0.0",
     "orientation": "landscape",
     "userInterfaceStyle": "automatic",
     "web": {
-      "bundler": "metro",
-      "output": "static",
-      "shortName": "Tomas Ravinskas"
+      "output": "static"
     },
-    "plugins": ["expo-router", "expo-localization"],
+    "plugins": [
+      ["expo-router", { "unstable_useServerDataLoaders": true }],
+      "expo-localization",
+      "expo-image",
+      "expo-font"
+    ],
     "experiments": {
-      "typedRoutes": true
+      "typedRoutes": true,
+      "reactCompiler": true
     }
   }
 }

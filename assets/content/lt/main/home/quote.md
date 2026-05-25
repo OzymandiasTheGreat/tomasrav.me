@@ -1,0 +1,1 @@
+Kliento-serverio modelis yra pasenęs ir trapus. Kadangi periferiniai įrenginiai kasdien tampa vis galingesni, galime perkelti skaičiavimus ir apdorojimus iš serverio į kliento pusę, taip sukurdami atsparius paskirstytus tinklus. Ateitis yra dabar, ir ateitis yra **P2P**!

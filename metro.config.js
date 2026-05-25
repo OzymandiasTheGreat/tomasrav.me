@@ -1,11 +1,25 @@
-// Learn more https://docs.expo.io/guides/customizing-metro
 const { getDefaultConfig } = require("expo/metro-config")
 
-/** @type {import('expo/metro-config').MetroConfig} */
+/**
+ * @type {import("expo/metro-config").MetroConfig}
+ */
 const config = getDefaultConfig(__dirname)
 
-config.resolver.unstable_enablePackageExports = true
-config.resolver.unstable_enableSymlinks = true
-config.resolver.assetExts = [...config.resolver.assetExts, "md"]
+const assetExts = [
+  ...config.resolver.assetExts.filter((ext) => ext !== "md" && ext !== "txt"),
+  "svg",
+]
+const sourceExts = [...config.resolver.sourceExts, "md", "txt"]
 
-module.exports = config
+module.exports = {
+  ...config,
+  transformer: {
+    ...config.transformer,
+    babelTransformerPath: require.resolve("./metro.transformer.js"),
+  },
+  resolver: {
+    ...config.resolver,
+    assetExts,
+    sourceExts,
+  },
+}

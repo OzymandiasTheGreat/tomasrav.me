@@ -1,0 +1,54 @@
+{
+  "content": [
+    {
+      "github": "OzymandiasTheGreat/tauri-plugin-bare-kit",
+      "npm": "tauri-plugin-bare-kit-api",
+      "crate": "tauri-plugin-bare-kit"
+    },
+    {
+      "github": "OzymandiasTheGreat/emoji-keyboard"
+    },
+    {
+      "github": "OzymandiasTheGreat/mopidy-ytmusic",
+      "pypi": "mopidy-ytmusic"
+    },
+    {
+      "github": "OzymandiasTheGreat/klembord",
+      "pypi": "klembord"
+    },
+    {
+      "github": "OzymandiasTheGreat/supafetch",
+      "npm": "@ozymandiasthegreat/supafetch"
+    },
+    {
+      "github": "OzymandiasTheGreat/aniren",
+      "npm": "aniren"
+    }
+  ],
+  "endpoint": {
+    "github": {
+      "uri": "https://api.github.com/repos/<SLUG>",
+      "slug": "<SLUG>",
+      "headers": {
+        "Accept": "application/vnd.github+json",
+        "X-GitHub-Api-Version": "2026-03-10"
+      }
+    },
+    "npm": {
+      "uri": "https://api.npmjs.org/downloads/point/last-month/<PACKAGE>",
+      "package": "<PACKAGE>"
+    },
+    "crates": {
+      "uri": "https://crates.io/api/v1/crates/<CRATE>/downloads",
+      "crate": "<CRATE>"
+    },
+    "pypi": {
+      "uri": "https://shields.io/pypi/dm/<PACKAGE>.json",
+      "package": "<PACKAGE>",
+      "headers": {
+        "Accept": "application/json"
+      },
+      "regex": "^(\\d+\\.\\d+)([kMB])\\/month$"
+    }
+  }
+}
