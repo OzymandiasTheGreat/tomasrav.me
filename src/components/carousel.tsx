@@ -21,7 +21,7 @@ import Animated, {
 } from "react-native-reanimated"
 
 import API from "@/assets/content/showcase.json"
-import { useMainStrings } from "@/hooks/use-strings"
+import { useHomeStrings } from "@/hooks/use-content"
 import { createThemedStylesheet } from "@/hooks/use-theme"
 
 const DUPLICATE_ITEMS = 3
@@ -77,7 +77,7 @@ const CarouselItem: React.FC<{
   index: number
   offset: SharedValue<number>
 }> = ({ item, index, width, offset }) => {
-  const strings = useMainStrings()["home"]
+  const strings = useHomeStrings()
   const styles = useStyles()
   const { width: windowWidth, height: windowHeight, scale } = useWindowDimensions()
   const contentWidth = useMemo(() => {
@@ -142,11 +142,19 @@ const CarouselItem: React.FC<{
         ) : (
           <>
             <Text style={styles.itemDescription}>{githubResponse?.description}</Text>
-            <Link href={`https://github.com/${item.github}`} style={styles.itemRepository}>
+            <Link
+              href={`https://github.com/${item.github}`}
+              target="_blank"
+              style={styles.itemRepository}
+            >
               {`https://github.com/${item.github}`}
             </Link>
             <View style={styles.itemStatsContainer}>
-              <Link href={`https://github.com/${item.github}`} style={styles.itemStatsLink}>
+              <Link
+                href={`https://github.com/${item.github}`}
+                target="_blank"
+                style={styles.itemStatsLink}
+              >
                 <MDI
                   name="github"
                   size={24}
@@ -159,6 +167,7 @@ const CarouselItem: React.FC<{
               {npmResponse && (
                 <Link
                   href={`https://npmjs.com/package/${item.npm}`}
+                  target="_blank"
                   style={styles.itemStatsLink}
                 >
                   <MDI
@@ -174,6 +183,7 @@ const CarouselItem: React.FC<{
               {cratesResponse && (
                 <Link
                   href={`https://crates.io/package/${item.crate}`}
+                  target="_blank"
                   style={styles.itemStatsLink}
                 >
                   <MDI
@@ -189,6 +199,7 @@ const CarouselItem: React.FC<{
               {pypiResponse && (
                 <Link
                   href={`https://pypi.org/package/${item.pypi}`}
+                  target="_blank"
                   style={styles.itemStatsLink}
                 >
                   <MDI
@@ -236,7 +247,7 @@ const CarouselIndicator: React.FC<{
 }
 
 export default function Carousel() {
-  const strings = useMainStrings()["home"]
+  const strings = useHomeStrings()
   const styles = useStyles()
   const flatList = useRef<Animated.FlatList>(null)
   const [visibleIndex, setVisibleIndex] = useState(0)
@@ -433,7 +444,7 @@ const useStyles = createThemedStylesheet((theme, portrait) =>
       color: theme.colors.primary,
     },
     itemDescription: {
-      ...theme.fonts.prose.italic,
+      ...theme.fonts.prose.regular,
       fontSize: 24,
       color: theme.colors.text,
       lineHeight: 32,

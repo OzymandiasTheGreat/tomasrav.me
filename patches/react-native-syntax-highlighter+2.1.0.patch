@@ -1,0 +1,12 @@
+diff --git a/node_modules/react-native-syntax-highlighter/dist/index.js b/node_modules/react-native-syntax-highlighter/dist/index.js
+index 9040688..82b09ce 100644
+--- a/node_modules/react-native-syntax-highlighter/dist/index.js
++++ b/node_modules/react-native-syntax-highlighter/dist/index.js
+@@ -202,7 +202,6 @@ function NativeSyntaxHighlighter(_ref10) {
+     Highlighter,
+     _extends({}, rest, {
+       style: transformedStyle,
+-      horizontal: true,
+       renderer: nativeRenderer({
+         defaultColor: defaultColor,
+         fontFamily: fontFamily,

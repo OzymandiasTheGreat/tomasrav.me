@@ -1,0 +1,93 @@
+diff --git a/node_modules/gray-matter/index.js b/node_modules/gray-matter/index.js
+index 7d49331..a4c0a29 100644
+--- a/node_modules/gray-matter/index.js
++++ b/node_modules/gray-matter/index.js
+@@ -1,6 +1,5 @@
+ 'use strict';
+ 
+-const fs = require('fs');
+ const sections = require('section-matter');
+ const defaults = require('./lib/defaults');
+ const stringify = require('./lib/stringify');
+@@ -162,26 +161,6 @@ matter.stringify = function(file, data, options) {
+   return stringify(file, data, options);
+ };
+ 
+-/**
+- * Synchronously read a file from the file system and parse
+- * front matter. Returns the same object as the [main function](#matter).
+- *
+- * ```js
+- * const file = matter.read('./content/blog-post.md');
+- * ```
+- * @param {String} `filepath` file path of the file to read.
+- * @param {Object} `options` [Options](#options) to pass to gray-matter.
+- * @return {Object} Returns [an object](#returned-object) with `data` and `content`
+- * @api public
+- */
+-
+-matter.read = function(filepath, options) {
+-  const str = fs.readFileSync(filepath, 'utf8');
+-  const file = matter(str, options);
+-  file.path = filepath;
+-  return file;
+-};
+-
+ /**
+  * Returns true if the given `string` has front matter.
+  * @param  {String} `string`
+diff --git a/node_modules/gray-matter/lib/to-file.js b/node_modules/gray-matter/lib/to-file.js
+index 799bb5d..b888275 100644
+--- a/node_modules/gray-matter/lib/to-file.js
++++ b/node_modules/gray-matter/lib/to-file.js
+@@ -25,7 +25,6 @@ module.exports = function(file) {
+   }
+ 
+   // set non-enumerable properties on the file object
+-  utils.define(file, 'orig', utils.toBuffer(file.content));
+   utils.define(file, 'language', file.language || '');
+   utils.define(file, 'matter', file.matter || '');
+   utils.define(file, 'stringify', function(data, options) {
+diff --git a/node_modules/gray-matter/lib/utils.js b/node_modules/gray-matter/lib/utils.js
+index 96e7ce0..410a7d4 100644
+--- a/node_modules/gray-matter/lib/utils.js
++++ b/node_modules/gray-matter/lib/utils.js
+@@ -12,14 +12,6 @@ exports.define = function(obj, key, val) {
+   });
+ };
+ 
+-/**
+- * Returns true if `val` is a buffer
+- */
+-
+-exports.isBuffer = function(val) {
+-  return typeOf(val) === 'buffer';
+-};
+-
+ /**
+  * Returns true if `val` is an object
+  */
+@@ -28,22 +20,13 @@ exports.isObject = function(val) {
+   return typeOf(val) === 'object';
+ };
+ 
+-/**
+- * Cast `input` to a buffer
+- */
+-
+-exports.toBuffer = function(input) {
+-  return typeof input === 'string' ? Buffer.from(input) : input;
+-};
+-
+ /**
+  * Cast `val` to a string.
+  */
+ 
+ exports.toString = function(input) {
+-  if (exports.isBuffer(input)) return stripBom(String(input));
+   if (typeof input !== 'string') {
+-    throw new TypeError('expected input to be a string or buffer');
++    throw new TypeError('expected input to be a string');
+   }
+   return stripBom(input);
+ };

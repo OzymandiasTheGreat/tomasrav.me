@@ -21,8 +21,8 @@ export default function Root({ children }: { children: React.ReactNode }) {
         <ScrollViewStyleReset />
 
         {/* Add any additional <head> elements that you want globally available on web... */}
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+        <link rel="icon" href="/images/favicon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" sizes="180x180" />
       </head>
       <body>{children}</body>
     </html>

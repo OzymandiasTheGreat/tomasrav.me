@@ -1,5 +1,7 @@
+import { type NativeStackHeaderItemProps } from "@react-navigation/native-stack"
 import { Image } from "expo-image"
-import { Link, useFocusEffect } from "expo-router"
+import { Link, Stack, useFocusEffect, usePathname } from "expo-router"
+import { useCallback, useEffect, useState } from "react"
 import { StyleSheet, Text, View, useWindowDimensions } from "react-native"
 import Animated, {
   Easing,
@@ -11,16 +13,63 @@ import Animated, {
   withTiming,
 } from "react-native-reanimated"
 
-import { useMainStrings } from "@/hooks/use-strings"
+import HeaderButton from "@/components/header-button"
+import { useColorScheme, useSetColorScheme } from "@/hooks/use-color-scheme"
+import { useSystemStrings } from "@/hooks/use-content"
+import { useLocale } from "@/hooks/use-locale"
 import { createThemedStylesheet } from "@/hooks/use-theme"
 
 const DROID_WIDTH = 256
 
 const AnimatedImage = Animated.createAnimatedComponent(Image)
 
-export default function NotFound({ home }: { home?: string } = {}) {
-  const strings = useMainStrings()["notFound"]
+export default function NotFound() {
+  const strings = useSystemStrings()
   const styles = useStyles()
+  const [home, setHome] = useState("/")
+  const pathname = usePathname()
+  const [locale, locales, setLocale] = useLocale()
+  const theme = useColorScheme()
+  const setTheme = useSetColorScheme()
+  const headerRight = useCallback(
+    ({ tintColor }: NativeStackHeaderItemProps) => {
+      const next = locales.find((_, i) => i > locales.lastIndexOf(locale)) ?? locales[0]
+
+      return (
+        <View style={styles.headerRight}>
+          <HeaderButton
+            icon="home"
+            size={24}
+            color={tintColor!}
+            href="/"
+            tooltip={strings.goHome}
+          />
+          <HeaderButton
+            icon="text-box-multiple-outline"
+            size={24}
+            color={tintColor!}
+            href="/blog"
+            tooltip={strings.tooltips.blog}
+          />
+          <HeaderButton
+            text={next}
+            size={24}
+            color={tintColor!}
+            onPress={() => setLocale(next)}
+            tooltip={strings.tooltips.language}
+          />
+          <HeaderButton
+            icon={theme === "dark" ? "weather-sunny" : "weather-night"}
+            size={32}
+            color={tintColor!}
+            onPress={() => setTheme(theme === "dark" ? "light" : "dark")}
+            tooltip={strings.tooltips.theme}
+          />
+        </View>
+      )
+    },
+    [locale, locales, styles, theme],
+  )
   const { width } = useWindowDimensions()
   const bounce = useSharedValue(0)
   const position = useSharedValue(0)
@@ -40,17 +89,26 @@ export default function NotFound({ home }: { home?: string } = {}) {
     position.value = withTiming(1, { duration: 7_000, easing: Easing.inOut(Easing.linear) })
   })
 
+  useEffect(() => {
+    if (pathname.startsWith("/blog/")) {
+      setHome("/blog")
+    }
+  }, [pathname])
+
   return (
     <View style={styles.container}>
+      <Stack.Screen options={{ headerRight, headerTransparent: true, title: "" }} />
+
       <AnimatedImage
         source={require("@/assets/images/r2d2.svg")}
         style={[styles.droid, animatedStyle]}
       />
+
       <Animated.View entering={FadeInUp.duration(750).delay(2_750)} style={styles.quote}>
-        <Text style={styles.quoteText}>“{strings.quote}”</Text>
-        <Text style={styles.quoteAttribution}>— {strings.attribution}</Text>
-        <Link href={(home ?? "/") as any} replace style={styles.quoteLink}>
-          {strings.go_home}
+        <Text style={styles.quoteText}>“{strings.notFound.quote}”</Text>
+        <Text style={styles.quoteAttribution}>— {strings.notFound.attribution}</Text>
+        <Link href={home as any} replace style={styles.quoteLink}>
+          {strings.goHome}
         </Link>
       </Animated.View>
     </View>
@@ -61,13 +119,18 @@ const useStyles = createThemedStylesheet((theme, portrait) =>
   StyleSheet.create({
     container: {
       backgroundColor: "#b1875c",
-      backgroundImage: "url(/dunes.svg)",
+      backgroundImage: "url(/images/dunes.svg)",
       backgroundSize: "512px 320px",
       backgroundPosition: "-128px",
       flex: 1,
       alignItems: "center",
       justifyContent: "center",
       overflow: "hidden",
+    },
+    headerRight: {
+      flexDirection: "row",
+      gap: 8,
+      marginEnd: 24,
     },
     droid: {
       alignSelf: "flex-start",
@@ -102,6 +165,7 @@ const useStyles = createThemedStylesheet((theme, portrait) =>
       color: theme.colors.secondary,
       fontSize: 24,
       fontWeight: "700",
+      fontVariant: ["small-caps"],
       textAlign: "center",
     },
   }),

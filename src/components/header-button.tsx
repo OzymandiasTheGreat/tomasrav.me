@@ -1,3 +1,4 @@
+import { Link } from "expo-router"
 import React, { type ComponentProps, useCallback } from "react"
 import { Pressable, type PressableProps, StyleSheet, Text } from "react-native"
 import Animated, {
@@ -12,20 +13,31 @@ import MDI from "@expo/vector-icons/MaterialCommunityIcons"
 import { createThemedStylesheet, useTheme } from "@/hooks/use-theme"
 
 interface HeaderButtonProps {
+  size: number
   color: string
   icon?: ComponentProps<typeof MDI>["name"]
   text?: string
-  onPress: PressableProps["onPress"]
+  href?: string
+  onPress?: PressableProps["onPress"]
+  tooltip?: string
 }
 
 const AnimatedPressable = Animated.createAnimatedComponent(Pressable)
 
-const HeaderButton: React.FC<HeaderButtonProps> = ({ color, icon, text, onPress }) => {
+const HeaderButton: React.FC<HeaderButtonProps> = ({
+  size,
+  color,
+  icon,
+  text,
+  href,
+  onPress,
+  tooltip,
+}) => {
   const theme = useTheme()
   const styles = useStyles()
   const hovered = useSharedValue(0)
   const pressed = useSharedValue(0)
-  const animatedStyle = useAnimatedStyle(() => ({
+  const buttonStyle = useAnimatedStyle(() => ({
     backgroundColor: interpolateColor(
       hovered.value,
       [0, 1],
@@ -33,16 +45,24 @@ const HeaderButton: React.FC<HeaderButtonProps> = ({ color, icon, text, onPress 
     ),
     opacity: interpolate(pressed.value, [0, 1], [1, 0.3]),
   }))
+  const opacity = useSharedValue(0)
+  const tooltipStyle = useAnimatedStyle(() => ({
+    opacity: interpolate(opacity.value, [0, 1], [0, 0.66]),
+  }))
   const onHoveredIn = useCallback(() => {
+    opacity.value = withTiming(1, { duration: 250 })
     hovered.value = withTiming(1, { duration: 250 })
   }, [])
   const onHoveredOut = useCallback(() => {
+    opacity.value = withTiming(0, { duration: 250 })
     hovered.value = withTiming(0, { duration: 250 })
   }, [])
   const onPressedIn = useCallback(() => {
+    opacity.value = withTiming(1, { duration: 250 })
     pressed.value = withTiming(1, { duration: 250 })
   }, [])
   const onPressedOut = useCallback(() => {
+    opacity.value = withTiming(0, { duration: 250 })
     pressed.value = withTiming(0, { duration: 250 })
   }, [])
 
@@ -53,10 +73,24 @@ const HeaderButton: React.FC<HeaderButtonProps> = ({ color, icon, text, onPress 
       onHoverOut={onHoveredOut}
       onPressIn={onPressedIn}
       onPressOut={onPressedOut}
-      style={[styles.pressable, animatedStyle]}
+      style={[styles.pressable, buttonStyle]}
     >
-      {!!icon && <MDI name={icon} size={32} color={color} />}
-      {!!text && <Text style={[styles.text, { color }]}>{text}</Text>}
+      {!href ? (
+        <>
+          {!!icon && <MDI name={icon} size={size} color={color} />}
+          {!!text && <Text style={[styles.text, { color, fontSize: size }]}>{text}</Text>}
+        </>
+      ) : (
+        <Link href={href as any} replace>
+          {!!icon && <MDI name={icon} size={size} color={color} />}
+          {!!text && <Text style={[styles.text, { color, fontSize: size }]}>{text}</Text>}
+        </Link>
+      )}
+      <Animated.View style={[styles.tooltip, tooltipStyle]}>
+        <Text numberOfLines={1} style={styles.tooltipText}>
+          {tooltip}
+        </Text>
+      </Animated.View>
     </AnimatedPressable>
   )
 }
@@ -74,8 +108,22 @@ const useStyles = createThemedStylesheet((theme, portrait) =>
     },
     text: {
       ...theme.fonts.ui.bold,
-      fontSize: 24,
       fontVariant: ["small-caps"],
+    },
+    tooltip: {
+      backgroundColor: theme.colors.card,
+      paddingHorizontal: 16,
+      paddingVertical: 8,
+      borderRadius: 8,
+      position: "absolute",
+      bottom: -36,
+      right: -8,
+      opacity: 0,
+    },
+    tooltipText: {
+      ...theme.fonts.ui.regular,
+      fontSize: 16,
+      color: theme.colors.text,
     },
   }),
 )

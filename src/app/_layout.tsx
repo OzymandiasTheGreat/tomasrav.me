@@ -7,21 +7,24 @@ import "react-native-reanimated"
 
 import HeaderButton from "@/components/header-button"
 import { DarkTheme, LightTheme } from "@/constants/main.theme"
-import { LocaleProvider, useLocale } from "@/hooks/use-locale"
 import {
   ColorSchemeProvider,
   useColorScheme,
   useSetColorScheme,
 } from "@/hooks/use-color-scheme"
+import { useSystemStrings } from "@/hooks/use-content"
+import { useMainFonts } from "@/hooks/use-fonts"
+import { LocaleProvider, useLocale } from "@/hooks/use-locale"
 import { createThemedStylesheet } from "@/hooks/use-theme"
 
 import "./styles.css"
 
 export const unstable_settings = {
-  initialRouteName: "[locale]",
+  initialRouteName: "[locale]/index",
 }
 
 function RootLayout() {
+  const strings = useSystemStrings()["tooltips"]
   const styles = useStyles()
   const [locale, locales, setLocale] = useLocale()
   const theme = useColorScheme()
@@ -32,21 +35,46 @@ function RootLayout() {
 
       return (
         <View style={styles.headerRight}>
-          <HeaderButton text={next} color={tintColor!} onPress={() => setLocale(next)} />
+          <HeaderButton
+            icon="text-box-multiple-outline"
+            size={24}
+            color={tintColor!}
+            href="/blog"
+            tooltip={strings.blog}
+          />
+          <HeaderButton
+            text={next}
+            size={24}
+            color={tintColor!}
+            onPress={() => setLocale(next)}
+            tooltip={strings.language}
+          />
           <HeaderButton
             icon={theme === "dark" ? "weather-sunny" : "weather-night"}
+            size={32}
             color={tintColor!}
             onPress={() => setTheme(theme === "dark" ? "light" : "dark")}
+            tooltip={strings.theme}
           />
         </View>
       )
     },
-    [locale, locales, theme],
+    [locale, locales, styles, theme],
   )
+
+  useMainFonts()
 
   return (
     <ThemeProvider value={theme === "dark" ? DarkTheme : LightTheme}>
-      <Stack screenOptions={{ headerRight, headerTransparent: true, title: "" }} />
+      <Stack
+        screenOptions={{
+          headerRight,
+          headerTransparent: true,
+          title: "",
+        }}
+      >
+        <Stack.Screen name="blog" options={{ headerShown: false }} />
+      </Stack>
     </ThemeProvider>
   )
 }

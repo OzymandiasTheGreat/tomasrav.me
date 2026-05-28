@@ -2,7 +2,7 @@ import MDI from "@expo/vector-icons/MaterialCommunityIcons"
 import { Link } from "expo-router"
 import { StyleSheet, Text, View } from "react-native"
 
-import Info from "@/assets/content/info.json"
+import SharedInfo from "@/assets/content/shared-info.json"
 import { createThemedStylesheet } from "@/hooks/use-theme"
 
 export default function Footer() {
@@ -10,8 +10,12 @@ export default function Footer() {
 
   return (
     <View style={styles.copyright}>
-      <Link href={Info.copyright.link as any} style={styles.copyrightLink}>
-        {Info.copyright.icons.map((name, i) => (
+      <Link
+        href={SharedInfo.copyright.link as any}
+        target="_blank"
+        style={styles.copyrightLink}
+      >
+        {SharedInfo.copyright.icons.map((name, i) => (
           <MDI
             key={`${i}-${name}`}
             name={name as any}
@@ -20,10 +24,10 @@ export default function Footer() {
             style={styles.copyrightIcon}
           />
         ))}
-        {Info.copyright.license}
+        {SharedInfo.copyright.license}
         <Text style={styles.copyrightText}>
           {" "}
-          - {Info.copyright.year} - {Info.me}
+          - {SharedInfo.copyright.year} - {SharedInfo.me}
         </Text>
       </Link>
     </View>

@@ -1,0 +1,12 @@
+{
+  "goHome": "Go Home",
+  "tooltips": {
+    "blog": "Blog",
+    "language": "Lietuviškai",
+    "theme": "Switch theme"
+  },
+  "notFound": {
+    "attribution": "Ben Kenobi",
+    "quote": "These are not the droids you’re looking for..."
+  }
+}
