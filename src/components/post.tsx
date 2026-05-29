@@ -86,9 +86,13 @@ const Post: React.FC<PostProps> = ({ post, strings }) => {
         {adapted && (
           <Text style={styles.adapted}>
             {strings.adapted}:{" "}
-            <Link href={post.source as any} target="_blank" style={styles.adaptedLink}>
-              {post.source}
-            </Link>
+            {URL.canParse(post.source!) ? (
+              <Link href={post.source as any} target="_blank" style={styles.adaptedLink}>
+                {post.source}
+              </Link>
+            ) : (
+              post.source
+            )}
           </Text>
         )}
       </View>

@@ -74,14 +74,22 @@ export const PostPreview: React.FC<PostPreviewProps> = ({
   )
 }
 
+export const EmbeddedPostList: React.FC<PostListProps> = ({ base, strings, listing }) => {
+  return (
+    <>
+      {listing.posts.map((post) => (
+        <PostPreview {...post} key={post.slug} base={base} strings={strings} />
+      ))}
+    </>
+  )
+}
+
 const PostList: React.FC<PostListProps> = ({ base, strings, listing }) => {
   const styles = useStyles()
 
   return (
     <Animated.ScrollView contentContainerStyle={styles.content}>
-      {listing.posts.map((post) => (
-        <PostPreview {...post} key={post.slug} base={base} strings={strings} />
-      ))}
+      <EmbeddedPostList base={base} strings={strings} listing={listing} />
 
       <View style={styles.pager}>
         {listing.page - 1 > 0 && (

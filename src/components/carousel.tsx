@@ -398,7 +398,7 @@ const useStyles = createThemedStylesheet((theme, portrait) =>
   StyleSheet.create({
     container: {
       width: "100%",
-      height: "85%",
+      height: "80%",
       backgroundColor: theme.colors.card,
     },
     titleContainer: {
@@ -411,10 +411,11 @@ const useStyles = createThemedStylesheet((theme, portrait) =>
       ...theme.fonts.ui.bold,
       fontSize: 32,
       color: theme.colors.primary,
+      textAlign: "center",
     },
     flatListContainer: {
       width: "100%",
-      height: "85%",
+      height: "90%",
     },
     indicatorContainer: {
       flexDirection: "row",
@@ -437,7 +438,7 @@ const useStyles = createThemedStylesheet((theme, portrait) =>
       justifyContent: "center",
     },
     itemContent: {
-      height: "30%",
+      height: "60%",
       paddingHorizontal: portrait ? 16 : 0,
     },
     itemLoading: {

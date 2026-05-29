@@ -135,13 +135,13 @@ const useStyles = createThemedStylesheet((theme, portrait) =>
       flexGrow: 1,
     },
     section: {
-      height: portrait ? null : "85%",
+      height: portrait ? null : "65%",
       alignItems: "center",
       justifyContent: "center",
       marginVertical: portrait ? 128 : null,
     },
     carousel: {
-      height: portrait ? "35%" : "85%",
+      height: portrait ? "25%" : "50%",
     },
     quote: {
       width: portrait ? "70%" : "60%",
@@ -172,8 +172,8 @@ const useStyles = createThemedStylesheet((theme, portrait) =>
       left: -68,
     },
     decorationEnd: {
-      bottom: -88,
-      right: -56,
+      bottom: -80,
+      right: -24,
     },
     intro: {
       width: portrait ? "90%" : "55%",
@@ -205,7 +205,7 @@ const useStyles = createThemedStylesheet((theme, portrait) =>
       marginHorizontal: 8,
     },
     sponsor: {
-      height: portrait ? 512 : "45%",
+      height: portrait ? 768 : "55%",
       alignItems: "center",
       justifyContent: "center",
     },
@@ -215,7 +215,7 @@ const useStyles = createThemedStylesheet((theme, portrait) =>
       color: theme.colors.text,
       lineHeight: 32,
       textAlign: "center",
-      width: portrait ? "60%" : "30%",
+      width: portrait ? "70%" : "35%",
     },
     sponsorIcon: {
       color: theme.colors.primary,

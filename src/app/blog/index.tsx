@@ -4,13 +4,13 @@ import Animated from "react-native-reanimated"
 
 import Strings from "@/assets/content/blog/blog.json"
 import Footer from "@/components/footer"
-import Markdown from "@/components/markdown"
+import { EmbeddedPostList } from "@/components/post-list"
 import { useBlogPosts } from "@/hooks/use-content"
 import { createThemedStylesheet } from "@/hooks/use-theme"
 
 export default function BlogHome() {
   const styles = useStyles()
-  const posts = useBlogPosts()
+  const listing = useBlogPosts()
 
   return (
     <Animated.ScrollView contentContainerStyle={styles.content}>
@@ -19,26 +19,10 @@ export default function BlogHome() {
           <Text style={styles.introText}>{Strings.intro}</Text>
         </View>
 
-        {posts
-          && posts.posts.map((post) => (
-            <View key={post.slug} style={styles.post}>
-              <Link href={`/blog/post/${post.slug}`} style={styles.postTitle}>
-                {post.title}
-              </Link>
-              <View style={styles.postMeta}>
-                <Text style={styles.postAuthor}>
-                  {Strings.by} {post.author}
-                </Text>
-                <Text style={styles.postPublished}>
-                  {post.edited ? Strings.edited : Strings.published}{" "}
-                  {post.edited ?? post.published}
-                </Text>
-              </View>
-              <Markdown>{post.excerpt}</Markdown>
-            </View>
-          ))}
-        {posts?.page! < posts?.total! && (
-          <Link href={`/blog/posts/2`} style={styles.viewMore}>
+        {listing && <EmbeddedPostList base="/blog" strings={Strings} listing={listing} />}
+
+        {listing?.page! < listing?.total! && (
+          <Link href={`/blog/posts/2`} style={styles.more}>
             {Strings.more}
           </Link>
         )}
@@ -69,36 +53,7 @@ const useStyles = createThemedStylesheet((theme, portrait) =>
       color: theme.colors.text,
       textAlign: "center",
     },
-    post: {
-      backgroundColor: theme.colors.card,
-      width: portrait ? "98%" : "60%",
-      padding: portrait ? 16 : 32,
-      borderRadius: 16,
-      marginBottom: 64,
-    },
-    postTitle: {
-      ...theme.fonts.ui.bold,
-      fontSize: 28,
-      color: theme.colors.secondary,
-      marginBottom: 32,
-    },
-    postMeta: {
-      flexDirection: "row",
-      justifyContent: "space-between",
-      opacity: 0.75,
-      marginBottom: 32,
-    },
-    postAuthor: {
-      ...theme.fonts.ui.regular,
-      fontSize: 18,
-      color: theme.colors.text,
-    },
-    postPublished: {
-      ...theme.fonts.ui.regular,
-      fontSize: 18,
-      color: theme.colors.text,
-    },
-    viewMore: {
+    more: {
       ...theme.fonts.ui.regular,
       fontSize: 20,
       color: theme.colors.secondary,
