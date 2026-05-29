@@ -3,11 +3,11 @@ import { DarkTheme as DarkMainTheme, LightTheme as LightMainTheme } from "./main
 
 const ui: Theme["fonts"]["ui"] = {
   regular: {
-    fontFamily: "FiraSans_400Regular, sans-serif",
+    fontFamily: "Lato_400Regular, sans-serif",
     fontWeight: "400",
   },
   bold: {
-    fontFamily: "FiraSans_700Bold, sans-serif",
+    fontFamily: "Lato_700Bold, sans-serif",
     fontWeight: "700",
   },
 }

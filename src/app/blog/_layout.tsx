@@ -9,6 +9,7 @@ import { DarkTheme, LightTheme } from "@/constants/blog.theme"
 import { useColorScheme, useSetColorScheme } from "@/hooks/use-color-scheme"
 import { useSystemStrings } from "@/hooks/use-content"
 import { useBlogFonts } from "@/hooks/use-fonts"
+import { useLocale } from "@/hooks/use-locale"
 import { createThemedStylesheet } from "@/hooks/use-theme"
 
 export const unstable_settings = {
@@ -20,6 +21,7 @@ export default function BlogLayout() {
   const styles = useStyles()
   const theme = useColorScheme()
   const setTheme = useSetColorScheme()
+  const [locale] = useLocale()
   const headerRight = useCallback(
     ({ tintColor }: NativeStackHeaderItemProps) => (
       <View style={styles.headerRight}>
@@ -31,6 +33,13 @@ export default function BlogLayout() {
           tooltip={strings.goHome}
         />
         <HeaderButton
+          icon="food-variant"
+          size={24}
+          color={tintColor!}
+          href={`/${locale}/kitchen`}
+          tooltip={strings.tooltips.kitchen}
+        />
+        <HeaderButton
           icon={theme === "dark" ? "weather-sunny" : "weather-night"}
           size={32}
           color={tintColor!}
@@ -39,7 +48,7 @@ export default function BlogLayout() {
         />
       </View>
     ),
-    [styles, theme],
+    [locale, strings, styles, theme],
   )
 
   useBlogFonts()

@@ -52,6 +52,13 @@ export default function NotFound() {
             tooltip={strings.tooltips.blog}
           />
           <HeaderButton
+            icon="food-variant"
+            size={24}
+            color={tintColor!}
+            href={`/${locale}/kitchen`}
+            tooltip={strings.tooltips.kitchen}
+          />
+          <HeaderButton
             text={next}
             size={24}
             color={tintColor!}
@@ -93,7 +100,11 @@ export default function NotFound() {
     if (pathname.startsWith("/blog/")) {
       setHome("/blog")
     }
-  }, [pathname])
+
+    if (pathname.startsWith(`/${locale}/kitchen/`)) {
+      setHome(`/${locale}/kitchen`)
+    }
+  }, [locale, pathname])
 
   return (
     <View style={styles.container}>

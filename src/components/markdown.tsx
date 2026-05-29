@@ -225,9 +225,11 @@ const useStyles = createThemedStylesheet((theme, portrait) =>
     table: {
       borderWidth: 1,
       borderColor: theme.colors.text,
+      marginBottom: 32,
     },
     tableHeader: {},
     tableHeaderCell: {
+      flex: 1,
       padding: 8,
       borderWidth: 1,
       borderColor: theme.colors.text,
@@ -236,6 +238,7 @@ const useStyles = createThemedStylesheet((theme, portrait) =>
       flexDirection: "row",
     },
     tableRowCell: {
+      flex: 1,
       padding: 8,
       borderWidth: 1,
       borderColor: theme.colors.text,
@@ -243,6 +246,7 @@ const useStyles = createThemedStylesheet((theme, portrait) =>
     hr: {
       backgroundColor: theme.colors.text,
       height: 1,
+      marginBottom: 32,
     },
     hardbreak: {
       width: "100%",

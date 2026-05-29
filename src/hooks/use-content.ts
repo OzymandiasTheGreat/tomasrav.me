@@ -8,6 +8,7 @@ export interface SystemStrings {
   goHome: string
   tooltips: {
     blog: string
+    kitchen: string
     language: string
     theme: string
   }
@@ -28,7 +29,12 @@ export interface HomeStrings {
 }
 
 export interface KitchenStrings {
+  adapted: string
+  by: string
+  edited: string
   intro: string
+  more: string
+  published: string
 }
 
 export interface BlogPost {
@@ -47,6 +53,22 @@ export interface BlogPostList {
   page: number
   total: number
   posts: BlogPost[]
+}
+
+export interface KitchenPost {
+  title: string
+  slug: string
+  author: string
+  content: string
+  published: string
+  edited?: string
+  source?: string
+}
+
+export interface KitchenPostList {
+  page: number
+  total: number
+  posts: KitchenPost[]
 }
 
 export function useSystemStrings(): SystemStrings {
@@ -97,70 +119,211 @@ export function useHomeStrings(): HomeStrings {
   return strings
 }
 
-export function useBlogPosts() {
-  const PER_PAGE = 10
-  const context = require.context("../../assets/content/blog/posts", false, /\.md$/)
-  const posts: BlogPost[] = context
-    .keys()
-    .map((key) => {
-      const data = matter(context(key), {
-        excerpt: true,
-        excerpt_separator: "<!--more-->",
-      })
+export function useKitchenStrings(): KitchenStrings {
+  const [locale] = useLocale()
+  const strings = useMemo(() => {
+    const context = require.context(
+      "../../assets/content",
+      true,
+      /^\.\/\w{2}\/kitchen\/kitchen\.json$/,
+    )
+    const strings: Record<string, string> = {}
 
-      return {
-        excerpt: data.excerpt!,
-        content: data.content,
-        ...data.data,
-      } as BlogPost
-    })
-    .sort((a, b) => {
-      const atime = a.edited ? new Date(a.edited).getTime() : new Date(a.published).getTime()
-      const btime = b.edited ? new Date(b.edited).getTime() : new Date(b.published).getTime()
+    for (const path of context.keys()) {
+      if (path.startsWith(`./${locale}`)) {
+        Object.assign(strings, context(path))
+      }
+    }
 
-      return btime - atime
-    })
-    .map((post) => ({
-      ...post,
-      edited: post.edited && new Date(post.edited).toLocaleDateString(new Intl.Locale("lt")),
-      published: new Date(post.published).toLocaleDateString(new Intl.Locale("lt")),
-    }))
-  const params = useLocalSearchParams()
-  const page =
-    "page" in params
-      ? /^\d+$/.test(params.page as string)
-        ? parseInt(params.page as string)
-        : -1
-      : 1
-  const total = Math.ceil(posts.length / PER_PAGE)
+    return strings
+  }, [locale])
 
-  if (page <= 0 || page > total) {
-    return null
-  }
-
-  const paged = posts.slice((page - 1) * PER_PAGE, (page - 1) * PER_PAGE + PER_PAGE)
-
-  return { page, total, posts: paged }
+  return strings as unknown as KitchenStrings
 }
 
-export function useBlogPost() {
+export function useBlogPosts(): BlogPostList | null {
+  const PER_PAGE = 5
+  const context = require.context("../../assets/content/blog/posts", false, /\.md$/)
+  const posts: BlogPost[] = useMemo(
+    () =>
+      context
+        .keys()
+        .map((key) => {
+          const data = matter(context(key), {
+            excerpt: true,
+            excerpt_separator: "<!--more-->",
+          })
+
+          return {
+            excerpt: data.excerpt!,
+            content: data.content,
+            ...data.data,
+          } as BlogPost
+        })
+        .sort((a, b) => {
+          const atime = a.edited
+            ? new Date(a.edited).getTime()
+            : new Date(a.published).getTime()
+          const btime = b.edited
+            ? new Date(b.edited).getTime()
+            : new Date(b.published).getTime()
+
+          return btime - atime
+        })
+        .map((post) => ({
+          ...post,
+          edited:
+            post.edited && new Date(post.edited).toLocaleDateString(new Intl.Locale("lt")),
+          published: new Date(post.published).toLocaleDateString(new Intl.Locale("lt")),
+        })),
+    [context],
+  )
+  const params = useLocalSearchParams()
+  const list = useMemo(() => {
+    const page =
+      "page" in params
+        ? /^\d+$/.test(params.page as string)
+          ? parseInt(params.page as string)
+          : -1
+        : 1
+    const total = Math.ceil(posts.length / PER_PAGE)
+
+    if (page <= 0 || page > total) {
+      return null
+    }
+
+    return {
+      page,
+      total,
+      posts: posts.slice((page - 1) * PER_PAGE, (page - 1) * PER_PAGE + PER_PAGE),
+    }
+  }, [params, posts])
+
+  return list
+}
+
+export function useBlogPost(): BlogPost | null {
   const params = useLocalSearchParams()
   const context = require.context("../../assets/content/blog/posts", false, /\.md$/)
-  const key = context.keys().find((key) => key.endsWith(`${params.slug}.md`))
+  const post = useMemo(() => {
+    const key = context.keys().find((key) => key.endsWith(`${params.slug}.md`))
 
-  if (!key) {
-    return null
-  }
+    if (!key) {
+      return null
+    }
 
-  const data = matter(context(key), {
-    excerpt: false,
-  })
+    const post = matter(context(key), {
+      excerpt: false,
+    })
 
-  return {
-    content: data.content,
-    ...data.data,
-    published: new Date(data.data.published).toLocaleDateString(new Intl.Locale("lt")),
-  } as BlogPost
+    return {
+      content: post.content,
+      ...post.data,
+      published: new Date(post.data.published).toLocaleDateString(new Intl.Locale("lt")),
+      edited:
+        post.data.edited
+        && new Date(post.data.edited).toLocaleDateString(new Intl.Locale("lt")),
+    }
+  }, [context, params])
+
+  return post as BlogPost
+}
+
+export function useKitchenPosts(): KitchenPostList | null {
+  const PER_PAGE = 8
+  const params = useLocalSearchParams()
+  const context = require.context(
+    "../../assets/content",
+    true,
+    /^\.\/\w{2}\/kitchen\/posts\/[\w-]+\.md$/,
+  )
+  const posts: KitchenPost[] = useMemo(
+    () =>
+      context
+        .keys()
+        .filter((key) => key.startsWith(`./${params.locale}`))
+        .map((key) => {
+          const data = matter(context(key), {
+            excerpt: false,
+          })
+
+          return {
+            content: data.content,
+            ...data.data,
+          } as KitchenPost
+        })
+        .sort((a, b) => {
+          const atime = a.edited
+            ? new Date(a.edited).getTime()
+            : new Date(a.published).getTime()
+          const btime = b.edited
+            ? new Date(b.edited).getTime()
+            : new Date(b.published).getTime()
+
+          return btime - atime
+        })
+        .map((post) => ({
+          ...post,
+          edited:
+            post.edited && new Date(post.edited).toLocaleDateString(new Intl.Locale("lt")),
+          published: new Date(post.published).toLocaleDateString(new Intl.Locale("lt")),
+        })),
+    [context, params],
+  )
+  const list = useMemo(() => {
+    const page =
+      "page" in params
+        ? /^\d+$/.test(params.page as string)
+          ? parseInt(params.page as string)
+          : -1
+        : 1
+    const total = Math.ceil(posts.length / PER_PAGE)
+
+    if (page <= 0 || page > total) {
+      return null
+    }
+
+    return {
+      page,
+      total,
+      posts: posts.slice((page - 1) * PER_PAGE, (page - 1) * PER_PAGE + PER_PAGE),
+    }
+  }, [params, posts])
+
+  return list
+}
+
+export function useKitchenPost(): KitchenPost | null {
+  const params = useLocalSearchParams()
+  const context = require.context(
+    "../../assets/content",
+    true,
+    /^\.\/\w{2}\/kitchen\/posts\/[\w-]+\.md$/,
+  )
+  const post = useMemo(() => {
+    const key = context
+      .keys()
+      .find((key) => key.startsWith(`./${params.locale}`) && key.endsWith(`${params.slug}.md`))
+
+    if (!key) {
+      return null
+    }
+
+    const post = matter(context(key), {
+      excerpt: false,
+    })
+
+    return {
+      content: post.content,
+      ...post.data,
+      published: new Date(post.data.published).toLocaleDateString(new Intl.Locale("lt")),
+      edited:
+        post.data.edited
+        && new Date(post.data.edited).toLocaleDateString(new Intl.Locale("lt")),
+    }
+  }, [context, params])
+
+  return post as KitchenPost
 }
 
 function camelize(str: string): string {

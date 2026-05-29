@@ -1,6 +1,7 @@
 import { useFonts as useNativeFonts } from "expo-font"
 import { FiraCode_400Regular } from "@expo-google-fonts/fira-code"
 import { FiraSans_400Regular, FiraSans_700Bold } from "@expo-google-fonts/fira-sans"
+import { Lato_400Regular, Lato_700Bold } from "@expo-google-fonts/lato"
 import {
   Merriweather_300Light_Italic,
   Merriweather_400Regular,
@@ -25,6 +26,17 @@ export function useBlogFonts() {
     FiraCode_400Regular,
     FiraSans_400Regular,
     FiraSans_700Bold,
+    Merriweather_400Regular,
+    Merriweather_400Regular_Italic,
+    Merriweather_700Bold,
+  })
+}
+
+export function useKitchenFonts() {
+  return useNativeFonts({
+    FiraCode_400Regular,
+    Lato_400Regular,
+    Lato_700Bold,
     Merriweather_400Regular,
     Merriweather_400Regular_Italic,
     Merriweather_700Bold,
