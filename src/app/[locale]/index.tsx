@@ -13,11 +13,6 @@ import { useLocale } from "@/hooks/use-locale"
 import { useHomeStrings } from "@/hooks/use-content"
 import { createThemedStylesheet } from "@/hooks/use-theme"
 
-export async function generateStaticParams() {
-  const context = require.context("../../../assets/content", true, /^\.\/\w{2}\/locale\.js$/)
-  return context.keys().map((key) => ({ locale: context(key) }))
-}
-
 export default function LocalizedHome() {
   const strings = useHomeStrings()
   const styles = useStyles()

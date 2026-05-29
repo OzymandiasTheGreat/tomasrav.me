@@ -88,6 +88,13 @@ const Markdown: React.FC<{ children: string | string[]; style?: MarkdownStyles }
             </Text>
           )
         }
+        if (parent[0].type.startsWith("link")) {
+          return (
+            <Text key={key} style={[...(styles.text as any), ...(styles.link as any)]}>
+              {content}
+            </Text>
+          )
+        }
         return (
           <Text key={key} style={styles.text as any}>
             {content}

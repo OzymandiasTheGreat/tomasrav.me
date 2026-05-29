@@ -6,15 +6,21 @@ import { useKitchenPosts, useKitchenStrings } from "@/hooks/use-content"
 
 export async function generateStaticParams(params: { locale: string }) {
   const PER_PAGE = 8
-  const context = require.context(
+  const localeContext = require.context(
+    "../../../../../assets/content",
+    true,
+    /^\.\/\w{2}\/locale\.js$/,
+  )
+  const locales = localeContext.keys().map((key) => localeContext(key))
+  const postContext = require.context(
     "../../../../../assets/content",
     true,
     /^\.\/\w{2}\/kitchen\/posts\/[\w-]+\.md$/,
   )
-  const pages = Math.ceil(
-    context.keys().filter((key) => key.startsWith(`./${params.locale}`)).length / PER_PAGE,
-  )
-  return new Array(pages).fill(0).map((_, i) => ({ ...params, page: `${i + 1}` }))
+  const pages = Math.ceil(postContext.keys().length / locales.length / PER_PAGE)
+  return new Array(pages)
+    .fill(0)
+    .flatMap((_, i) => locales.map((locale) => ({ locale, page: `${i + 1}` })))
 }
 
 export default function KitchenPostList() {

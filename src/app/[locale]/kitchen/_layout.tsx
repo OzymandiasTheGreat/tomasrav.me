@@ -13,7 +13,7 @@ import { useLocale } from "@/hooks/use-locale"
 import { createThemedStylesheet } from "@/hooks/use-theme"
 
 export const unstable_settings = {
-  initialRouteName: "[locale]/kitchen/index",
+  initialRouteName: "index",
 }
 
 export default function KitchenLayout() {

@@ -1,5 +1,9 @@
 # Bienvenue chez moi!
 
-Aš esu laisvai samdomas programuotojas ir konsultantas, kuris specializuojasi **P2P** technologijose, tarp-platforminėse integracijose, ir periferinėje kompiuterijoje. Skiriu pirmenybe ir daugiausiai dirbu su **Atviro-Kodo** projektais. Programuoju nuo 2014 metų ir labiausiai minėtina yra tai, jog padėjau sukurti pirmines versijas **P2P** susirašinėjimo ir video skambučių programėlės [Keet](https://keet.io/) dirbdamas [Holepunch 🕳️🥊](https://holepunch.to/).
+Esu aistringas programuotojas, laisvai samdomas kūrėjas ir programinės įrangos konsultantas, besispecializuojantis paskirstytose **P2P** sistemose, write-once-run-anywhere tarp-platforminiuose sprendimuose ir be ryšio veikiančiose pirmiausia vietinėse periferinėse kompiuterijose.
 
-Galite mane pasamdyti, [parašykite man](mailto:tomas@tomasrav.me) ir aptarsime detales.
+Tvirtai tikiu **Atvirojo Kodo** principais ir prisidedu prie bendruomenės, kai tik galiu.
+
+Rašau kodą nuo 2014 m. ir verta paminėti, jog buvau komandos, sukūrusios mobiliąją **P2P** pranešimų ir vaizdo skambučių programėlę [Keet](https://keet.io/), dalis, kai dirbau su [Holepunch 🕳️🥊](https://holepunch.to/).
+
+Mano įgūdžius galima išsinuomoti, [parašykite man](mailto:tomas@tomasrav.me) ir mes aptarsime detales.
