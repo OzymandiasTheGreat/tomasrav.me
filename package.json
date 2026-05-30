@@ -2,7 +2,7 @@
   "private": true,
   "name": "tomasrav.me",
   "main": "expo-router/entry",
-  "version": "5.0.1",
+  "version": "5.0.2",
   "scripts": {
     "start": "watchman watch-del . && expo start",
     "export": "expo export --platform web",
