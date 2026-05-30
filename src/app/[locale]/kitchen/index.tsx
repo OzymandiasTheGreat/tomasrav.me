@@ -1,7 +1,9 @@
 import { Link, useLocalSearchParams } from "expo-router"
+import Head from "expo-router/head"
 import { StyleSheet, Text, View } from "react-native"
 import Animated from "react-native-reanimated"
 
+import Strings from "@/assets/content/shared-info.json"
 import Footer from "@/components/footer"
 import { EmbeddedPostList } from "@/components/post-list"
 import { useKitchenPosts, useKitchenStrings } from "@/hooks/use-content"
@@ -15,6 +17,12 @@ export default function KitchenHome() {
 
   return (
     <Animated.ScrollView contentContainerStyle={styles.content}>
+      <Head>
+        <title>
+          {strings.title} | {Strings.me}
+        </title>
+      </Head>
+
       <View style={styles.container}>
         <View style={styles.intro}>
           <Text style={styles.introText}>{strings.intro}</Text>

@@ -1,11 +1,12 @@
 import MDI from "@expo/vector-icons/MaterialCommunityIcons"
 import { Image } from "expo-image"
 import { Link, Stack, useLocalSearchParams } from "expo-router"
+import Head from "expo-router/head"
 import { StyleSheet, Text, View } from "react-native"
 import Animated, { FadeIn } from "react-native-reanimated"
 
 import NotFound from "../+not-found"
-import SharedInfo from "@/assets/content/shared-info.json"
+import Strings from "@/assets/content/shared-info.json"
 import Carousel from "@/components/carousel"
 import Footer from "@/components/footer"
 import Markdown from "@/components/markdown"
@@ -27,6 +28,10 @@ export default function LocalizedHome() {
 
   return (
     <Animated.ScrollView contentContainerStyle={styles.content}>
+      <Head>
+        <title>{Strings.me}</title>
+      </Head>
+
       <Stack.Screen options={{ headerLeft: noop }} />
 
       <View style={styles.section}>
@@ -36,7 +41,7 @@ export default function LocalizedHome() {
             <Markdown style={quoteStyles}>{strings.quote}</Markdown>
             <Text style={[styles.decoration, styles.decorationEnd]}>”</Text>
           </View>
-          <Text style={styles.quoteAttribution}>— {SharedInfo.me}</Text>
+          <Text style={styles.quoteAttribution}>— {Strings.me}</Text>
         </Animated.View>
       </View>
 
@@ -53,7 +58,7 @@ export default function LocalizedHome() {
                 style={styles.infoIcon}
               />
               <Link
-                href={`https://www.google.com/maps/${SharedInfo.location}`}
+                href={`https://www.google.com/maps/${Strings.location}`}
                 target="_blank"
                 style={styles.infoLink}
               >
@@ -68,8 +73,8 @@ export default function LocalizedHome() {
                 color={styles.infoIcon.color}
                 style={styles.infoIcon}
               />
-              <Link href={`mailto:${SharedInfo.email}`} target="_blank" style={styles.infoLink}>
-                {SharedInfo.email}
+              <Link href={`mailto:${Strings.email}`} target="_blank" style={styles.infoLink}>
+                {Strings.email}
               </Link>
             </View>
 
@@ -81,11 +86,11 @@ export default function LocalizedHome() {
                 style={styles.infoIcon}
               />
               <Link
-                href={`https://github.com/${SharedInfo.github}`}
+                href={`https://github.com/${Strings.github}`}
                 target="_blank"
                 style={styles.infoLink}
               >
-                {SharedInfo.github}
+                {Strings.github}
               </Link>
             </View>
           </View>
@@ -101,7 +106,7 @@ export default function LocalizedHome() {
       <View style={styles.sponsor}>
         <Text style={styles.sponsorText}>{strings.support}</Text>
         <Link
-          href={SharedInfo.sponsor.github.link as any}
+          href={Strings.sponsor.github.link as any}
           target="_blank"
           style={styles.sponsorLink}
         >
@@ -111,7 +116,7 @@ export default function LocalizedHome() {
             color={styles.sponsorIcon.color}
             style={styles.sponsorIcon}
           />
-          <Text>{SharedInfo.sponsor.github.name}</Text>
+          <Text>{Strings.sponsor.github.name}</Text>
         </Link>
       </View>
 

@@ -1,17 +1,20 @@
 import FA from "@expo/vector-icons/FontAwesome6"
 import { Link } from "expo-router"
+import Head from "expo-router/head"
 import React from "react"
 import { StyleSheet, Text, View } from "react-native"
 import Animated from "react-native-reanimated"
 
 import Footer from "./footer"
 import Markdown from "./markdown"
+import Strings from "@/assets/content/shared-info.json"
 import { createThemedStylesheet } from "@/hooks/use-theme"
 
 export interface PostStrings {
   by: string
   edited: string
   published: string
+  title: string
   adapted?: string
   alsoPublished?: string
 }
@@ -40,6 +43,12 @@ const Post: React.FC<PostProps> = ({ post, strings }) => {
 
   return (
     <Animated.ScrollView contentContainerStyle={styles.content}>
+      <Head>
+        <title>
+          {post.title} | {strings.title} | {Strings.me}
+        </title>
+      </Head>
+
       <View style={styles.post}>
         <Text style={styles.title}>{post.title}</Text>
 

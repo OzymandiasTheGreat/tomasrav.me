@@ -1,8 +1,10 @@
 import { Link } from "expo-router"
+import Head from "expo-router/head"
 import { StyleSheet, Text, View } from "react-native"
 import Animated from "react-native-reanimated"
 
 import Strings from "@/assets/content/blog/blog.json"
+import SharedStrings from "@/assets/content/shared-info.json"
 import Footer from "@/components/footer"
 import { EmbeddedPostList } from "@/components/post-list"
 import { useBlogPosts } from "@/hooks/use-content"
@@ -14,6 +16,12 @@ export default function BlogHome() {
 
   return (
     <Animated.ScrollView contentContainerStyle={styles.content}>
+      <Head>
+        <title>
+          {Strings.title} | {SharedStrings.me}
+        </title>
+      </Head>
+
       <View style={styles.container}>
         <View style={styles.intro}>
           <Text style={styles.introText}>{Strings.intro}</Text>

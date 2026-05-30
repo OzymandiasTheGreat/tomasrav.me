@@ -1,11 +1,14 @@
 import MDI from "@expo/vector-icons/MaterialCommunityIcons"
 import { Link } from "expo-router"
+import Head from "expo-router/head"
 import React from "react"
 import { StyleSheet, Text, View } from "react-native"
 import Animated from "react-native-reanimated"
 
 import Footer from "./footer"
 import Markdown from "./markdown"
+import Strings from "@/assets/content/shared-info.json"
+import { useSystemStrings } from "@/hooks/use-content"
 import { createThemedStylesheet } from "@/hooks/use-theme"
 
 export interface PostListStrings {
@@ -13,6 +16,7 @@ export interface PostListStrings {
   edited: string
   more: string
   published: string
+  title: string
 }
 
 export interface PostPreview {
@@ -86,9 +90,17 @@ export const EmbeddedPostList: React.FC<PostListProps> = ({ base, strings, listi
 
 const PostList: React.FC<PostListProps> = ({ base, strings, listing }) => {
   const styles = useStyles()
+  const systemStrings = useSystemStrings()
 
   return (
     <Animated.ScrollView contentContainerStyle={styles.content}>
+      <Head>
+        <title>
+          {systemStrings.page} {`${listing.page}`} {systemStrings.of} {`${listing.total}`} |{" "}
+          {strings.title} | {Strings.me}
+        </title>
+      </Head>
+
       <EmbeddedPostList base={base} strings={strings} listing={listing} />
 
       <View style={styles.pager}>

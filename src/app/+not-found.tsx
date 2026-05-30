@@ -1,6 +1,7 @@
 import { type NativeStackHeaderItemProps } from "@react-navigation/native-stack"
 import { Image } from "expo-image"
 import { Link, Stack, useFocusEffect, usePathname } from "expo-router"
+import Head from "expo-router/head"
 import { useCallback, useEffect, useState } from "react"
 import { StyleSheet, Text, View, useWindowDimensions } from "react-native"
 import Animated, {
@@ -13,6 +14,7 @@ import Animated, {
   withTiming,
 } from "react-native-reanimated"
 
+import Strings from "@/assets/content/shared-info.json"
 import HeaderButton from "@/components/header-button"
 import { useColorScheme, useSetColorScheme } from "@/hooks/use-color-scheme"
 import { useSystemStrings } from "@/hooks/use-content"
@@ -108,6 +110,12 @@ export default function NotFound() {
 
   return (
     <View style={styles.container}>
+      <Head>
+        <title>
+          {strings.notFound.title} | {Strings.me}
+        </title>
+      </Head>
+
       <Stack.Screen options={{ headerRight, headerTransparent: true, title: "" }} />
 
       <AnimatedImage

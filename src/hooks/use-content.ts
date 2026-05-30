@@ -6,6 +6,8 @@ import { useLocale } from "./use-locale"
 
 export interface SystemStrings {
   goHome: string
+  page: string
+  of: string
   tooltips: {
     blog: string
     kitchen: string
@@ -15,6 +17,7 @@ export interface SystemStrings {
   notFound: {
     attribution: string
     quote: string
+    title: string
   }
 }
 
@@ -35,6 +38,7 @@ export interface KitchenStrings {
   intro: string
   more: string
   published: string
+  title: string
 }
 
 export interface BlogPost {

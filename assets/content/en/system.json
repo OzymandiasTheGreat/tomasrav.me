@@ -1,5 +1,7 @@
 {
   "goHome": "Go Home",
+  "page": "Page",
+  "of": "of",
   "tooltips": {
     "blog": "Blog",
     "kitchen": "Kitchen",
@@ -8,6 +10,7 @@
   },
   "notFound": {
     "attribution": "Ben Kenobi",
-    "quote": "These are not the droids you’re looking for..."
+    "quote": "These are not the droids you’re looking for...",
+    "title": "404 - Not Found"
   }
 }

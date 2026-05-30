@@ -1,5 +1,7 @@
 {
   "goHome": "Į Titulinį",
+  "page": "Puslapis",
+  "of": "iš",
   "tooltips": {
     "blog": "Tinklaraštis",
     "kitchen": "Virtuvė",
@@ -8,6 +10,7 @@
   },
   "notFound": {
     "attribution": "Benas Kenobis",
-    "quote": "Tai ne tie droidai, kurių ieškote..."
+    "quote": "Tai ne tie droidai, kurių ieškote...",
+    "title": "404 - Puslapio Nėra"
   }
 }
