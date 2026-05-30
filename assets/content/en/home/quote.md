@@ -1,1 +1,1 @@
-The server-client model is outdated and fragile. Now that consumer and edge devices can perform expensive computations locally the server is just a centralized point of failure, and frankly, redundant The future is here and the future is **Peer-to-Peer**!
+The server-client model is outdated and fragile. Now that consumer and edge devices can perform expensive computations locally the server is just a centralized point of failure, and frankly, redundant. The future is here and the future is **Peer-to-Peer**!
