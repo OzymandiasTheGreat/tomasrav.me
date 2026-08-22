@@ -3,6 +3,7 @@ title: Bringing Relational SQL Databases to the P2P World
 slug: paraql
 author: Tomas Ravinskas
 published: 2026-08-22T20:45:00+0300
+devto: https://dev.to/ozymandiasthegreat/bringing-relational-sql-databases-to-the-p2p-world-5hk6
 ---
 
 Have you ever wanted to integrate full-text search (or to be more trendy, vector similarity search) in to your P2P project only to be disappointed by the available options (or lack there of)? I sure was, so I set out to see what could be done to improve the situation.
