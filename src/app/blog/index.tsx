@@ -1,4 +1,4 @@
-import { Link } from "expo-router"
+import { Link, Stack } from "expo-router"
 import Head from "expo-router/head"
 import { StyleSheet, Text, View } from "react-native"
 import Animated from "react-native-reanimated"
@@ -15,30 +15,38 @@ export default function BlogHome() {
   const listing = useBlogPosts()
 
   return (
-    <Animated.ScrollView contentContainerStyle={styles.content}>
+    <>
       <Head>
         <title>
           {Strings.title} | {SharedStrings.me}
         </title>
       </Head>
 
-      <View style={styles.container}>
-        <View style={styles.intro}>
-          <Text style={styles.introText}>{Strings.intro}</Text>
+      <Stack.Screen options={{ headerLeft: noop }} />
+
+      <Animated.ScrollView contentContainerStyle={styles.content}>
+        <View style={styles.container}>
+          <View style={styles.intro}>
+            <Text style={styles.introText}>{Strings.intro}</Text>
+          </View>
+
+          {listing && <EmbeddedPostList base="/blog" strings={Strings} listing={listing} />}
+
+          {listing?.page! < listing?.total! && (
+            <Link href={`/blog/posts/2`} style={styles.more}>
+              {Strings.more}
+            </Link>
+          )}
         </View>
 
-        {listing && <EmbeddedPostList base="/blog" strings={Strings} listing={listing} />}
-
-        {listing?.page! < listing?.total! && (
-          <Link href={`/blog/posts/2`} style={styles.more}>
-            {Strings.more}
-          </Link>
-        )}
-      </View>
-
-      <Footer />
-    </Animated.ScrollView>
+        <Footer />
+      </Animated.ScrollView>
+    </>
   )
+}
+
+function noop() {
+  return <></>
 }
 
 const useStyles = createThemedStylesheet((theme, portrait) =>

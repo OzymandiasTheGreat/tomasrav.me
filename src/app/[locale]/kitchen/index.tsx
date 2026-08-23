@@ -1,4 +1,4 @@
-import { Link, useLocalSearchParams } from "expo-router"
+import { Link, Stack, useLocalSearchParams } from "expo-router"
 import Head from "expo-router/head"
 import { StyleSheet, Text, View } from "react-native"
 import Animated from "react-native-reanimated"
@@ -16,32 +16,40 @@ export default function KitchenHome() {
   const { locale } = useLocalSearchParams()
 
   return (
-    <Animated.ScrollView contentContainerStyle={styles.content}>
+    <>
       <Head>
         <title>
           {strings.title} | {Strings.me}
         </title>
       </Head>
 
-      <View style={styles.container}>
-        <View style={styles.intro}>
-          <Text style={styles.introText}>{strings.intro}</Text>
+      <Stack.Screen options={{ headerLeft: noop }} />
+
+      <Animated.ScrollView contentContainerStyle={styles.content}>
+        <View style={styles.container}>
+          <View style={styles.intro}>
+            <Text style={styles.introText}>{strings.intro}</Text>
+          </View>
+
+          {listing && (
+            <EmbeddedPostList base={`/${locale}/kitchen`} strings={strings} listing={listing} />
+          )}
+
+          {listing?.page! < listing?.total! && (
+            <Link href={`/${locale}/kitchen/posts/2`} style={styles.more}>
+              {strings.more}
+            </Link>
+          )}
         </View>
 
-        {listing && (
-          <EmbeddedPostList base={`/${locale}/kitchen`} strings={strings} listing={listing} />
-        )}
-
-        {listing?.page! < listing?.total! && (
-          <Link href={`/${locale}/kitchen/posts/2`} style={styles.more}>
-            {strings.more}
-          </Link>
-        )}
-      </View>
-
-      <Footer />
-    </Animated.ScrollView>
+        <Footer />
+      </Animated.ScrollView>
+    </>
   )
+}
+
+function noop() {
+  return <></>
 }
 
 const useStyles = createThemedStylesheet((theme, portrait) =>
