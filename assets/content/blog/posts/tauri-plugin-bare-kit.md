@@ -3,6 +3,7 @@ title: Tauri Apps without Rust? Write Your Backend in Javascript
 slug: tauri-plugin-bare-kit
 author: Tomas Ravinskas
 published: 2026-08-23T04:00:00+0300
+devto: https://dev.to/ozymandiasthegreat/tauri-apps-without-rust-write-your-backend-in-javascript-20g4
 ---
 
 TL;DR I wrote Tauri-specific rust bindings for [BareKit](https://github.com/holepunchto/bare-kit) as a Tauri plugin so you can write your backend in javascript without touching rust at all (other than enabling the plugin) or split your logic between javascript and rust. Most modules on NPM work out of the box. Native addons are autolinked. Mobile is supported as well. Interested? Read on!
