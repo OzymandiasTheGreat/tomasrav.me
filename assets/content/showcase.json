@@ -1,9 +1,16 @@
 {
   "content": [
     {
-      "github": "OzymandiasTheGreat/tauri-plugin-bare-kit",
+      "github": "getbullet-app/tauri-plugin-bare-kit",
       "npm": "tauri-plugin-bare-kit-api",
       "crate": "tauri-plugin-bare-kit"
+    },
+    {
+      "github": "getbullet-app/paraql",
+      "npm": "@bullet./paraql"
+    },
+    {
+      "github": "holepunchto/bare-kit"
     },
     {
       "github": "OzymandiasTheGreat/emoji-keyboard"
