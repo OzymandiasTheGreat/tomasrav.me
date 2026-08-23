@@ -1,4 +1,4 @@
-import { useTheme as useNativeTheme } from "@react-navigation/native"
+import { useTheme as useNativeTheme } from "expo-router"
 import { useMemo } from "react"
 import { StyleSheet, useWindowDimensions } from "react-native"
 

@@ -1,6 +1,4 @@
-import { ThemeProvider } from "@react-navigation/native"
-import { type NativeStackHeaderItemProps } from "@react-navigation/native-stack"
-import { Stack } from "expo-router"
+import { type NativeStackHeaderItemProps, Stack, ThemeProvider } from "expo-router"
 import { useCallback } from "react"
 import { StyleSheet, View } from "react-native"
 import "react-native-reanimated"
@@ -38,28 +36,28 @@ function RootLayout() {
           <HeaderButton
             icon="text-box-multiple-outline"
             size={24}
-            color={tintColor!}
+            color={tintColor as string}
             href="/blog"
             tooltip={strings.blog}
           />
           <HeaderButton
             icon="food-variant"
             size={24}
-            color={tintColor!}
+            color={tintColor as string}
             href={`/${locale}/kitchen`}
             tooltip={strings.kitchen}
           />
           <HeaderButton
             text={next}
             size={24}
-            color={tintColor!}
+            color={tintColor as string}
             onPress={() => setLocale(next)}
             tooltip={strings.language}
           />
           <HeaderButton
             icon={theme === "dark" ? "weather-sunny" : "weather-night"}
             size={32}
-            color={tintColor!}
+            color={tintColor as string}
             onPress={() => setTheme(theme === "dark" ? "light" : "dark")}
             tooltip={strings.theme}
           />

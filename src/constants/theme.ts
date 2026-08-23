@@ -1,4 +1,4 @@
-import { type Theme as NativeTheme } from "@react-navigation/native"
+import { type Theme as NativeTheme } from "expo-router"
 
 type FontStyle = {
   fontFamily: string
@@ -18,6 +18,7 @@ type FontStyle = {
 }
 
 export interface Theme extends NativeTheme {
+  dark: boolean
   colors: NativeTheme["colors"] & {
     secondary: string
   }

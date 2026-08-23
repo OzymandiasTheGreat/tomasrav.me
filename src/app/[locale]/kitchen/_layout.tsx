@@ -1,6 +1,4 @@
-import { ThemeProvider } from "@react-navigation/native"
-import { type NativeStackHeaderItemProps } from "@react-navigation/native-stack"
-import { Stack } from "expo-router"
+import { type NativeStackHeaderItemProps, Stack, ThemeProvider } from "expo-router"
 import { useCallback } from "react"
 import { StyleSheet, View } from "react-native"
 
@@ -31,28 +29,28 @@ export default function KitchenLayout() {
           <HeaderButton
             icon="home"
             size={24}
-            color={tintColor!}
+            color={tintColor as string}
             href="/"
             tooltip={strings.goHome}
           />
           <HeaderButton
             icon="text-box-multiple-outline"
             size={24}
-            color={tintColor!}
+            color={tintColor as string}
             href="/blog"
             tooltip={strings.tooltips.blog}
           />
           <HeaderButton
             text={next}
             size={24}
-            color={tintColor!}
+            color={tintColor as string}
             onPress={() => setLocale(next)}
             tooltip={strings.tooltips.language}
           />
           <HeaderButton
             icon={theme === "dark" ? "weather-sunny" : "weather-night"}
             size={32}
-            color={tintColor!}
+            color={tintColor as string}
             onPress={() => setTheme(theme === "dark" ? "light" : "dark")}
           />
         </View>
